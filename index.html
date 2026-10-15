@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Kay Lustre">
+<meta name="theme-color" content="#121212">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<script>
+/* Safety net: if the shop cannot start on some phone or browser, show a clear message instead of a dead page. */
+window.addEventListener("error", function (e) {
+  var a = document.getElementById("app");
+  if (a && !a.children.length && !document.getElementById("klfatal")) {
+    var d = document.createElement("div");
+    d.id = "klfatal";
+    d.style.cssText = "margin:1rem;padding:1.2rem;border:1px solid #d4af37;color:#f3e5ab;font-family:sans-serif";
+    d.innerHTML = "<b>The shop could not start on this browser.</b><br>Please update your phone, or open this page in Safari (iPhone/iPad) or Chrome (Android). If it still fails, call 0257911684 or 0550771454.<br><small style='opacity:.7'>" + String(e.message || "").replace(/</g, "&lt;") + "</small>";
+    a.appendChild(d);
+  }
+});
+/* iOS Safari only fires taps on some elements when a touch listener exists; this also enables :active styles. */
+document.addEventListener("touchstart", function () {}, { passive: true });
+</script>
+<title>KAY LUSTRE GIFTS &amp; MORE</title>
+<style>
+:root{--in:#0e0e0e;--hl:#16130a;--strip:#0a0a0a;--hdr:rgba(18,18,18,.94);--navbg:rgba(10,10,10,.98);--herog:#2a2412;--bub:#2a2a2a;--bg:#121212;--panel:#1a1a1a;--line:#2e2a1c;--gold:#d4af37;--gold2:#f3e5ab;--txt:#ece7d8;--mute:#9a9484;--ok:#6fbf73;--bad:#d9605a;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--txt);font:16px/1.55 var(--sans);min-height:100vh}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:.02em}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+.gold{background:linear-gradient(135deg,var(--gold),var(--gold2) 50%,var(--gold));color:#161208}
+.btn{border:1px solid var(--gold);background:transparent;color:var(--gold2);padding:.6rem 1.1rem;border-radius:3px;cursor:pointer}
+.btn:hover{background:rgba(212,175,55,.12)}
+.btn.gold{border:0;font-weight:600}.btn.gold:hover{filter:brightness(1.08)}
+.btn.sm{padding:.3rem .7rem;font-size:.85rem}.btn.bad{border-color:var(--bad);color:var(--bad)}
+header{position:sticky;top:0;z-index:20;background:var(--hdr);backdrop-filter:blur(8px);border-bottom:1px solid var(--gold);display:flex;align-items:center;gap:1rem;padding:.7rem 1.2rem;flex-wrap:wrap}
+.logo{font-family:var(--serif);font-size:1.3rem;color:var(--gold);line-height:1.1}
+.logo small{display:block;font-size:.65rem;letter-spacing:.3em;color:var(--mute)}
+nav{display:flex;gap:.3rem;margin-left:auto;flex-wrap:wrap}
+nav button{background:none;border:0;padding:.5rem .8rem;cursor:pointer;color:var(--mute);border-bottom:2px solid transparent}
+nav button.on,nav button:hover{color:var(--gold2);border-color:var(--gold)}
+main{max-width:1200px;margin:0 auto;padding:1.5rem 1.2rem 6rem}
+.hero{padding:3rem 1rem;text-align:center;border:1px solid var(--line);background:radial-gradient(circle at 50% 0,var(--herog),var(--panel) 70%);margin-bottom:1.5rem}
+.hero h1{font-size:clamp(2rem,6vw,3.6rem);color:var(--gold2)}
+.hero p{color:var(--mute);max-width:46ch;margin:.8rem auto 0}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.chip{border:1px solid var(--line);background:var(--panel);padding:.4rem .9rem;border-radius:99px;cursor:pointer;color:var(--mute)}
+.chip.on{background:var(--gold);color:#161208;border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.1rem}
+.card{background:var(--panel);border:1px solid var(--line);cursor:pointer;transition:border-color .2s}
+.card:hover{border-color:var(--gold)}
+.card img{width:100%;height:200px;object-fit:cover;display:block;background:var(--in)}@supports(aspect-ratio:1){.card img{height:auto;aspect-ratio:1}}
+.card div{padding:.8rem}.card h3{font-size:1.05rem}
+.price{color:var(--gold);font-weight:600}.low{color:var(--bad);font-size:.8rem}
+.panel{background:var(--panel);border:1px solid var(--line);padding:1.2rem;margin-bottom:1rem}
+label{display:block;font-size:.85rem;color:var(--mute);margin:.7rem 0 .2rem}
+input,select,textarea{width:100%;background:var(--in);border:1px solid var(--line);padding:.6rem;border-radius:3px}
+input[type=file]{padding:.4rem}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}
+.modal{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.82);z-index:50;display:none;align-items:center;justify-content:center;padding:1rem;overflow:auto}
+.modal.open{display:flex}
+.box{background:var(--panel);border:1px solid var(--gold);max-width:860px;width:100%;max-height:94vh;max-height:94dvh;overflow:auto;position:relative}
+.box .x{position:absolute;right:.6rem;top:.4rem;background:none;border:0;font-size:1.8rem;color:var(--gold2);cursor:pointer;z-index:2}
+.lb{display:grid;grid-template-columns:1fr 1fr}
+.lb img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.lb .info{padding:1.5rem}
+@media(max-width:720px){.lb{grid-template-columns:1fr}}
+.drawer{position:fixed;right:0;top:0;bottom:0;width:100%;max-width:400px;background:var(--panel);border-left:1px solid var(--gold);z-index:40;transform:translateX(100%);transition:transform .25s;padding:1.2rem;overflow:auto}
+.drawer.open{transform:none}
+.item{display:flex;gap:.7rem;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.item img{width:54px;height:54px;object-fit:cover}.item .g{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:.5rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--gold);font-weight:500}
+.scroll{overflow-x:auto}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin-bottom:1rem}
+.stat{border:1px solid var(--line);padding:.8rem;background:var(--panel)}.stat b{display:block;font:500 1.6rem var(--serif);color:var(--gold2)}
+.badge{padding:.1rem .5rem;border-radius:99px;font-size:.75rem;border:1px solid var(--gold);color:var(--gold2)}
+.chat{display:grid;grid-template-columns:200px 1fr;gap:1rem}
+@media(max-width:720px){.chat{grid-template-columns:1fr}}
+.threads button{display:block;width:100%;text-align:left;padding:.5rem;background:var(--in);border:1px solid var(--line);margin-bottom:.3rem;cursor:pointer}
+.threads button.on{border-color:var(--gold)}
+.msgs{height:300px;overflow:auto;background:var(--in);border:1px solid var(--line);padding:.6rem;display:flex;flex-direction:column;gap:.4rem}
+.m{max-width:80%;padding:.4rem .7rem;border-radius:8px;font-size:.9rem}
+.m.me{align-self:flex-end;background:var(--gold);color:#161208}.m.them{background:var(--bub)}
+.m small{display:block;opacity:.6;font-size:.7rem}
+#fab{position:fixed;left:1rem;bottom:1rem;z-index:30;border-radius:99px;padding:.7rem 1.2rem}
+#chatbox{position:fixed;left:1rem;bottom:4.2rem;width:calc(100% - 2rem);max-width:340px;z-index:30;display:none;border:1px solid var(--gold);background:var(--panel);padding:.8rem}
+#chatbox.open{display:block}#chatbox .msgs{height:230px}
+.momo{border:1px dashed var(--gold);padding:.8rem;background:var(--hl);margin:.6rem 0}.momo b{color:var(--gold2);font-size:1.15rem;letter-spacing:.06em}
+#toast{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);background:var(--gold);color:#161208;padding:.6rem 1.2rem;border-radius:3px;z-index:99;display:none}
+.stars button{background:none;border:0;font-size:1.5rem;color:var(--mute);cursor:pointer}.stars button.on{color:var(--gold)}
+.hidden{display:none!important}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+a.btn{text-decoration:none;display:inline-block}
+.strip{background:var(--strip);border-bottom:1px solid var(--line);font-size:.85rem;color:var(--gold2);display:flex;gap:.4rem 1.4rem;flex-wrap:wrap;justify-content:center;padding:.45rem 1rem}
+.strip a{color:inherit;text-decoration:none}
+.logo{font-size:clamp(1.7rem,5vw,2.8rem);font-weight:700;line-height:1;letter-spacing:.05em;background:linear-gradient(135deg,#b8902a,#f3e5ab 45%,#d4af37 70%,#9c7a1c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo small{font-size:clamp(.8rem,2.2vw,1.15rem);letter-spacing:.32em;margin-top:.25rem;-webkit-text-fill-color:var(--gold2);color:var(--gold2)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;text-align:left;padding:2.5rem 1.8rem}
+@media(max-width:800px){.hero{grid-template-columns:1fr;text-align:center}}
+.hero h1.brand{font:700 clamp(3rem,10vw,6rem)/.95 var(--serif);letter-spacing:.03em;background:linear-gradient(135deg,#b8902a,#f3e5ab 45%,#d4af37 70%,#9c7a1c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand-sub{font:clamp(1.2rem,3.4vw,2rem) var(--serif);letter-spacing:.36em;color:var(--gold2);margin:.4rem 0 1.2rem}
+.tag{font:clamp(1.5rem,4vw,2.5rem)/1.15 var(--serif);color:var(--gold2);margin-bottom:1.2rem}
+.loc{border:1px solid var(--gold);padding:.7rem 1rem;display:inline-block;margin-bottom:1.2rem;color:var(--gold2)}
+.dealh{display:inline-block;background:linear-gradient(90deg,var(--gold),var(--gold2));color:#161208;font-weight:700;padding:.3rem 1.2rem .3rem .8rem;margin-bottom:.7rem;letter-spacing:.08em}
+.deal{list-style:none;padding:0;text-align:left}
+.deal li{padding:.3rem .4rem;cursor:pointer;color:var(--gold2);letter-spacing:.04em;transition:padding .2s}
+.deal li:hover{padding-left:.9rem;color:#fff}
+.deal li:before{content:"";display:inline-block;width:.6rem;height:.6rem;background:var(--gold);margin-right:.7rem}
+footer{border-top:1px solid var(--gold);background:var(--strip);padding:2.2rem 1.2rem 5rem}
+.fgrid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.2rem}
+.cc{border:1px solid var(--gold);padding:1.1rem;background:linear-gradient(135deg,rgba(212,175,55,.14),transparent)}
+.cc p{margin:.5rem 0}
+.f1{font:700 2rem/1 var(--serif);color:var(--gold)}.f2{letter-spacing:.3em;color:var(--gold2)}
+.phone a{font:600 clamp(1.7rem,5vw,2.4rem) var(--serif);color:var(--gold2);text-decoration:none}
+.soc div,.soc a{display:flex;gap:.7rem;align-items:center;padding:.35rem 0;color:var(--txt);text-decoration:none}
+.ic{font-style:normal;font-weight:700;font-size:.75rem;background:var(--gold);color:#161208;width:2rem;height:2rem;border-radius:6px;display:grid;place-items:center;flex:none}
+.pm{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem}
+.pm button{border:1px solid var(--line);background:var(--in);padding:.7rem .4rem;cursor:pointer;text-align:center;border-radius:3px}
+.pm button.on{border-color:var(--gold);background:var(--hl);color:var(--gold2)}
+.two{display:grid;grid-template-columns:2fr 1fr;gap:1rem}@media(max-width:800px){.two{grid-template-columns:1fr}}
+.stats .stat{transition:transform .2s,border-color .2s}.stats .stat:hover{transform:translateY(-3px);border-color:var(--gold)}
+.chart{display:flex;gap:.5rem}.col{flex:1;text-align:center;font-size:.72rem;color:var(--mute)}
+.bw{height:140px;display:flex;align-items:flex-end}
+.bw i{display:block;width:100%;background:linear-gradient(var(--gold2),var(--gold));border-radius:3px 3px 0 0;height:0;transition:height .9s cubic-bezier(.2,.8,.2,1)}
+.hbar{height:8px;background:var(--in);margin:.15rem 0 .7rem}.hbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));width:0;transition:width .9s}
+.feed{padding:0;max-height:260px;overflow:auto}.feed li{list-style:none;padding:.5rem 0;border-bottom:1px solid var(--line);font-size:.88rem}.feed small{color:var(--mute);display:block}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok);margin-right:.5rem;animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(111,191,115,.65)}100%{box-shadow:0 0 0 9px rgba(111,191,115,0)}}
+.nb{background:var(--bad);color:#fff;border-radius:99px;padding:0 .45rem;font-size:.72rem;margin-left:.35rem}
+.pg{height:4px;background:var(--in);margin:.5rem 0}.pg i{display:block;height:100%;background:var(--ok);transition:width .5s}
+.qr{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
+.btn,.chip,input,select{min-height:44px}.btn.sm{min-height:36px}
+.hint{color:var(--mute);font-size:.92rem;margin:.3rem 0 .8rem}
+.qa{display:flex;gap:.6rem;flex-wrap:wrap}
+.thumbs{display:flex;gap:.5rem;flex-wrap:wrap;padding:.5rem 0}
+.thumbs img{width:68px;height:68px;min-height:0;object-fit:cover;cursor:pointer;border:2px solid transparent}
+.thumbs img.on,.thumbs img:hover{border-color:var(--gold)}
+.thumbs .pt{display:flex;flex-direction:column;gap:.3rem;width:104px}.thumbs .pt img{width:104px;height:104px;cursor:default}
+.drop{border:2px dashed var(--gold);padding:1.6rem 1rem;text-align:center;color:var(--gold2);cursor:pointer;background:var(--hl);border-radius:4px}
+.drop:hover,.drop.on{background:var(--hl)}
+.pd{font:600 2rem var(--serif);letter-spacing:.4em;color:var(--gold2);background:var(--in);border:1px solid var(--gold);padding:.7rem;margin:.6rem 0;min-height:3.6rem}.pd.empty{font-size:1rem;letter-spacing:0;color:var(--mute);padding-top:1.1rem}
+.pad{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:.8rem 0}.pad .btn{min-height:54px;font-size:1.2rem}
+.sbar{display:flex;flex:1 1 260px;max-width:520px;min-width:220px}
+.sbar input{border-radius:99px 0 0 99px;padding-left:1rem}.sbar .btn{border-radius:0 99px 99px 0;min-width:90px}
+@media(max-width:800px){.sbar{order:3;flex-basis:100%;max-width:none}}
+.acct{position:relative;display:inline-block}
+.menu{position:absolute;right:0;top:100%;background:var(--panel);border:1px solid var(--gold);min-width:210px;z-index:60;padding:.5rem;box-shadow:0 8px 24px #000a}
+.menu button{display:block;width:100%;text-align:left;border:0;padding:.55rem .6rem}.menu .btn{text-align:center;margin-bottom:.4rem}
+.vars{display:flex;gap:.5rem;flex-wrap:wrap}.vars button{border:1px solid var(--line);background:var(--in);padding:.45rem .9rem;cursor:pointer;border-radius:3px}.vars button.on{border-color:var(--gold);color:var(--gold2);background:var(--hl)}
+.btn.big{width:100%;min-height:52px;font-size:1.1rem}
+.pdet{grid-column:1/-1;padding:1.2rem 1.5rem;border-top:1px solid var(--line)}
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin-top:.8rem}.spec>div{border:1px solid var(--line);padding:.8rem}.spec td{padding:.25rem .2rem;border:0}
+.qty{display:inline-flex;align-items:center;gap:.4rem}.qty button{width:32px;height:32px;border:1px solid var(--gold);background:none;color:var(--gold2);cursor:pointer;border-radius:3px;font-size:1.1rem}
+.welcome{border:1px solid var(--gold);background:var(--hl);padding:.7rem 1rem;margin-bottom:1rem;color:var(--gold2)}
+html{-webkit-text-size-adjust:100%}img{max-width:100%}
+button,.btn,.chip,a,.card,.deal li,.drop,nav button,select,summary{touch-action:manipulation;-webkit-tap-highlight-color:rgba(212,175,55,.25)}
+#toast{pointer-events:none}#chips{scroll-margin-top:8rem}
+.sm{display:none}
+@supports not (font-size:clamp(1px,2vw,3px)){.logo{font-size:1.8rem}.hero h1.brand{font-size:3rem}.brand-sub,.tag{font-size:1.4rem}.phone a{font-size:1.8rem}.logo small{font-size:.8rem}}
+@media(max-width:800px){
+ header{padding:.5rem .8rem;gap:.5rem;backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg)}
+ .logo{font-size:1.6rem}.logo small{font-size:.65rem;letter-spacing:.25em}
+ .strip{font-size:.75rem;gap:.2rem 1rem;padding:.35rem .6rem}
+ nav{position:fixed;left:0;right:0;bottom:0;margin:0;z-index:36;background:var(--navbg);border-top:1px solid var(--gold);display:flex;flex-wrap:nowrap;gap:0;justify-content:space-around;padding:0 0 env(safe-area-inset-bottom,0)}
+ nav>button,nav .acct{flex:1 1 0;min-width:0}
+ nav button{padding:.45rem .1rem;font-size:.68rem;border-bottom:0;border-top:2px solid transparent;width:100%;min-height:52px;line-height:1.2}
+ nav button.on{border-top-color:var(--gold)}
+ .lg{display:none}.sm{display:inline}#ct{display:none}
+ .acct{display:block;position:relative}.menu{top:auto;bottom:100%;right:0;left:auto}
+ main{padding:1rem .8rem 7rem}footer{padding-bottom:6rem}
+ #fab{bottom:calc(64px + env(safe-area-inset-bottom,0px));left:.6rem;padding:.55rem .9rem;font-size:.9rem}
+ #chatbox{bottom:calc(112px + env(safe-area-inset-bottom,0px));left:.6rem;width:calc(100% - 1.2rem);max-width:none}
+ #toast{bottom:calc(72px + env(safe-area-inset-bottom,0px));max-width:90%;text-align:center}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+ .card div{padding:.6rem}.card h3{font-size:.95rem}
+ .hero{padding:1.5rem 1rem}
+ .modal{padding:0;align-items:flex-end}
+ .box{max-height:92vh;max-height:92dvh;border-radius:14px 14px 0 0;max-width:none}
+ .box .x{top:.3rem;right:.3rem;width:44px;height:44px;font-size:2rem;background:rgba(0,0,0,.55);border-radius:50%}
+ .lb img#lbi{min-height:0;max-height:48vh}.lb .info{padding:1rem}.pdet{padding:1rem}
+ .drawer{width:100%;max-width:none;padding-bottom:calc(1.2rem + env(safe-area-inset-bottom,0px))}
+ th,td{padding:.4rem .3rem}
+ .row{grid-template-columns:1fr}
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .tabs,.chips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:.4rem}
+ .tabs .chip,.chips .chip{white-space:nowrap;flex:none}
+}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1rem;margin-top:1rem}
+.vcard{position:relative;background:var(--panel);border:1px solid var(--line);cursor:pointer;overflow:hidden;transition:border-color .2s}
+.vcard:hover{border-color:var(--gold)}
+.vcard .pst{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--in)}
+.vcard .play{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:3.2rem;height:3.2rem;border-radius:50%;background:rgba(18,18,18,.7);border:2px solid var(--gold);color:var(--gold2);display:grid;place-items:center;font-size:1.1rem;padding-left:.2rem}
+.vcard .vt{padding:.6rem;font-size:.9rem}
+.vrow{display:flex;gap:.8rem;overflow-x:auto;padding:.6rem 0}.vrow .vcard{flex:0 0 150px}
+.vm{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:1rem;padding:1rem}
+@media(max-width:720px){.vm{grid-template-columns:1fr}}
+.vwrap video,.vwrap iframe{display:block;width:100%;aspect-ratio:9/16;max-height:78vh;background:#000;border:0}
+.vlink{padding:2rem 1rem;text-align:center}.vinfo{padding:.5rem}
+.tbtn{background:none;border:1px solid var(--gold);color:var(--gold2);border-radius:99px;padding:.15rem .8rem;font-size:.75rem;cursor:pointer;min-height:32px}
+.strip{align-items:center}
+.gal{position:relative;outline:none}
+.gtrack{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}
+.gtrack::-webkit-scrollbar{display:none}
+.gs{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;aspect-ratio:1;max-height:70vh;overflow:hidden;background:var(--in)}
+.gs img{display:block;width:100%;height:100%;min-height:0;object-fit:cover}
+.gnav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(18,18,18,.72);border:1px solid var(--gold);color:#f3e5ab;font-size:1.7rem;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0 0 .15rem}
+.gprev{left:.5rem}.gnext{right:.5rem}
+.gcount{position:absolute;right:.6rem;bottom:.6rem;background:rgba(0,0,0,.65);color:#fff;padding:.1rem .6rem;border-radius:99px;font-size:.8rem}
+.tscroll{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:.6rem}
+.tscroll img{flex:none}
+:root[data-theme=light]{--bg:#f7f3e8;--panel:#ffffff;--line:#e2d9bd;--gold:#b8902a;--gold2:#7a5a0b;--txt:#2a2619;--mute:#6b6553;--ok:#2f8a3a;--bad:#c0392b;--in:#fbf9f2;--hl:#fbf1d0;--strip:#efe7cf;--hdr:rgba(255,255,255,.95);--navbg:rgba(255,255,255,.98);--herog:#f1e6bd;--bub:#ece6d4;color-scheme:light}
+:root[data-theme=light] .gold,:root[data-theme=light] .btn.gold{background:linear-gradient(135deg,#d4af37,#f3e5ab 50%,#d4af37);color:#161208}
+:root[data-theme=light] .logo,:root[data-theme=light] .hero h1.brand{background:linear-gradient(135deg,#7a5a0b,#b8902a 50%,#7a5a0b);-webkit-background-clip:text;background-clip:text;color:transparent}
+:root[data-theme=light] .logo small{-webkit-text-fill-color:var(--gold2);color:var(--gold2)}
+:root[data-theme=light] .chip.on,:root[data-theme=light] .m.me{color:#161208}
+:root[data-theme=light] .menu{box-shadow:0 8px 24px rgba(0,0,0,.2)}
+:root[data-theme=light] .modal{background:rgba(40,35,20,.55)}
+:root[data-theme=light] .dealh,:root[data-theme=light] .ic{color:#161208}
+@media(min-width:801px) and (max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1400px){main,.fgrid{max-width:1360px}.grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}}
+@media(max-height:480px) and (orientation:landscape){header{position:static}.box{max-height:96vh}}
+@media(max-width:700px){
+ .scroll{overflow:visible}
+ table.rt,table.rt tbody{display:block;width:100%}
+ table.rt tr:first-child{display:none}
+ table.rt tr{display:block;border:1px solid var(--line);border-radius:6px;margin-bottom:.8rem;padding:.3rem .2rem;background:var(--panel)}
+ table.rt td{display:block;border:0;padding:.35rem .5rem}
+ table.rt td::before{content:attr(data-label);display:block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-bottom:.1rem}
+ table.rt input,table.rt select{max-width:100%}
+}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+a,button,.card,.vcard,.chip,.drop,.deal li{-webkit-tap-highlight-color:rgba(212,175,55,.25);touch-action:manipulation}
+.fi{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0);pointer-events:none}
+.box,.drawer,.menu,.msgs{overscroll-behavior:contain}
+@media (hover:none){body{cursor:pointer}input,textarea,select{cursor:auto}}
+@supports (-webkit-touch-callout:none){
+ input,select,textarea{font-size:16px!important;-webkit-appearance:none;appearance:none;border-radius:3px}
+ select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 18px) 55%,calc(100% - 13px) 55%;background-size:5px 5px;background-repeat:no-repeat;padding-right:2rem}
+ input[type=checkbox],input[type=radio]{-webkit-appearance:auto;appearance:auto}
+ body{min-height:-webkit-fill-available}
+ .modal{top:0;right:0;bottom:0;left:0}
+}
+</style>
+</head>
+<body>
+<noscript><div style="margin:1rem;padding:1.2rem;border:1px solid #d4af37;color:#f3e5ab;font-family:sans-serif"><b>This shop needs JavaScript to work.</b><br>If you opened this file from Files, WhatsApp, Mail or a download preview on an iPhone, it will not be interactive there. Open the shop's web address in Safari instead, or tap Share, then Open in Safari. Need help? Call or WhatsApp 0257911684 or 0550771454.</div></noscript>
+<div class="strip"><span>West Hills Mall, North Kaneshie, Lapaz</span><a href="tel:0257911684">Call &amp; WhatsApp: 0257911684</a><a href="tel:+233550771454">+233 55 077 1454</a><span>Nationwide delivery is available</span><button class="tbtn" id="themeBtn" type="button">Light mode</button></div>
+<header>
+  <div class="logo">KAY LUSTRE<small>GIFTS &amp; MORE</small></div>
+  <div class="sbar"><input id="sq" placeholder="Search products, brands and categories" aria-label="Search products"><button class="btn gold" id="sbtn">Search</button></div>
+  <nav id="nav">
+    <button data-v="shop" class="on">Shop</button>
+    <button data-v="custom"><span class="lg">Customer request</span><span class="sm">Request</span></button>
+    <button data-v="feedback">Reviews</button>
+    <button data-v="videos"><span class="lg">Testimonies</span><span class="sm">Videos</span></button>
+    <button data-v="admin" class="hidden" id="navadm"><span class="lg">Owner dashboard</span><span class="sm">Admin</span></button>
+    <button id="trk"><span class="lg">Track &amp; pay</span><span class="sm">Track</span></button>
+    <div class="acct"><button id="acBtn">Account ▾</button><div class="menu hidden" id="acMenu"></div></div>
+    <button id="cartBtn">Cart (<span id="cc">0</span>)<span id="ct"></span></button>
+  </nav>
+</header>
+<main id="app"></main>
+<footer><div class="fgrid">
+  <div class="cc"><div class="f1">KAY LUSTRE</div><div class="f2">GIFTS &amp; MORE</div><p style="font-family:var(--serif);font-size:1.2rem;color:var(--gold2)">Your elegant choice is here.</p><p>West Hills Mall, North Kaneshie, Lapaz</p></div>
+  <div class="cc"><small style="color:var(--mute)">Contact us — for call &amp; WhatsApp</small><div class="phone"><a href="tel:0257911684">0257911684</a></div><div class="phone"><a href="tel:+233550771454">+233 55 077 1454</a></div><p>Nationwide delivery is available.</p><a class="btn gold" href="https://wa.me/233257911684" target="_blank" rel="noopener">WhatsApp 025 791 1684</a> <a class="btn gold" href="https://wa.me/233550771454" target="_blank" rel="noopener">WhatsApp 055 077 1454</a></div>
+  <div class="cc soc"><a href="https://www.instagram.com/kuukuaheninful" target="_blank" rel="noopener"><i class="ic">IG</i>kuukuaheninful</a><div><i class="ic">TT</i>Kay Lustre Gifts &amp; More</div><div><i class="ic">SC</i>Kay Lustre</div><p style="color:var(--gold2)">Catalogue online: www.kaylustre.com/catalogue</p></div>
+</div><p style="max-width:1200px;margin:1.2rem auto 0;text-align:center"><a href="#owner" id="olink" style="color:var(--mute);font-size:.8rem">Owner login</a></p></footer>
+
+<div class="drawer" id="drawer" aria-label="Cart"></div>
+<div class="modal" id="modal"><div class="box" id="box"></div></div>
+<button class="btn gold" id="fab">Chat with us</button>
+<div id="chatbox"><b style="color:var(--gold2)">Chat with Kay Lustre</b>
+  <div class="msgs" id="cmsgs"></div>
+  <div style="display:flex;gap:.4rem;margin-top:.5rem"><input id="cin" placeholder="Type a message"><button class="btn gold sm" id="csend">Send</button></div>
+</div>
+<div id="toast" role="status"></div>
+
+<script>
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+(() => {
+  let memOnly = false;
+  /* Phone verification: put the address of your SMS gateway here (see sms-gateway-example.js).
+     While this is blank the shop runs in TEST MODE and shows the code on screen instead of sending an SMS. */
+  const SMS_API = "";
+  const LS = (() => {
+    try {
+      const k = "__kl";
+      localStorage.setItem(k, "1");
+      localStorage.removeItem(k);
+      return localStorage;
+    } catch (e) {
+      memOnly = true;
+      const m = {};
+      Object.defineProperties(m, { getItem: { value: (k) => Object.prototype.hasOwnProperty.call(m, k) ? m[k] : null }, setItem: { value: (k, v) => {
+        m[k] = String(v);
+      } }, removeItem: { value: (k) => {
+        delete m[k];
+      } } });
+      return m;
+    }
+  })();
+  const H = (t) => {
+    let a = 3735928559 ^ 7, b = 1103547991 ^ 7;
+    for (let i = 0; i < t.length; i++) {
+      const c = t.charCodeAt(i);
+      a = Math.imul(a ^ c, 2654435761);
+      b = Math.imul(b ^ c, 1597334677);
+    }
+    a = Math.imul(a ^ a >>> 16, 2246822507) ^ Math.imul(b ^ b >>> 13, 3266489909);
+    b = Math.imul(b ^ b >>> 16, 2246822507) ^ Math.imul(a ^ a >>> 13, 3266489909);
+    return (4294967296 * (2097151 & b) + (a >>> 0)).toString(36);
+  };
+  const pinHash = (x) => H("kl|" + x + "|lustre"), hasPin = () => !!(LS.kl_pinh || LS.kl_pin);
+  const checkPin = (x) => LS.kl_pinh ? LS.kl_pinh === pinHash(x) : LS.kl_pin ? LS.kl_pin === x : false;
+  const setPin = (x) => {
+    LS.kl_pinh = pinHash(x);
+    LS.removeItem("kl_pin");
+  };
+  let lastAct = Date.now();
+  const touch = () => {
+    lastAct = Date.now();
+  };
+  ["click", "keydown", "touchstart"].forEach((ev) => addEventListener(ev, touch, true));
+  setInterval(() => {
+    if (admin && Date.now() - lastAct > 9e5) {
+      admin = false;
+      view = "shop";
+      toast("Signed out after 15 minutes of inactivity");
+      render();
+    }
+  }, 2e4);
+  const CATS = ["Casual Everyday Watches", "Chronographs", "Leather Watches", "Bracelets", "Neck Chains", "Ladies Sets", "G-Shock"];
+  const STATUS = ["Pending", "Confirmed", "Shipped", "Delivered", "Cancelled"];
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s != null ? s : "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const money = (n) => "GH\u20B5 " + Number(n).toLocaleString("en-GH", { minimumFractionDigits: 2 });
+  const uid = () => Math.random().toString(36).slice(2, 9);
+  const ago = (t) => new Date(t).toLocaleString("en-GH", { dateStyle: "short", timeStyle: "short" });
+  function toast(m) {
+    const t = $("#toast");
+    t.textContent = m;
+    t.style.display = "block";
+    clearTimeout(toast.h);
+    toast.h = setTimeout(() => t.style.display = "none", 2600);
+  }
+  function art(cat2, i) {
+    const h = 38 + i * 9, g = `<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3e5ab"/><stop offset="1" stop-color="#9c7a1c"/></linearGradient></defs>`;
+    let b;
+    if (/Casual|Chrono|Leather|G-Shock/.test(cat2)) {
+      const strap = cat2 === "Leather Watches" ? "#5a3a22" : cat2 === "G-Shock" ? "#222" : "url(#g)";
+      b = `<rect x="170" y="20" width="60" height="360" rx="14" fill="${strap}"/><circle cx="200" cy="200" r="92" fill="#0d0d0d" stroke="url(#g)" stroke-width="10"/><circle cx="200" cy="200" r="70" fill="hsl(${h},30%,14%)"/>` + [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((k) => `<rect x="198" y="136" width="4" height="${k % 3 ? 8 : 16}" fill="#f3e5ab" transform="rotate(${k * 30} 200 200)"/>`).join("") + `<rect x="198" y="150" width="4" height="52" fill="#f3e5ab" transform="rotate(${i * 40} 200 200)"/><rect x="198" y="165" width="3" height="38" fill="#d4af37" transform="rotate(${120 + i * 25} 200 200)"/>` + (cat2 === "Chronographs" ? `<circle cx="200" cy="170" r="16" fill="none" stroke="#d4af37"/><circle cx="170" cy="215" r="14" fill="none" stroke="#d4af37"/><circle cx="230" cy="215" r="14" fill="none" stroke="#d4af37"/>` : "");
+    } else if (cat2 === "Bracelets") {
+      b = `<ellipse cx="200" cy="200" rx="120" ry="95" fill="none" stroke="url(#g)" stroke-width="22"/><ellipse cx="200" cy="200" rx="120" ry="95" fill="none" stroke="#121212" stroke-width="2" stroke-dasharray="6 14"/>`;
+    } else if (cat2 === "Neck Chains") {
+      b = `<path d="M90 90 Q200 360 310 90" fill="none" stroke="url(#g)" stroke-width="12" stroke-dasharray="18 6" stroke-linecap="round"/><circle cx="200" cy="262" r="22" fill="url(#g)"/>`;
+    } else {
+      b = `<path d="M110 100 Q200 280 290 100" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/><circle cx="200" cy="232" r="18" fill="url(#g)"/><circle cx="130" cy="320" r="26" fill="none" stroke="url(#g)" stroke-width="10"/><circle cx="270" cy="320" r="10" fill="url(#g)"/>`;
+    }
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">${g}<rect width="400" height="400" fill="hsl(${h},18%,10%)"/>${b}</svg>`;
+    return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+  }
+  const KEY = "kaylustre_v2";
+  function seed() {
+    return { products: [], orders: [], feedback: [], requests: [], chats: {}, users: [], videos: [], settings: { platforms: [{ id: "mtn", label: "MTN MoMo", kind: "momo", number: "0257911684", name: "Joycelyn Eninful", note: "", on: true }, { id: "tel", label: "Telecel Cash", kind: "momo", number: "", name: "", note: "Send to the MTN number above from your Telecel wallet.", on: true }, { id: "atg", label: "AirtelTigo Money", kind: "momo", number: "", name: "", note: "Send to the MTN number above from your AirtelTigo wallet.", on: true }, { id: "cod", label: "Cash on delivery", kind: "cash", note: "Pay the rider in cash when your order arrives. We will call to confirm.", on: true }, { id: "shop", label: "Pay at shop", kind: "cash", note: "Reserve online and pay when you collect at West Hills Mall, North Kaneshie, Lapaz.", on: true }] } };
+  }
+  const REG = { "Greater Accra": "Abeka,Lapaz,North Kaneshie,Accra Central,Osu,Dansoman,Achimota,Madina,Adenta,East Legon,Spintex,Tema,Ashaiman,Teshie,Nungua,Weija,Amasaman,Kwabenya,Nima,Kotobabi", "Ashanti": "Kumasi,Obuasi,Ejisu,Mampong,Konongo,Bekwai,Offinso,Tafo", "Western": "Takoradi,Sekondi,Tarkwa,Axim,Prestea,Half Assini", "Western North": "Sefwi Wiawso,Bibiani,Enchi,Juaboso", "Central": "Cape Coast,Kasoa,Winneba,Mankessim,Swedru,Assin Fosu,Elmina", "Eastern": "Koforidua,Nsawam,Suhum,Nkawkaw,Akim Oda,Somanya,Aburi", "Volta": "Ho,Keta,Aflao,Sogakope,Hohoe,Kpando", "Oti": "Dambai,Nkwanta,Kete Krachi,Jasikan", "Northern": "Tamale,Yendi,Savelugu,Bimbilla", "Savannah": "Damongo,Bole,Salaga", "North East": "Nalerigu,Walewale,Gambaga", "Upper East": "Bolgatanga,Bawku,Navrongo", "Upper West": "Wa,Tumu,Lawra", "Bono": "Sunyani,Berekum,Dormaa Ahenkro", "Bono East": "Techiman,Kintampo,Atebubu", "Ahafo": "Goaso,Bechem,Kenyasi" };
+  const locHtml = (pre, reg, town) => `<div class="row"><div><label>Region</label><select id="${pre}rg"><option value="">Choose region</option>${Object.keys(REG).map((r) => `<option ${r === reg ? "selected" : ""}>${r}</option>`).join("")}</select></div><div><label>Town</label><select id="${pre}tw"></select></div></div><input id="${pre}to" placeholder="Type your town" style="margin-top:.5rem;display:none">`;
+  function bindLoc(pre, town) {
+    const rg = $("#" + pre + "rg"), tw = $("#" + pre + "tw"), to = $("#" + pre + "to");
+    const fill = (t) => {
+      const L = REG[rg.value] ? REG[rg.value].split(",") : [];
+      tw.innerHTML = `<option value="">Choose town</option>` + L.map((x) => `<option ${x === t ? "selected" : ""}>${x}</option>`).join("") + (rg.value ? `<option value="__o" ${t && !L.includes(t) ? "selected" : ""}>Other town\u2026</option>` : "");
+      to.style.display = tw.value === "__o" ? "" : "none";
+      if (tw.value === "__o") to.value = t || "";
+    };
+    rg.onchange = () => fill("");
+    tw.onchange = () => {
+      to.style.display = tw.value === "__o" ? "" : "none";
+    };
+    fill(town || "");
+  }
+  const getLoc = (pre) => {
+    const tv = $("#" + pre + "tw").value;
+    return { region: $("#" + pre + "rg").value, town: tv === "__o" ? $("#" + pre + "to").value.trim() : tv };
+  };
+  const me = () => S.users.find((u) => u.id === LS.kl_user) || null;
+  let since = 0;
+  const welcome = () => {
+    const u = me();
+    if (!u) return `<div class="welcome">New here? <a href="#" onclick="authModal('up');return false" style="color:var(--gold2);font-weight:600;text-decoration:underline">Create a free account</a> to save your delivery location and track your orders.</div>`;
+    const n = S.products.filter((p) => p.t && p.t > since).length;
+    return `<div class="welcome">Welcome back, ${esc(u.name.split(" ")[0])}. ${n ? n + " new item" + (n > 1 ? "s" : "") + " since your last visit." : "Browse everything available today."}${u.town ? " Delivering to " + esc(u.town) + (u.region ? ", " + esc(u.region) : "") + "." : ""}</div>`;
+  };
+  function payBox(PL, p, amt) {
+    const m = p.kind === "momo", fb = PL.find((x) => x.kind === "momo" && x.number), r = p.number ? p : fb;
+    return m ? r ? `<div class="momo">${amt > 0 ? `Send <b style="font-size:1rem">${money(amt)}</b> with ${esc(p.label)} to` : `Pay with ${esc(p.label)} to`}<br><b>${esc(r.number)}</b><br>Registered name: <b style="font-size:1rem">${esc(r.name || "")}</b>${p.note ? `<br><small style="color:var(--mute)">${esc(p.note)}</small>` : ""}</div>` : `<div class="momo">Call or WhatsApp 0257911684 or 0550771454 for the payment number.</div>` : `<div class="momo">${esc(p.note || "We will contact you to arrange payment.")}</div>`;
+  }
+  const netOf = (p) => /telecel|vodafone/i.test(p.label) ? "Telecel" : /airtel|tigo/i.test(p.label) ? "AirtelTigo" : "MTN";
+  const detFields = (pre, p) => `<label>Product details <small>(shown to customers under the photos)</small></label><textarea id="${pre}dt" rows="4" placeholder="Tell customers more about this product">${esc(p && p.details || "")}</textarea><label>Key features <small>(one per line)</small></label><textarea id="${pre}ft" rows="3" placeholder="Water resistant&#10;Genuine leather strap">${esc(p && p.feats || "")}</textarea><label>Specifications <small>(one per line, e.g. Case size: 42mm)</small></label><textarea id="${pre}sp" rows="3" placeholder="Case size: 42mm&#10;Movement: Quartz">${esc(p && p.specs || "")}</textarea>`;
+  const readDet = (pre) => ({ details: $("#" + pre + "dt").value.trim(), feats: $("#" + pre + "ft").value.trim(), specs: $("#" + pre + "sp").value.trim() });
+  const parseSpecs = (t) => (t || "").split("\n").map((l) => l.trim()).filter(Boolean).map((l) => {
+    const i = l.indexOf(":");
+    return i > 0 ? [l.slice(0, i).trim(), l.slice(i + 1).trim()] : ["", l];
+  });
+  const pic = (p) => p.imgs && p.imgs[0] || art(p.cat || "Bracelets", 3);
+  const slug = (n) => String(n).replace(/[^\w]+/g, "-").replace(/^-|-$/g, "").toLowerCase() || "photo";
+  const splitV = (v) => {
+    const a = v.split(",").map((x) => x.trim()).filter(Boolean);
+    return a.length ? a : ["Standard"];
+  };
+  function dl(src, base) {
+    const m = (src.match(/^data:image\/([\w+]+)/) || [])[1] || "jpeg", ext = m === "jpeg" ? "jpg" : m === "svg+xml" ? "svg" : m, a = document.createElement("a");
+    a.href = src;
+    a.download = base + "." + ext;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+  async function shareFiles(list) {
+    try {
+      if (!(navigator.canShare && navigator.share && window.matchMedia && matchMedia("(pointer:coarse)").matches)) return false;
+      const files = await Promise.all(list.map(async ([src, n]) => {
+        const b = await (await fetch(src)).blob();
+        const e = (b.type.split("/")[1] || "jpeg").replace("jpeg", "jpg").replace("svg+xml", "svg");
+        return new File([b], n + "." + e, { type: b.type });
+      }));
+      if (!navigator.canShare({ files })) return false;
+      await navigator.share({ files, title: "Kay Lustre photos" });
+      return true;
+    } catch (e) {
+      return !!e && e.name === "AbortError";
+    }
+  }
+  async function dlOne(src, base) {
+    if (await shareFiles([[src, base]])) return;
+    dl(src, base);
+  }
+  async function dlMany(list) {
+    if (await shareFiles(list)) return;
+    toast("Downloading " + list.length + " photo(s)\u2026");
+    for (const [src, n] of list) {
+      dl(src, n);
+      await new Promise((r) => setTimeout(r, 350));
+    }
+  }
+  const shrink = (f) => new Promise((res) => {
+    const r = new FileReader();
+    r.onload = () => {
+      const im = new Image();
+      im.onload = () => {
+        const k = Math.min(1, 800 / Math.max(im.width, im.height)), c = document.createElement("canvas");
+        c.width = im.width * k;
+        c.height = im.height * k;
+        c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
+        res(c.toDataURL("image/jpeg", 0.76));
+      };
+      im.onerror = () => res(null);
+      im.src = r.result;
+    };
+    r.onerror = () => res(null);
+    r.readAsDataURL(f);
+  });
+  const shrinkAll = async (fs) => (await Promise.all([...fs].map(shrink))).filter(Boolean);
+  let S = load();
+  function load() {
+    try {
+      const d = JSON.parse(LS.getItem(KEY)) || seed();
+      const sd = seed().settings;
+      d.settings = d.settings || sd;
+      if (!d.settings.platforms) {
+        const old = d.settings.pay || {};
+        d.settings.platforms = sd.platforms.map((x) => old[x.id] ? __spreadProps(__spreadValues({}, x), { number: old[x.id].number || x.number, name: old[x.id].name || x.name }) : x);
+      }
+      d.users = d.users || [];
+      d.videos = d.videos || [];
+      return d;
+    } catch (e) {
+      return seed();
+    }
+  }
+  function save() {
+    try {
+      LS.setItem(KEY, JSON.stringify(S));
+      prev = snap();
+      return true;
+    } catch (e) {
+      toast("Storage full \u2014 use smaller images or delete items");
+      return false;
+    }
+  }
+  let cart = JSON.parse(LS.getItem("kl_cart") || "[]");
+  const saveCart = () => {
+    LS.setItem("kl_cart", JSON.stringify(cart));
+    $("#cc").textContent = cart.reduce((a, c) => a + c.q, 0);
+    $("#ct").textContent = cart.length ? " \xB7 " + money(total()) : "";
+  };
+  const cid = LS.kl_cid || (LS.kl_cid = "c" + uid());
+  let sq = "", backTo = null, view = "shop", cat = "All", admin = false, tab = "overview", thread = null, rating = 5;
+  window.addEventListener("storage", (e) => {
+    if (e.key === KEY) {
+      S = load();
+      live();
+    }
+  });
+  let prev = snap();
+  function snap() {
+    return { o: S.orders.length, f: S.feedback.length, r: S.requests.length, m: Object.values(S.chats).reduce((a, c) => a + c.filter((x) => x.from === "c").length, 0), a: (S.chats[cid] || []).filter((x) => x.from === "a").length };
+  }
+  function live() {
+    const n = snap();
+    if (prev) {
+      if (admin) {
+        if (n.o > prev.o) toast("New order received");
+        else if (n.m > prev.m) toast("New client message");
+        else if (n.f > prev.f) toast("New review posted");
+        else if (n.r > prev.r) toast("New customer request");
+      }
+      if (n.a > prev.a && !$("#chatbox").classList.contains("open")) toast("Kay Lustre replied to your message");
+    }
+    prev = n;
+    drawMsgs();
+    if (view === "admin" && admin && ["overview", "orders", "chat", "feedback", "requests", "brands", "export"].includes(tab)) {
+      const a = document.activeElement, typing = a && /INPUT|TEXTAREA|SELECT/.test(a.tagName) && a.closest("#app");
+      if (!typing) rAdmin();
+      else if (tab === "chat") drawAdminChat();
+    }
+    if (view === "shop") drawGrid();
+    if (view === "videos") rVideos();
+  }
+  setInterval(() => {
+    const n = LS.getItem(KEY);
+    if (n && n !== JSON.stringify(S)) {
+      S = load();
+      live();
+    }
+  }, 3e3);
+  document.querySelectorAll("#nav [data-v]").forEach((b) => b.onclick = () => {
+    view = b.dataset.v;
+    render();
+  });
+  $("#cartBtn").onclick = () => {
+    drawCart();
+    $("#drawer").classList.add("open");
+  };
+  function render() {
+    $("#navadm").classList.toggle("hidden", !admin);
+    document.querySelectorAll("#nav [data-v]").forEach((b) => b.classList.toggle("on", b.dataset.v === view));
+    ({ shop: rShop, custom: rCustom, feedback: rFeedback, videos: rVideos, admin: rAdmin })[view]();
+    scrollTo(0, 0);
+  }
+  function rShop() {
+    $("#app").innerHTML = `<section class="hero"><div><h1 class="brand">KAY LUSTRE</h1><div class="brand-sub">GIFTS &amp; MORE</div><div class="tag">Where elegance finds you</div><div class="loc"><b>West Hills Mall, North Kaneshie, Lapaz</b></div><div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:inherit"><a class="btn gold" href="tel:0257911684">Call 0257911684</a><a class="btn gold" href="tel:+233550771454">Call 055 077 1454</a><a class="btn" href="https://wa.me/233257911684" target="_blank" rel="noopener">WhatsApp 0257911684</a><a class="btn" href="https://wa.me/233550771454" target="_blank" rel="noopener">WhatsApp 055 077 1454</a></div></div>
+  <div><div class="dealh">WE DEAL IN</div><ul class="deal" id="deal">${[...CATS, "And lots more"].map((c) => `<li data-c="${c}">${c}</li>`).join("")}</ul></div></section>
+  ${welcome()}<div class="chips" id="chips">${["All", ...CATS].map((c) => `<button class="chip ${c === cat ? "on" : ""}" data-c="${c}">${c}</button>`).join("")}</div><div id="ownerbar"></div><div id="addp"></div><div class="grid" id="grid"></div>`;
+    const pick = (e) => {
+      let c = e.target.dataset.c;
+      if (!c) return;
+      if (c === "And lots more") c = "All";
+      cat = c;
+      sq = "";
+      $("#sq").value = "";
+      rShop();
+      $("#chips").scrollIntoView({ behavior: "smooth" });
+    };
+    $("#chips").onclick = pick;
+    $("#deal").onclick = pick;
+    ownerUI();
+    drawGrid();
+  }
+  function drawGrid() {
+    const g = $("#grid");
+    if (!g) return;
+    const q = sq.trim().toLowerCase(), mt = (p) => [p.name, p.cat, p.desc, p.details, (p.vars || []).join(" ")].join(" ").toLowerCase().includes(q), l = S.products.filter((p) => q ? mt(p) : cat === "All" || p.cat === cat);
+    g.innerHTML = l.length ? l.map((p) => `<article class="card" tabindex="0" data-id="${p.id}"><img src="${pic(p)}" alt="${esc(p.name)}" loading="lazy"><div><h3>${esc(p.name)}${p.t && Date.now() - p.t < 6048e5 ? ' <span class="badge">New</span>' : ""}</h3><span class="price">${money(p.price)}</span> <small style="color:var(--mute)">${(p.imgs || []).length} photos</small>${p.stock < 1 ? ' <span class="low">Sold out</span>' : p.stock < 4 ? ` <span class="low">Only ${p.stock} left</span>` : ""}${admin ? `<br><button class="btn sm" data-ed="${p.id}" style="margin-top:.4rem">Edit</button>` : ""}</div></article>`).join("") : `<div class="panel" style="grid-column:1/-1;text-align:center"><h3>${S.products.length ? q ? "No products match your search" : "Nothing in this category yet" : "New arrivals are on the way"}</h3><p style="color:var(--mute)">Call or WhatsApp 0257911684 or 0550771454 to ask about our latest watches and gifts.</p></div>`;
+    if (q) {
+      g.insertAdjacentHTML("afterbegin", `<div style="grid-column:1/-1"><b>${l.length}</b> result(s) for \u201C${esc(sq)}\u201D <button class="btn sm" id="sclr">Clear search</button></div>`);
+      $("#sclr").onclick = () => {
+        sq = "";
+        $("#sq").value = "";
+        drawGrid();
+      };
+    }
+    g.querySelectorAll(".card").forEach((c) => {
+      c.onclick = () => lightbox(c.dataset.id);
+      c.onkeydown = (e) => e.key === "Enter" && lightbox(c.dataset.id);
+    });
+    g.querySelectorAll("[data-ed]").forEach((b) => b.onclick = (e) => {
+      e.stopPropagation();
+      editBrand(b.dataset.ed);
+    });
+  }
+  function openModal(h) {
+    $("#box").innerHTML = `<button class="x" aria-label="Close">\xD7</button>` + h;
+    $("#modal").classList.add("open");
+    document.body.style.overflow = "hidden";
+    $("#box .x").onclick = closeModal;
+  }
+  function closeModal() {
+    $("#modal").classList.remove("open");
+    if ($("#box video") || $("#box iframe")) {
+      $("#box").innerHTML = "";
+      if (curUrl) {
+        URL.revokeObjectURL(curUrl);
+        curUrl = null;
+      }
+    }
+    document.body.style.overflow = "";
+  }
+  $("#modal").onclick = (e) => {
+    if (e.target.id === "modal") closeModal();
+  };
+  addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeModal();
+      $("#drawer").classList.remove("open");
+    }
+  });
+  function lightbox(id) {
+    const p = S.products.find((x) => x.id === id);
+    if (!p) return;
+    let k = 0, vi = 0;
+    const im = p.imgs && p.imgs.length ? p.imgs : [pic(p)];
+    openModal(`<div class="lb"><div><div class="gal" id="gal" tabindex="0"><div class="gtrack" id="gtr">${im.map((x, j) => `<div class="gs"><img src="${x}" alt="Photo ${j + 1} of ${esc(p.name)}"${j ? ' loading="lazy"' : ""}></div>`).join("")}</div>${im.length > 1 ? `<button class="gnav gprev" id="gp" aria-label="Previous photo">\u2039</button><button class="gnav gnext" id="gn" aria-label="Next photo">\u203A</button><span class="gcount" id="gc">1 / ${im.length}</span>` : ""}</div><div class="thumbs tscroll" id="lbt">${im.map((x, j) => `<img src="${x}" data-k="${j}" class="${j ? "" : "on"}" alt="Photo ${j + 1} of ${esc(p.name)}">`).join("")}</div></div><div class="info"><h2>${esc(p.name)}</h2><p style="color:var(--mute)">${esc(p.cat)}</p><p class="price" style="font-size:1.5rem;margin:.4rem 0">${money(p.price)}</p><p>${esc(p.desc)}</p>
+  <small style="color:var(--mute)">Updated ${new Date(p.u || p.t || Date.now()).toLocaleDateString("en-GH")}</small>
+  <label style="text-transform:uppercase;letter-spacing:.06em">Variation available</label><div class="vars" id="lvs">${p.vars.map((v, j) => `<button data-v="${j}" class="${j ? "" : "on"}">${esc(v)}</button>`).join("")}</div>
+  <label>Quantity</label><div class="qty"><button id="lm" aria-label="Fewer">\u2212</button><input id="lq" type="number" min="1" max="${Math.max(p.stock, 1)}" value="1" style="width:80px;text-align:center"><button id="lp" aria-label="More">+</button></div> <small style="color:var(--mute)">${p.stock > 0 ? p.stock + " in stock" : "Out of stock"}</small>
+  <p class="price" id="lt" style="margin:.7rem 0"></p>
+  <button class="btn gold big" id="la" ${p.stock < 1 ? "disabled" : ""}>Add to cart</button>
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem"><button class="btn sm" id="ld">Download this photo</button>${im.length > 1 ? `<button class="btn sm" id="lda">Download all ${im.length}</button>` : ""}${admin ? `<button class="btn sm" id="le">Edit this product</button>` : ""}</div></div>
+  ${p.details || p.feats || p.specs ? `<div class="pdet"><h3>Product details</h3>${p.details ? `<p style="white-space:pre-line;margin-top:.6rem">${esc(p.details)}</p>` : ""}<div class="spec">${p.feats ? `<div><b>KEY FEATURES</b><ul style="margin:.5rem 0 0 1.1rem">${p.feats.split("\n").filter((x) => x.trim()).map((x) => `<li>${esc(x.trim())}</li>`).join("")}</ul></div>` : ""}${p.specs ? `<div><b>SPECIFICATIONS</b><table>${parseSpecs(p.specs).map((r) => `<tr><td>${r[0] ? `<b>${esc(r[0])}</b>: ` : ""}${esc(r[1])}</td></tr>`).join("")}</table></div>` : ""}</div></div>` : ""}</div>`);
+    const qn = () => Math.max(1, Math.min(+$("#lq").value || 1, Math.max(p.stock, 1))), upd = () => {
+      $("#lq").value = qn();
+      $("#lt").textContent = "Total: " + money(p.price * qn());
+    };
+    const tr = $("#gtr"), ths = [...$("#lbt").children];
+    const go = (j) => {
+      j = Math.max(0, Math.min(im.length - 1, j));
+      if (tr.scrollTo && "scrollBehavior" in document.documentElement.style) tr.scrollTo({ left: j * tr.clientWidth, top: 0, behavior: "smooth" }); else tr.scrollLeft = j * tr.clientWidth;
+    };
+    const setK = (j) => {
+      k = j;
+      ths.forEach((c, x) => c.classList.toggle("on", x === k));
+      const gc = $("#gc");
+      if (gc) gc.textContent = (k + 1) + " / " + im.length;
+      const t = ths[k];
+      if (t) { const w = t.parentNode; w.scrollLeft += t.getBoundingClientRect().left - w.getBoundingClientRect().left - (w.clientWidth - t.offsetWidth) / 2; }
+    };
+    let st = null;
+    tr.onscroll = () => {
+      clearTimeout(st);
+      st = setTimeout(() => { const j = Math.round(tr.scrollLeft / (tr.clientWidth || 1)); if (j !== k) setK(j); }, 60);
+    };
+    $("#lbt").onclick = (e) => { const j = e.target.dataset.k; if (j !== void 0) go(+j); };
+    const gp = $("#gp"), gn = $("#gn");
+    if (gp) { gp.onclick = () => go(k - 1); gn.onclick = () => go(k + 1); }
+    $("#gal").onkeydown = (e) => { if (e.key === "ArrowLeft") go(k - 1); else if (e.key === "ArrowRight") go(k + 1); };
+    addVidStrip(p.id);
+    $("#lvs").onclick = (e) => {
+      const j = e.target.dataset.v;
+      if (j === void 0) return;
+      vi = +j;
+      [...$("#lvs").children].forEach((c, x) => c.classList.toggle("on", x === vi));
+    };
+    $("#lm").onclick = () => {
+      $("#lq").value = qn() - 1;
+      upd();
+    };
+    $("#lp").onclick = () => {
+      $("#lq").value = qn() + 1;
+      upd();
+    };
+    $("#lq").oninput = upd;
+    upd();
+    $("#la").onclick = () => {
+      const q = qn(), v = p.vars[vi], ex = cart.find((c) => c.id === id && c.v === v);
+      ex ? ex.q = Math.min(ex.q + q, p.stock) : cart.push({ id, v, q });
+      saveCart();
+      closeModal();
+      toast("Added to cart \u2014 cart total " + money(total()));
+    };
+    $("#ld").onclick = () => {
+      dlOne(im[k], slug(p.name) + "-" + (k + 1));
+      toast("Saving photo\u2026");
+    };
+    const le = $("#le");
+    if (le) le.onclick = () => editBrand(id);
+    const da = $("#lda");
+    if (da) da.onclick = () => dlMany(im.map((x, j) => [x, slug(p.name) + "-" + (j + 1)]));
+  }
+  const lines = () => cart.map((c) => ({ c, p: S.products.find((x) => x.id === c.id) })).filter((x) => x.p);
+  const total = () => lines().reduce((a, x) => a + x.p.price * x.c.q, 0);
+  function drawCart() {
+    const L = lines(), n = L.reduce((a, x) => a + x.c.q, 0), dr = $("#drawer");
+    dr.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center"><h2>Your cart</h2><button class="btn sm" id="cx">Close</button></div>` + (L.length ? L.map((x) => {
+      const i = cart.indexOf(x.c);
+      return `<div class="item"><img src="${pic(x.p)}" alt=""><div class="g"><b>${esc(x.p.name)}</b><br><small>${esc(x.c.v)} \xB7 ${money(x.p.price)} each</small><br><span class="qty"><button data-m="${i}" aria-label="Fewer">\u2212</button><b>${x.c.q}</b><button data-p="${i}" aria-label="More">+</button></span> <span class="price">${money(x.p.price * x.c.q)}</span></div><button class="btn sm bad" data-r="${i}">Remove</button></div>`;
+    }).join("") + `<div class="panel" style="margin-top:1rem"><div style="display:flex;justify-content:space-between"><span>Items (${n})</span><span>${money(total())}</span></div><h3 style="display:flex;justify-content:space-between;margin-top:.4rem"><span>Total to pay</span><span class="price">${money(total())}</span></h3></div><button class="btn gold big" id="co">Checkout</button>` : `<p style="margin-top:1rem;color:var(--mute)">Your cart is empty. Browse the collection and add something you love.</p>`);
+    $("#cx").onclick = () => dr.classList.remove("open");
+    const fix = () => {
+      saveCart();
+      drawCart();
+    };
+    dr.querySelectorAll("[data-r]").forEach((b) => b.onclick = () => {
+      cart.splice(+b.dataset.r, 1);
+      fix();
+    });
+    dr.querySelectorAll("[data-m]").forEach((b) => b.onclick = () => {
+      const c = cart[+b.dataset.m];
+      if (c.q > 1) c.q--;
+      else cart.splice(+b.dataset.m, 1);
+      fix();
+    });
+    dr.querySelectorAll("[data-p]").forEach((b) => b.onclick = () => {
+      const c = cart[+b.dataset.p], p = S.products.find((x) => x.id === c.id);
+      if (c.q < p.stock) c.q++;
+      else toast("Only " + p.stock + " in stock");
+      fix();
+    });
+    const co = $("#co");
+    if (co) co.onclick = checkout;
+  }
+  function checkout() {
+    const U = me(), PL = S.settings.platforms.filter((x) => x.on), T = total();
+    if (!PL.length) return openModal(`<div class="info" style="padding:2rem;text-align:center"><h2>Payment is being set up</h2><p style="margin:.8rem 0">Please call or WhatsApp 0257911684 or 0550771454 to complete your order.</p></div>`);
+    let pm = PL[0].id;
+    openModal(`<div class="info" style="padding:1.5rem"><h2>Checkout</h2>
+  <label>How would you like to pay?</label><div class="pm" id="pm">${PL.map((x) => `<button data-p="${x.id}" class="${x.id === pm ? "on" : ""}">${esc(x.label)}</button>`).join("")}</div>
+  <label>Amount you are paying now (GH\u20B5) \u2014 order total ${money(T)}</label><input id="oamt" type="number" min="0" max="${T}" step="0.01" value="${T}">
+  <small id="bal" style="color:var(--mute)"></small>
+  <div id="pinfo"></div>
+  <div class="row"><div><label>Your name</label><input id="on" value="${esc(U ? U.name : "")}"></div><div><label>Your phone number</label><input id="op" inputmode="tel" placeholder="024XXXXXXX" value="${esc(U ? U.phone : "")}"></div></div>
+  <div class="row"><div id="onetw"><label>Network you are paying from</label><select id="onet"><option>MTN</option><option>Telecel</option><option>AirtelTigo</option></select></div><div id="orw"><label>Transaction reference / ID</label><input id="or" placeholder="From your payment SMS"></div></div>
+  <h3 style="margin-top:1rem">Delivery location</h3>${locHtml("c", U ? U.region : "", U ? U.town : "")}<label>Street / landmark / notes</label><textarea id="oa" rows="2"></textarea>
+  <button class="btn gold" id="pay" style="margin-top:1rem;width:100%">Place order</button></div>`);
+    const amt = () => Math.max(0, +$("#oamt").value || 0), P = () => PL.find((x) => x.id === pm);
+    const bal = () => {
+      const b = T - amt();
+      $("#bal").textContent = b > 0 ? "Balance still due: " + money(b) : "Paying in full";
+    };
+    const info = () => {
+      const p = P(), m = p.kind === "momo", fb = PL.find((x) => x.kind === "momo" && x.number), r = p.number ? p : fb;
+      $("#pinfo").innerHTML = m ? r ? `<div class="momo">Send <b style="font-size:1rem">${money(amt())}</b> with ${esc(p.label)} to<br><b>${esc(r.number)}</b><br>Registered name: <b style="font-size:1rem">${esc(r.name || "")}</b>${p.note ? `<br><small style="color:var(--mute)">${esc(p.note)}</small>` : ""}</div>` : `<div class="momo">Call or WhatsApp 0257911684 or 0550771454 for the payment number.</div>` : `<div class="momo">${esc(p.note || "We will contact you to arrange payment.")}</div>`;
+      $("#onetw").style.display = $("#orw").style.display = m ? "" : "none";
+      if (m) $("#onet").value = /telecel|vodafone/i.test(p.label) ? "Telecel" : /airtel|tigo/i.test(p.label) ? "AirtelTigo" : "MTN";
+      bal();
+    };
+    $("#pm").onclick = (e) => {
+      const id = e.target.dataset.p;
+      if (!id) return;
+      pm = id;
+      [...$("#pm").children].forEach((b) => b.classList.toggle("on", b.dataset.p === id));
+      info();
+    };
+    $("#oamt").oninput = () => {
+      bal();
+      info();
+    };
+    info();
+    bindLoc("c", U ? U.town : "");
+    $("#pay").onclick = () => {
+      const n = $("#on").value.trim(), ph = $("#op").value.trim().replace(/\s/g, ""), ref = $("#or").value.trim(), a = amt(), p = P(), m = p.kind === "momo";
+      if (!n || !/^0\d{9}$/.test(ph)) return toast("Enter your name and a 10-digit phone number");
+      const lc = getLoc("c");
+      if (!lc.region || !lc.town) return toast("Choose your delivery region and town");
+      if (a > T) return toast("Amount cannot be more than the order total");
+      if (m && (a <= 0 || ref.length < 4)) return toast("Enter the amount you paid and your transaction reference");
+      const L = lines();
+      const o = { id: "KL" + Date.now().toString().slice(-6), cid, name: n, phone: ph, pay: p.label, network: m ? $("#onet").value : "", ref, addr: $("#oa").value, region: lc.region, town: lc.town, uid: U ? U.id : null, items: L.map((x) => ({ n: x.p.name, v: x.c.v, q: x.c.q, p: x.p.price })), total: T, paid: a, status: "Pending", t: Date.now() };
+      L.forEach((x) => x.p.stock = Math.max(0, x.p.stock - x.c.q));
+      S.orders.unshift(o);
+      S.chats[cid] = S.chats[cid] || [];
+      if (!save()) return;
+      cart = [];
+      saveCart();
+      openModal(`<div class="info" style="padding:2rem;text-align:center"><h2>Order ${o.id} received</h2><p style="margin:.8rem 0">Thank you, ${esc(n)}. We will confirm your order shortly${m ? " once we verify your payment" : ""}. Questions? Tap Chat with us, or call 0257911684 or 0550771454.</p><button class="btn gold" onclick="closeModal()">Continue shopping</button></div>`);
+    };
+  }
+  function rCustom() {
+    const U = me(), PL = S.settings.platforms.filter((x) => x.on);
+    let pm = PL.length ? PL[0].id : "";
+    $("#app").innerHTML = `<div class="panel" style="max-width:700px;margin:auto"><h2>Customer request</h2><p style="color:var(--mute)">Looking for a particular watch, a special set or an engraving? Tell us what you need and how you would like to pay.</p>
+  <div class="row"><div><label>Your name</label><input id="rn" value="${esc(U ? U.name : "")}"></div><div><label>Phone</label><input id="rp" inputmode="tel" value="${esc(U ? U.phone : "")}"></div></div>
+  ${locHtml("r", U ? U.region : "", U ? U.town : "")}
+  <label>What would you like?</label><textarea id="rt" rows="4" placeholder="Brand, colour, size, quantity\u2026"></textarea>
+  <label>Budget (GH\u20B5, optional)</label><input id="rb" type="number" min="0">
+  <h3 style="margin-top:1.2rem">Payment option</h3>${PL.length ? `<div class="pm" id="rpm">${PL.map((x) => `<button data-p="${x.id}" class="${x.id === pm ? "on" : ""}">${esc(x.label)}</button>`).join("")}</div><div id="rinfo"></div>
+  <div class="row"><div><label>Deposit you are paying now (GH\u20B5, optional)</label><input id="rdep" type="number" min="0" step="0.01"></div><div id="rrw"><label>Transaction reference (if you have paid)</label><input id="rref"></div></div>` : `<p class="hint">Payment options will appear here once the shop sets them up. Call 0257911684 or 0550771454.</p>`}
+  <button class="btn gold big" id="rs" style="margin-top:1rem">Send request</button></div>`;
+    const P = () => PL.find((x) => x.id === pm), info = () => {
+      $("#rinfo").innerHTML = payBox(PL, P(), +$("#rdep").value || 0);
+      $("#rrw").style.display = P().kind === "momo" ? "" : "none";
+    };
+    bindLoc("r", U ? U.town : "");
+    if (PL.length) {
+      $("#rpm").onclick = (e) => {
+        const id = e.target.dataset.p;
+        if (!id) return;
+        pm = id;
+        [...$("#rpm").children].forEach((b) => b.classList.toggle("on", b.dataset.p === id));
+        info();
+      };
+      $("#rdep").oninput = info;
+      info();
+    }
+    $("#rs").onclick = () => {
+      const n = $("#rn").value.trim(), t = $("#rt").value.trim(), ph = $("#rp").value.trim().replace(/\s/g, ""), dep = PL.length ? +$("#rdep").value || 0 : 0, ref = PL.length ? $("#rref").value.trim() : "";
+      if (!n || !t) return toast("Add your name and what you would like");
+      if (!/^0\d{9}$/.test(ph)) return toast("Enter a 10-digit phone number so we can reach you");
+      if (dep > 0 && P().kind === "momo" && ref.length < 4) return toast("Enter your transaction reference for the deposit");
+      const l = getLoc("r");
+      S.requests.unshift({ id: uid(), name: n, phone: ph, region: l.region, town: l.town, text: t, budget: $("#rb").value, pay: PL.length ? P().label : "", deposit: dep, ref, uid: U ? U.id : null, t: Date.now() });
+      if (save()) {
+        toast("Request sent \u2014 we will contact you soon");
+        view = "shop";
+        render();
+      }
+    };
+  }
+  function rFeedback() {
+    $("#app").innerHTML = `<div class="panel" style="max-width:640px;margin:auto"><h2>Leave a review</h2><div class="stars" id="st">${[1, 2, 3, 4, 5].map((i) => `<button data-s="${i}" class="${i <= rating ? "on" : ""}" aria-label="${i} stars">\u2605</button>`).join("")}</div>
+  <label>Name</label><input id="fn"><label>Your experience</label><textarea id="ft" rows="3"></textarea><button class="btn gold" id="fs" style="margin-top:1rem">Post review</button></div>
+  <h2 style="margin:1.5rem 0 .6rem;text-align:center">What clients say</h2><div style="max-width:640px;margin:auto" id="fl">${fbList()}</div>`;
+    $("#st").onclick = (e) => {
+      const s = e.target.dataset.s;
+      if (s) {
+        rating = +s;
+        [...$("#st").children].forEach((b, i) => b.classList.toggle("on", i < rating));
+      }
+    };
+    $("#fs").onclick = () => {
+      const t = $("#ft").value.trim();
+      if (!t) return toast("Write a few words first");
+      S.feedback.unshift({ id: uid(), name: $("#fn").value.trim() || "Guest", stars: rating, text: t, t: Date.now() });
+      if (save()) rFeedback();
+    };
+  }
+  const fbList = () => S.feedback.length ? S.feedback.map((f) => `<div class="panel"><span class="price">${"\u2605".repeat(f.stars)}${"\u2606".repeat(5 - f.stars)}</span> <b>${esc(f.name)}</b> <small style="color:var(--mute)">${ago(f.t)}</small><p>${esc(f.text)}</p></div>`).join("") : `<p style="text-align:center;color:var(--mute)">No reviews yet. Be the first to share yours.</p>`;
+  $("#fab").onclick = () => {
+    $("#chatbox").classList.toggle("open");
+    drawMsgs();
+  };
+  function drawMsgs() {
+    const b = $("#cmsgs");
+    if (!b) return;
+    const m = S.chats[cid] || [];
+    b.innerHTML = m.length ? m.map((x) => `<div class="m ${x.from === "c" ? "me" : "them"}">${esc(x.text)}<small>${x.from === "c" ? "You" : "Kay Lustre"} \xB7 ${ago(x.t)}</small></div>`).join("") : `<small style="color:var(--mute)">Ask about a product, delivery or payment.</small>`;
+    b.scrollTop = 1e9;
+  }
+  function sendChat() {
+    const i = $("#cin"), t = i.value.trim();
+    if (!t) return;
+    (S.chats[cid] = S.chats[cid] || []).push({ from: "c", text: t, t: Date.now() });
+    i.value = "";
+    save();
+    drawMsgs();
+  }
+  $("#csend").onclick = sendChat;
+  $("#cin").onkeydown = (e) => e.key === "Enter" && sendChat();
+  const seenMap = () => {
+    try {
+      return JSON.parse(LS.kl_seen || "{}");
+    } catch (e) {
+      return {};
+    }
+  };
+  const ccount = (id) => (S.chats[id] || []).filter((x) => x.from === "c").length;
+  const unread = () => {
+    const s = seenMap();
+    return Object.keys(S.chats).reduce((a, id) => a + Math.max(0, ccount(id) - (s[id] || 0)), 0);
+  };
+  function markSeen(id) {
+    const s = seenMap();
+    s[id] = ccount(id);
+    LS.kl_seen = JSON.stringify(s);
+  }
+  const pd = (o) => {
+    var _a;
+    return (_a = o.paid) != null ? _a : o.total;
+  };
+  let ofilter = "All", oq = "";
+  function countUp() {
+    document.querySelectorAll("[data-n]").forEach((el) => {
+      const n = +el.dataset.n, m = el.dataset.m, t0 = performance.now();
+      (function f(t) {
+        const k = Math.min(1, (t - t0) / 800), v = n * (1 - Math.pow(1 - k, 3));
+        el.textContent = m ? money(v) : Math.round(v);
+        if (k < 1) requestAnimationFrame(f);
+      })(t0);
+    });
+  }
+  addEventListener("keydown", (e) => {
+    const h = window.pinH;
+    if (!h || view !== "admin" || admin) return;
+    if (/^\d$/.test(e.key)) {
+      h.press(e.key);
+      e.preventDefault();
+    } else if (e.key === "Backspace") {
+      h.press("B");
+      e.preventDefault();
+    } else if (e.key === "Enter") {
+      h.go();
+      e.preventDefault();
+    }
+  });
+  function rAdmin() {
+    if (!admin) {
+      let pinBuf = "", showPin = false, first = "";
+      const setup = !hasPin();
+      const locked = () => Math.max(0, (+LS.kl_lock || 0) - Date.now());
+      $("#app").innerHTML = `<div class="panel" style="max-width:340px;margin:2rem auto;text-align:center"><h2 id="pt">${setup ? "Create your owner PIN" : "Owner sign-in"}</h2><p class="hint" id="ph">${setup ? "Choose a 4 to 8 digit PIN. Only you should know it." : "Enter your owner PIN."}</p><div id="pd" class="pd" aria-live="polite"></div><div class="pad">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => `<button class="btn" data-pk="${n}">${n}</button>`).join("")}<button class="btn" data-pk="C">Clear</button><button class="btn" data-pk="0">0</button><button class="btn" data-pk="B">Delete</button></div><label style="display:flex;gap:.5rem;justify-content:center;align-items:center;cursor:pointer"><input type="checkbox" id="spin" style="width:auto;min-height:0"> Show numbers</label><button class="btn gold" id="go" style="margin-top:.8rem;width:100%">${setup ? "Continue" : "Enter dashboard"}</button><button class="btn sm" id="bk" style="margin-top:.6rem">Back to shop</button></div>`;
+      const draw = () => {
+        const d = $("#pd");
+        d.textContent = pinBuf ? showPin ? pinBuf : "\u2022".repeat(pinBuf.length) : "Type your PIN";
+        d.classList.toggle("empty", !pinBuf);
+      };
+      const press = (k) => {
+        if (k === "C") pinBuf = "";
+        else if (k === "B") pinBuf = pinBuf.slice(0, -1);
+        else if (pinBuf.length < 8) pinBuf += k;
+        draw();
+      };
+      const ok = () => {
+        admin = true;
+        touch();
+        prev = snap();
+        window.pinH = null;
+        if (backTo) {
+          view = backTo;
+          backTo = null;
+        } else view = "admin";
+        render();
+      };
+      const go = () => {
+        if (locked() > 0) return toast("Too many wrong tries. Try again in " + Math.ceil(locked() / 6e4) + " minute(s).");
+        if (setup) {
+          if (!/^\d{4,8}$/.test(pinBuf)) return toast("Use 4 to 8 digits");
+          if (!first) {
+            first = pinBuf;
+            pinBuf = "";
+            $("#pt").textContent = "Confirm your PIN";
+            $("#ph").textContent = "Enter the same PIN again.";
+            $("#go").textContent = "Save PIN";
+            draw();
+            return;
+          }
+          if (pinBuf !== first) {
+            first = "";
+            pinBuf = "";
+            $("#pt").textContent = "Create your owner PIN";
+            $("#ph").textContent = "The PINs did not match. Start again.";
+            $("#go").textContent = "Continue";
+            draw();
+            return;
+          }
+          setPin(pinBuf);
+          toast("PIN saved");
+          ok();
+          return;
+        }
+        if (checkPin(pinBuf)) {
+          LS.kl_fail = 0;
+          if (LS.kl_pin) setPin(pinBuf);
+          ok();
+        } else {
+          const f = (+LS.kl_fail || 0) + 1;
+          LS.kl_fail = f;
+          if (f >= 5) {
+            LS.kl_lock = Date.now() + 3e5;
+            LS.kl_fail = 0;
+            toast("Too many wrong tries. Locked for 5 minutes.");
+          } else toast("Incorrect PIN \u2014 " + (5 - f) + " tries left");
+          pinBuf = "";
+          draw();
+        }
+      };
+      document.querySelectorAll("[data-pk]").forEach((b) => b.onclick = () => press(b.dataset.pk));
+      $("#spin").onchange = (e) => {
+        showPin = e.target.checked;
+        draw();
+      };
+      $("#bk").onclick = () => {
+        backTo = null;
+        view = "shop";
+        render();
+      };
+      $("#go").onclick = go;
+      window.pinH = { press, go };
+      draw();
+      return;
+    }
+    const O = S.orders.filter((o) => o.status !== "Cancelled"), pend = S.orders.filter((o) => o.status === "Pending").length, un = unread();
+    const T = [["overview", "Overview"], ["orders", "Orders" + (pend ? `<span class="nb">${pend}</span>` : "")], ["chat", "Messages" + (un ? `<span class="nb">${un}</span>` : "")], ["feedback", "Feedback"], ["requests", "Customer requests"], ["brands", "Brands &amp; prices"], ["import", "Add photos"], ["export", "Download photos"], ["videos", "Upload testimony videos"], ["settings", "Payment settings"]];
+    $("#app").innerHTML = `<div class="stats"><div class="stat"><b data-n="${S.orders.length}">0</b>Orders</div><div class="stat"><b data-n="${pend}">0</b>Awaiting confirmation</div><div class="stat"><b data-n="${O.reduce((a, o) => a + o.total, 0)}" data-m="1">0</b>Order value</div><div class="stat"><b data-n="${O.reduce((a, o) => a + pd(o), 0)}" data-m="1">0</b>Payments received</div><div class="stat"><b data-n="${S.products.filter((p) => p.stock < 4).length}">0</b>Low stock items</div></div>
+  <div class="tabs">${T.map((t) => `<button class="chip ${t[0] === tab ? "on" : ""}" data-t="${t[0]}">${t[1]}</button>`).join("")}<button class="chip" id="out">Sign out</button></div><div id="pane"></div>`;
+    document.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => {
+      tab = b.dataset.t;
+      rAdmin();
+    });
+    $("#out").onclick = () => {
+      admin = false;
+      view = "shop";
+      render();
+    };
+    ({ overview: aOverview, orders: aOrders, chat: aChat, feedback: aFeedback, requests: aRequests, brands: aBrands, import: aImport, export: aExport, videos: aVideos, settings: aSettings })[tab]();
+    countUp();
+  }
+  function aOverview() {
+    const O = S.orders.filter((o) => o.status !== "Cancelled");
+    const days = [...Array(7)].map((_, i) => {
+      const d = /* @__PURE__ */ new Date();
+      d.setHours(0, 0, 0, 0);
+      d.setDate(d.getDate() - 6 + i);
+      return d;
+    });
+    const rv = days.map((d) => O.filter((o) => o.t >= +d && o.t < +d + 864e5).reduce((a, o) => a + o.total, 0)), mx = Math.max(...rv, 1);
+    const cats = {}, top = {};
+    O.forEach((o) => o.items.forEach((i) => {
+      const p = S.products.find((x) => x.name === i.n), c = p ? p.cat : "Other";
+      cats[c] = (cats[c] || 0) + i.p * i.q;
+      top[i.n] = (top[i.n] || 0) + i.q;
+    }));
+    const cmx = Math.max(...Object.values(cats), 1), tp = Object.entries(top).sort((a, b) => b[1] - a[1]).slice(0, 4);
+    const ev = [...S.orders.map((o) => ({ t: o.t, x: `Order ${o.id} from <b>${esc(o.name)}</b> \u2014 ${money(o.total)}` })), ...S.feedback.map((f) => ({ t: f.t, x: `<b>${esc(f.name)}</b> left ${f.stars}\u2605 feedback` })), ...S.requests.map((r) => ({ t: r.t, x: `Customer request from <b>${esc(r.name)}</b>` })), ...Object.entries(S.chats).map(([id, c]) => {
+      const m = c.filter((x) => x.from === "c").pop();
+      return m && { t: m.t, x: `Message: \u201C${esc(m.text.slice(0, 50))}\u201D` };
+    }).filter(Boolean)].sort((a, b) => b.t - a.t).slice(0, 12);
+    const low = S.products.filter((p) => p.stock < 4);
+    $("#pane").innerHTML = smsNote() + quick() + `<div class="two"><div class="panel"><h3>Order value \u2014 last 7 days</h3><div class="chart" style="margin-top:1rem">${rv.map((v, i) => `<div class="col" title="${money(v)}"><div class="bw"><i data-h="${v / mx * 100}"></i></div>${days[i].toLocaleDateString("en-GH", { weekday: "short" })}<br>${v ? Math.round(v) : "\u2013"}</div>`).join("")}</div></div>
+  <div class="panel"><h3><span class="dot"></span>Live activity</h3><ul class="feed">${ev.length ? ev.map((e) => `<li>${e.x}<small>${ago(e.t)}</small></li>`).join("") : "<li>Waiting for the first order, message or review.</li>"}</ul></div></div>
+  <div class="two"><div class="panel"><h3>Sales by category</h3><div style="margin-top:.8rem">${Object.keys(cats).length ? Object.entries(cats).map(([c, v]) => `${esc(c)} <span class="price" style="float:right">${money(v)}</span><div class="hbar"><i data-w="${v / cmx * 100}"></i></div>`).join("") : "<p style='color:var(--mute)'>Category sales appear after your first order.</p>"}</div></div>
+  <div class="panel"><h3>Best sellers</h3>${tp.length ? tp.map((t) => `<p>${esc(t[0])} <span class="price" style="float:right">${t[1]} sold</span></p>`).join("") : "<p style='color:var(--mute)'>No sales yet.</p>"}<h3 style="margin-top:1rem">Restock soon</h3>${low.length ? low.map((p) => `<p>${esc(p.name)} <span class="low" style="float:right">${p.stock} left</span></p>`).join("") : "<p style='color:var(--mute)'>Stock levels look healthy.</p>"}</div></div>`;
+    setTimeout(() => {
+      document.querySelectorAll("[data-h]").forEach((e) => e.style.height = e.dataset.h + "%");
+      document.querySelectorAll("[data-w]").forEach((e) => e.style.width = e.dataset.w + "%");
+    }, 40);
+  }
+  function ordRows() {
+    const q = oq.toLowerCase(), L = S.orders.filter((o) => (ofilter === "All" || o.status === ofilter) && (o.name + o.id + o.phone).toLowerCase().includes(q));
+    $("#ot").innerHTML = L.length ? `<div class="scroll"><table><tr><th>Order</th><th>Client</th><th>Items</th><th>Amounts (GH\u20B5)</th><th>Status</th></tr>${L.map((o) => {
+      const i = STATUS.indexOf(o.status), w = o.status === "Cancelled" ? 100 : Math.round(i / 3 * 100), b = o.total - pd(o);
+      return `<tr><td><b>${o.id}</b><br><small>${ago(o.t)}</small></td><td>${esc(o.name)}<br><small>${esc(o.phone)}</small><br><small>${o.town ? esc(o.town) + ", " + esc(o.region) : ""}</small><br><small>${esc(o.addr)}</small></td><td>${o.items.map((i2) => `${esc(i2.n)} (${esc(i2.v)}) \xD7 ${i2.q}`).join("<br>")}</td><td><small>${esc(o.pay || o.network)}${o.ref ? " \xB7 ref " + esc(o.ref) : ""}</small><label>Order total</label><input type="number" style="width:110px" data-tt="${o.id}" value="${o.total}"><label>Received</label><input type="number" style="width:110px" data-pd="${o.id}" value="${pd(o)}"><small class="${b > 0 ? "low" : ""}" style="display:block">${b > 0 ? "Balance " + money(b) : "Fully paid"}</small>${(o.claims || []).map((c) => `<div class="momo" style="padding:.4rem;font-size:.82rem">${money(c.amt)} via ${esc(c.net)}, ref ${esc(c.ref)} \u2014 <b>${c.s}</b>${c.s === "Pending" ? ` <button class="btn sm" data-cc="${o.id}:${c.id}">Confirm</button> <button class="btn sm bad" data-cr="${o.id}:${c.id}">Reject</button>` : ""}</div>`).join("")}</td><td><select data-o="${o.id}">${STATUS.map((s) => `<option ${s === o.status ? "selected" : ""}>${s}</option>`).join("")}</select><div class="pg"><i style="width:${w}%;${o.status === "Cancelled" ? "background:var(--bad)" : ""}"></i></div><button class="btn sm" data-m="${o.cid}">Message client</button></td></tr>`;
+    }).join("")}</table></div>` : `<p>${S.orders.length ? "No orders match your filter." : "No orders yet. New orders appear here the moment a client checks out."}</p>`;
+    const get = (id) => S.orders.find((x) => x.id === id);
+    document.querySelectorAll("[data-tt]").forEach((i) => i.onchange = () => {
+      get(i.dataset.tt).total = Math.max(0, +i.value || 0);
+      save();
+      rAdmin();
+      toast("Order total updated");
+    });
+    document.querySelectorAll("[data-pd]").forEach((i) => i.onchange = () => {
+      get(i.dataset.pd).paid = Math.max(0, +i.value || 0);
+      save();
+      rAdmin();
+      toast("Payment recorded");
+    });
+    document.querySelectorAll("[data-o]").forEach((s) => s.onchange = () => {
+      const o = get(s.dataset.o);
+      if (o.status !== "Cancelled" && s.value === "Cancelled") o.items.forEach((i) => {
+        const p = S.products.find((x) => x.name === i.n);
+        if (p) p.stock += i.q;
+      });
+      o.status = s.value;
+      save();
+      rAdmin();
+      toast("Order marked " + s.value);
+    });
+    document.querySelectorAll("[data-m]").forEach((b) => b.onclick = () => {
+      thread = b.dataset.m;
+      tab = "chat";
+      rAdmin();
+    });
+    const claim = (v, ok) => {
+      if (!admin) return;
+      const [oid, cid2] = v.split(":"), o = get(oid), c = (o.claims || []).find((x) => x.id === cid2);
+      if (!c || c.s !== "Pending") return;
+      if (ok) {
+        o.paid = pd(o) + c.amt;
+        c.s = "Confirmed";
+      } else c.s = "Rejected";
+      save();
+      rAdmin();
+      toast(ok ? "Payment confirmed" : "Payment rejected");
+    };
+    document.querySelectorAll("[data-cc]").forEach((b) => b.onclick = () => claim(b.dataset.cc, true));
+    document.querySelectorAll("[data-cr]").forEach((b) => b.onclick = () => claim(b.dataset.cr, false));
+  }
+  function aOrders() {
+    $("#pane").innerHTML = `<div class="chips">${["All", ...STATUS].map((s) => `<button class="chip ${s === ofilter ? "on" : ""}" data-sf="${s}">${s} (${s === "All" ? S.orders.length : S.orders.filter((o) => o.status === s).length})</button>`).join("")}<button class="chip" id="csv">Export CSV</button></div><input id="oq" placeholder="Search by name, phone or order number" value="${esc(oq)}" style="max-width:360px;margin-bottom:.8rem"><div id="ot"></div>`;
+    document.querySelectorAll("[data-sf]").forEach((b) => b.onclick = () => {
+      ofilter = b.dataset.sf;
+      aOrders();
+    });
+    $("#oq").oninput = (e) => {
+      oq = e.target.value;
+      ordRows();
+    };
+    $("#csv").onclick = exportCSV;
+    ordRows();
+  }
+  function exportCSV() {
+    if (!admin) return;
+    const r = [["Order", "Date", "Client", "Phone", "Platform", "Reference", "Items", "Total", "Received", "Status"], ...S.orders.map((o) => [o.id, ago(o.t), o.name, o.phone, o.pay || o.network, o.ref || "", o.items.map((i) => i.n + " x" + i.q).join("; "), o.total, pd(o), o.status])];
+    const csv = r.map((x) => x.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+    a.download = "kay-lustre-orders.csv";
+    a.click();
+    toast("Orders exported");
+  }
+  const lastT = (id) => ((S.chats[id] || []).slice(-1)[0] || {}).t || 0;
+  function aChat() {
+    const ids = Object.keys(S.chats).sort((a, b) => lastT(b) - lastT(a));
+    thread = ids.includes(thread) ? thread : ids[0];
+    const nm = (id) => (S.orders.find((o) => o.cid === id) || {}).name || "Visitor " + id.slice(-4), sn = seenMap();
+    $("#pane").innerHTML = ids.length ? `<div class="chat"><div class="threads">${ids.map((id) => {
+      const u = ccount(id) - (sn[id] || 0);
+      return `<button data-th="${id}" class="${id === thread ? "on" : ""}">${esc(nm(id))}${u > 0 && id !== thread ? `<span class="nb">${u}</span>` : ""}<br><small>${(S.chats[id] || []).length} messages</small></button>`;
+    }).join("")}</div><div><div class="msgs" id="am"></div><div style="display:flex;gap:.4rem;margin-top:.5rem"><input id="ai" placeholder="Reply to ${esc(nm(thread))}"><button class="btn gold" id="as">Send</button></div><div class="qr">${["Payment received \u2014 thank you!", "Your order is confirmed.", "Your order is on its way.", "Please send your transaction reference."].map((t) => `<button class="chip" data-q="${t}">${t}</button>`).join("")}</div></div></div>` : `<p>No client messages yet. Chats from the shop's chat button appear here live.</p>`;
+    if (!ids.length) return;
+    document.querySelectorAll("[data-th]").forEach((b) => b.onclick = () => {
+      thread = b.dataset.th;
+      aChat();
+      rAdmin();
+    });
+    document.querySelectorAll("[data-q]").forEach((b) => b.onclick = () => {
+      $("#ai").value = b.dataset.q;
+      $("#ai").focus();
+    });
+    const send = () => {
+      const t = $("#ai").value.trim();
+      if (!t) return;
+      S.chats[thread].push({ from: "a", text: t, t: Date.now() });
+      $("#ai").value = "";
+      save();
+      drawAdminChat();
+    };
+    $("#as").onclick = send;
+    $("#ai").onkeydown = (e) => e.key === "Enter" && send();
+    drawAdminChat();
+  }
+  function drawAdminChat() {
+    const b = $("#am");
+    if (!b || !S.chats[thread]) return;
+    markSeen(thread);
+    b.innerHTML = S.chats[thread].map((x) => `<div class="m ${x.from === "a" ? "me" : "them"}">${esc(x.text)}<small>${x.from === "a" ? "You" : "Client"} \xB7 ${ago(x.t)}</small></div>`).join("") || "<small style='color:var(--mute)'>No messages in this chat yet.</small>";
+    b.scrollTop = 1e9;
+  }
+  function aSettings() {
+    const L = S.settings.platforms;
+    const collect = () => document.querySelectorAll("[data-g]").forEach((i) => {
+      const x = L[+i.dataset.i], g = i.dataset.g;
+      x[g] = g === "on" ? i.checked : i.value.trim();
+    });
+    $("#pane").innerHTML = `<div class="panel" style="max-width:760px"><h2>Payment platforms</h2><p class="hint">These are the options customers see at checkout. Customers can only choose from them. Only you can add, change or remove them.</p>${L.map((x, i) => `<div class="panel" style="background:var(--bg)"><div class="row"><div><label>Platform name</label><input data-i="${i}" data-g="label" value="${esc(x.label)}"></div><div><label>Type</label><select data-i="${i}" data-g="kind"><option value="momo" ${x.kind === "momo" ? "selected" : ""}>Mobile money (customer sends money)</option><option value="cash" ${x.kind === "cash" ? "selected" : ""}>Cash or pay later</option></select></div></div>${x.kind === "momo" ? `<div class="row"><div><label>Receiving number</label><input data-i="${i}" data-g="number" value="${esc(x.number || "")}"></div><div><label>Registered name</label><input data-i="${i}" data-g="name" value="${esc(x.name || "")}"></div></div>` : ""}<label>Instructions for the customer (optional)</label><input data-i="${i}" data-g="note" value="${esc(x.note || "")}"><div style="display:flex;gap:.6rem;align-items:center;margin-top:.6rem"><label style="display:flex;gap:.4rem;align-items:center;margin:0;cursor:pointer;color:var(--txt)"><input type="checkbox" data-i="${i}" data-g="on" ${x.on ? "checked" : ""} style="width:auto;min-height:0"> Show at checkout</label><button class="btn sm bad" data-del="${i}" style="margin-left:auto">Remove</button></div></div>`).join("")}<button class="btn" id="addpl">+ Add a payment platform</button> <button class="btn gold" id="sv">Save payment platforms</button></div>
+  <div class="panel" style="max-width:760px"><h2>Change owner PIN</h2><div class="row"><div><label>Current PIN</label><input id="cp" inputmode="numeric" autocomplete="off" maxlength="8"></div><div><label>New PIN (4 to 8 digits)</label><input id="np" inputmode="numeric" autocomplete="off" maxlength="8"></div></div><button class="btn gold" id="sp" style="margin-top:.8rem">Save new PIN</button></div>`;
+    document.querySelectorAll('select[data-g="kind"]').forEach((i) => i.onchange = () => {
+      collect();
+      save();
+      aSettings();
+    });
+    document.querySelectorAll("[data-del]").forEach((b) => b.onclick = () => {
+      if (confirm("Remove this payment platform?")) {
+        collect();
+        L.splice(+b.dataset.del, 1);
+        save();
+        aSettings();
+      }
+    });
+    $("#addpl").onclick = () => {
+      collect();
+      L.push({ id: "x" + uid(), label: "New platform", kind: "momo", number: "", name: "", note: "", on: true });
+      save();
+      aSettings();
+    };
+    $("#sv").onclick = () => {
+      collect();
+      if (L.some((x) => !x.label)) return toast("Every platform needs a name");
+      save();
+      toast("Payment platforms saved");
+    };
+    $("#sp").onclick = () => {
+      const c = $("#cp").value.trim(), v = $("#np").value.trim();
+      if (!checkPin(c)) return toast("Current PIN is not correct");
+      if (!/^\d{4,8}$/.test(v)) return toast("New PIN must be 4 to 8 digits");
+      setPin(v);
+      $("#cp").value = $("#np").value = "";
+      toast("PIN changed");
+    };
+  }
+  function aFeedback() {
+    $("#pane").innerHTML = fbList();
+  }
+  function aRequests() {
+    $("#pane").innerHTML = S.requests.length ? S.requests.map((r) => `<div class="panel"><b>${esc(r.name)}</b> \xB7 ${esc(r.phone)} <small style="color:var(--mute)">${ago(r.t)}</small>${r.town ? `<br><small>${esc(r.town)}, ${esc(r.region)}</small>` : ""}${r.budget ? ` \xB7 budget ${money(r.budget)}` : ""}<p>${esc(r.text)}</p>${r.pay ? `<small style="color:var(--gold2)">Payment option: ${esc(r.pay)}${r.deposit ? ` \xB7 deposit ${money(r.deposit)}` : ""}${r.ref ? ` \xB7 ref ${esc(r.ref)}` : ""}</small>` : ""}</div>`).join("") : `<p>No customer requests yet.</p>`;
+  }
+  const smsNote = () => SMS_API ? "" : `<div class="panel" style="border-color:var(--bad)"><b style="color:var(--bad)">Phone verification is in test mode.</b> The SMS service is not connected, so each new customer is shown a random 6-digit code on screen instead of receiving a text message. Connect an SMS gateway (see <b>sms-gateway-example.js</b>) and set <b>SMS_API</b> in this file to send real codes before you go live.</div>`;
+  const quick = () => `<div class="panel"><h3>${S.products.length ? "Quick actions" : "Welcome \u2014 let's stock your shop"}</h3><p class="hint">${S.products.length ? "Everything you need is one tap away." : "Your shop is empty. Add your first watch brand with its price and at least 3 photos, and customers see it straight away."}</p><div class="qa"><button class="btn gold" onclick="goTab('import')">Add a brand &amp; photos</button><button class="btn" onclick="goTab('brands')">Change names &amp; prices</button><button class="btn" onclick="goTab('export')">Download photos</button><button class="btn" onclick="goTab('videos')">Upload testimony video</button><button class="btn" onclick="goTab('settings')">Payment details</button><button class="btn" onclick="goShop()">View my shop</button></div></div>`;
+  function goTab(t) {
+    tab = t;
+    rAdmin();
+  }
+  function aBrands() {
+    const mb = (JSON.stringify(S).length / 1048576).toFixed(1), pct = Math.min(100, mb / 5 * 100);
+    $("#pane").innerHTML = `<div class="panel"><h2>Brands &amp; prices</h2><p class="hint">Change a name, price or stock count below and the shop updates straight away. Each brand needs at least 3 photos.</p>
+  <small style="color:var(--mute)">Photo storage used: ${mb} MB of about 5 MB</small><div class="hbar"><i style="width:${pct}%"></i></div>
+  ${S.products.length ? `<div class="scroll"><table><tr><th>Photo</th><th>Brand name</th><th>Category</th><th>Price (GH\u20B5)</th><th>In stock</th><th></th></tr>${S.products.map((p) => `<tr><td><img src="${pic(p)}" width="56" height="56" style="object-fit:cover" alt=""><br><small class="${p.imgs.length < 3 ? "low" : ""}">${p.imgs.length < 3 ? "Needs " + (3 - p.imgs.length) + " more" : p.imgs.length + " photos"}</small></td><td><input data-p="${p.id}" data-f="name" value="${esc(p.name)}" style="min-width:160px"></td><td><select data-p="${p.id}" data-f="cat">${CATS.map((c) => `<option ${c === p.cat ? "selected" : ""}>${c}</option>`).join("")}</select></td><td><input type="number" min="0" style="width:110px" data-p="${p.id}" data-f="price" value="${p.price}"></td><td><input type="number" min="0" style="width:80px" data-p="${p.id}" data-f="stock" value="${p.stock}"></td><td><button class="btn sm" data-e="${p.id}">Edit photos &amp; details</button> <button class="btn sm bad" data-d="${p.id}">Delete</button></td></tr>`).join("")}</table></div>` : `<p>No brands yet. Open <b>Add photos</b> to add your first one.</p><button class="btn gold" onclick="goTab('import')">Add a brand &amp; photos</button>`}</div>`;
+    document.querySelectorAll("[data-f]").forEach((i) => i.onchange = () => {
+      const p = S.products.find((x) => x.id === i.dataset.p), f = i.dataset.f;
+      p[f] = f === "name" || f === "cat" ? i.value.trim() || p[f] : Math.max(0, +i.value || 0);
+      save();
+      toast("Saved");
+    });
+    document.querySelectorAll("[data-e]").forEach((b) => b.onclick = () => editBrand(b.dataset.e));
+    document.querySelectorAll("[data-d]").forEach((b) => b.onclick = () => {
+      if (confirm("Delete this brand and all its photos?")) {
+        S.products = S.products.filter((p) => p.id !== b.dataset.d);
+        save();
+        aBrands();
+      }
+    });
+  }
+  function editBrand(id) {
+    if (!admin) return;
+    const p = S.products.find((x) => x.id === id);
+    if (!p) return;
+    openModal(`<div style="padding:1.5rem"><h2>Edit product</h2><div class="row"><div><label>Brand name</label><input id="en" value="${esc(p.name)}"></div><div><label>Category</label><select id="ec">${CATS.map((c) => `<option ${c === p.cat ? "selected" : ""}>${c}</option>`).join("")}</select></div><div><label>Price (GH\u20B5)</label><input id="epr" type="number" min="0" value="${p.price}"></div><div><label>In stock</label><input id="es" type="number" min="0" value="${p.stock}"></div></div><label>Description</label><textarea id="ed" rows="3">${esc(p.desc)}</textarea><label>Variations, separated by commas (e.g. Gold, Silver, Black)</label><input id="ev" value="${esc(p.vars.join(", "))}">${detFields("e", p)}<h3 style="margin-top:1.2rem">Photos</h3><p class="hint" id="eh"></p><div class="thumbs" id="ep"></div><input type="file" id="ef" multiple accept="image/*" class="fi"><div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem"><button class="btn" id="eadd">Import more photos</button><button class="btn gold" id="esv">Save changes</button></div></div>`);
+    const draw = () => {
+      $("#eh").textContent = p.imgs.length < 3 ? `Add ${3 - p.imgs.length} more photo(s) \u2014 each brand needs at least 3. The first photo is the main one.` : `${p.imgs.length} photos. The first photo is the main one shown in the shop.`;
+      $("#ep").innerHTML = p.imgs.map((x, k) => `<div class="pt"><img src="${x}" alt=""><button class="btn sm" data-mk="${k}" ${k ? "" : "disabled"}>${k ? "Make main" : "Main photo"}</button><button class="btn sm bad" data-rm="${k}">Remove</button></div>`).join("");
+      document.querySelectorAll("[data-rm]").forEach((b) => b.onclick = () => {
+        p.imgs.splice(+b.dataset.rm, 1);
+        save();
+        draw();
+      });
+      document.querySelectorAll("[data-mk]").forEach((b) => b.onclick = () => {
+        const [x] = p.imgs.splice(+b.dataset.mk, 1);
+        p.imgs.unshift(x);
+        save();
+        draw();
+      });
+    };
+    draw();
+    $("#box .x").onclick = () => {
+      closeModal();
+      refreshView();
+    };
+    $("#eadd").onclick = () => $("#ef").click();
+    $("#ef").onchange = async (e) => {
+      toast("Processing photos\u2026");
+      p.imgs.push(...await shrinkAll(e.target.files));
+      save();
+      draw();
+      toast("Photos added");
+    };
+    $("#esv").onclick = () => {
+      p.name = $("#en").value.trim() || p.name;
+      p.cat = $("#ec").value;
+      p.price = Math.max(0, +$("#epr").value || 0);
+      p.stock = Math.max(0, +$("#es").value || 0);
+      p.desc = $("#ed").value.trim();
+      p.vars = splitV($("#ev").value);
+      Object.assign(p, readDet("e"));
+      p.u = Date.now();
+      save();
+      closeModal();
+      toast("Saved \u2014 customers now see the update");
+      refreshView();
+    };
+  }
+  /* ---------- testimonial videos ---------- */
+  let curUrl = null;
+  const MEDIA = {
+    db: null,
+    open() {
+      return this.db ? Promise.resolve(this.db) : new Promise((res, rej) => {
+        const r = indexedDB.open("kl_media", 1);
+        r.onupgradeneeded = () => r.result.createObjectStore("videos");
+        r.onsuccess = () => { this.db = r.result; res(this.db); };
+        r.onerror = () => rej(r.error);
+      });
+    },
+    async put(id, blob) {
+      const db = await this.open();
+      return new Promise((res, rej) => { const t = db.transaction("videos", "readwrite"); t.objectStore("videos").put(blob, id); t.oncomplete = () => res(); t.onerror = t.onabort = () => rej(t.error); });
+    },
+    async get(id) {
+      const db = await this.open();
+      return new Promise((res, rej) => { const r = db.transaction("videos", "readonly").objectStore("videos").get(id); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); });
+    },
+    async del(id) {
+      const db = await this.open();
+      return new Promise((res) => { const t = db.transaction("videos", "readwrite"); t.objectStore("videos").delete(id); t.oncomplete = () => res(); t.onerror = t.onabort = () => res(); });
+    }
+  };
+  const MAX_MB = 100, MAX_SEC = 90;
+  function probeVideo(file) {
+    return new Promise((res, rej) => {
+      const u = URL.createObjectURL(file), v = document.createElement("video");
+      let done = false;
+      const end = (fn, val) => { if (done) return; done = true; URL.revokeObjectURL(u); fn(val); };
+      v.preload = "metadata"; v.muted = true; v.playsInline = true;
+      v.onerror = () => end(rej, new Error("format"));
+      v.onloadedmetadata = () => { v.currentTime = Math.min(1, (v.duration || 2) / 2); };
+      v.onseeked = () => {
+        let poster = "";
+        try {
+          const w = 360, h = Math.round(w * ((v.videoHeight / v.videoWidth) || 16 / 9)), c = document.createElement("canvas");
+          c.width = w; c.height = h; c.getContext("2d").drawImage(v, 0, 0, w, h);
+          poster = c.toDataURL("image/jpeg", .7);
+        } catch (e) {}
+        end(res, { dur: v.duration || 0, poster });
+      };
+      setTimeout(() => end(rej, new Error("format")), 8000);
+      v.src = u;
+    });
+  }
+  function parseVideoUrl(u) {
+    u = (u || "").trim();
+    if (!/^https?:\/\//i.test(u)) return null;
+    const yt = u.match(/youtu\.be\/([\w-]{11})|youtube\.com\/(?:shorts|embed|live)\/([\w-]{11})|youtube\.com\/watch\?(?:[^#]*&)?v=([\w-]{11})/i);
+    if (yt) return { kind: "yt", vid: yt[1] || yt[2] || yt[3], short: /shorts/i.test(u), url: u, host: "YouTube" };
+    let host = "";
+    try { host = new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return null; }
+    const nice = /tiktok/i.test(host) ? "TikTok" : /instagram/i.test(host) ? "Instagram" : /facebook|fb\.watch/i.test(host) ? "Facebook" : host;
+    return { kind: "link", url: u, host: nice };
+  }
+  const vposter = (v) => v.poster || (v.kind === "yt" ? "https://i.ytimg.com/vi/" + v.vid + "/hqdefault.jpg" : "");
+  const vcard = (v) => {
+    const pr = S.products.find((x) => x.id === v.pid), ps = vposter(v);
+    return `<article class="vcard" tabindex="0" data-vp="${v.id}">${ps ? `<img class="pst" src="${esc(ps)}" alt="${esc(v.title)}" loading="lazy">` : `<div class="pst"></div>`}<span class="play" aria-hidden="true">\u25B6</span><div class="vt"><b>${esc(v.title)}</b>${v.client ? `<br><small>${esc(v.client)}</small>` : ""}${pr ? `<br><small class="price">${esc(pr.name)}</small>` : ""}${v.dur ? `<br><small style="color:var(--mute)">${Math.round(v.dur)} sec</small>` : ""}</div></article>`;
+  };
+  const bindVcards = (root) => root.querySelectorAll("[data-vp]").forEach((c) => {
+    c.onclick = () => playVideo(c.dataset.vp);
+    c.onkeydown = (e) => { if (e.key === "Enter") playVideo(c.dataset.vp); };
+  });
+  const refreshVideos = () => (view === "videos" ? rVideos() : aVideos());
+  function rVideos() {
+    const L = (S.videos || []).filter((v) => v.on !== false);
+    $("#app").innerHTML = `<section class="panel" style="text-align:center"><h2>Customer testimonies</h2><p class="hint" style="margin:.4rem 0 0">Watch short videos from our clients and see our products in real life.</p></section>` + (L.length ? `<div class="vgrid" id="vg">${L.map(vcard).join("")}</div>` : `<div class="panel" style="text-align:center"><h3>Videos are coming soon</h3><p style="color:var(--mute)">Follow us on TikTok and Instagram, or call 0257911684 or 0550771454, to see our latest products.</p></div>`);
+    bindVcards($("#app"));
+    if (admin) {
+      $("#app").insertAdjacentHTML("afterbegin", '<div id="pane"></div><h3 style="margin:1.2rem 0 .2rem;text-align:center">What customers see</h3>');
+      aVideos();
+    }
+  }
+  function addVidStrip(pid) {
+    const L = (S.videos || []).filter((v) => v.pid === pid && v.on !== false), lb = $("#box .lb");
+    if (!L.length || !lb) return;
+    lb.insertAdjacentHTML("beforeend", `<div class="pdet"><h3>Customer testimonies</h3><div class="vrow">${L.map(vcard).join("")}</div></div>`);
+    bindVcards(lb);
+  }
+  async function playVideo(id) {
+    const v = (S.videos || []).find((x) => x.id === id);
+    if (!v) return;
+    const pr = S.products.find((x) => x.id === v.pid);
+    if (curUrl) { URL.revokeObjectURL(curUrl); curUrl = null; }
+    let media = "";
+    if (v.kind === "file") {
+      let blob = null;
+      try { blob = await MEDIA.get(id); } catch (e) {}
+      if (!blob) { toast("This video is stored on the owner's device and cannot be played here"); return; }
+      curUrl = URL.createObjectURL(blob);
+      media = `<video controls autoplay playsinline src="${curUrl}"></video>`;
+    } else if (v.kind === "yt") {
+      media = `<iframe src="https://www.youtube-nocookie.com/embed/${esc(v.vid)}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="${esc(v.title)}" style="aspect-ratio:${v.short ? "9/16" : "16/9"}"></iframe><p style="margin:.5rem"><a href="${esc(v.url)}" target="_blank" rel="noopener" style="color:var(--gold2)">Open on YouTube</a></p>`;
+    } else {
+      media = `<div class="vlink"><p>This testimony is on ${esc(v.host)}.</p><a class="btn gold big" href="${esc(v.url)}" target="_blank" rel="noopener">Watch on ${esc(v.host)}</a></div>`;
+    }
+    openModal(`<div class="vm"><div class="vwrap">${media}</div><div class="vinfo"><h3>${esc(v.title)}</h3>${v.client ? `<p style="color:var(--gold2)">${esc(v.client)}</p>` : ""}${v.cap ? `<p style="white-space:pre-line;margin-top:.6rem">${esc(v.cap)}</p>` : ""}${pr ? `<button class="btn gold" id="vpg" style="margin-top:1rem">View ${esc(pr.name)}</button>` : ""}</div></div>`);
+    const b = $("#vpg");
+    if (b) b.onclick = () => { closeModal(); lightbox(v.pid); };
+  }
+  const prodOpts = (sel) => `<option value="">No linked product</option>` + S.products.map((x) => `<option value="${x.id}" ${x.id === sel ? "selected" : ""}>${esc(x.name)}</option>`).join("");
+  function aVideos() {
+    if (!admin) return;
+    let pend = null;
+    const L = S.videos || [], used = L.reduce((a, v) => a + (v.size || 0), 0) / 1048576;
+    $("#pane").innerHTML = `<div class="panel" style="max-width:760px"><h2>Testimonial videos</h2><p class="hint">Add short videos of happy customers or product clips. Customers watch them on the <b>Testimonies</b> page, and on the product page if you link one. Videos can be up to ${MAX_SEC} seconds and ${MAX_MB} MB.</p>
+    <div class="row"><div><label>Title</label><input id="vti" placeholder="e.g. Ama loves her chronograph"></div><div><label>Client name (optional)</label><input id="vcl" placeholder="e.g. Ama, Kumasi"></div></div>
+    <label>Linked product (optional)</label><select id="vpr">${prodOpts("")}</select>
+    <label>What the customer said (optional)</label><textarea id="vca" rows="2"></textarea>
+    <label>1. Upload a video from this device</label><div class="drop" id="vdz" tabindex="0">Tap to choose a video, or drag one here</div><input type="file" id="vf" accept="video/*" class="fi"><div id="vpv"></div>
+    <label>2. Or paste a link (YouTube, TikTok, Instagram or Facebook)</label><input id="vli" placeholder="https://...">
+    <p class="hint">Links work for customers on every phone. Videos uploaded here are stored in this browser only.</p>
+    <button class="btn gold big" id="vs" style="margin-top:.6rem">Publish video</button></div>
+    <div class="panel"><h3>Published videos (${L.length})</h3><small style="color:var(--mute)">${used.toFixed(1)} MB of uploaded video stored on this device</small>
+    ${L.length ? `<div class="scroll"><table><tr><th></th><th>Title</th><th>Type</th><th>Shown</th><th></th></tr>${L.map((v) => `<tr><td>${vposter(v) ? `<img src="${esc(vposter(v))}" width="48" height="64" style="object-fit:cover" alt="">` : ""}</td><td><b>${esc(v.title)}</b>${v.client ? `<br><small>${esc(v.client)}</small>` : ""}</td><td>${v.kind === "file" ? "Uploaded" : esc(v.host || "Link")}</td><td><label style="display:flex;gap:.4rem;align-items:center;margin:0"><input type="checkbox" data-vo="${v.id}" ${v.on !== false ? "checked" : ""} style="width:auto;min-height:0"> Visible</label></td><td><button class="btn sm" data-vw="${v.id}">Watch</button> <button class="btn sm" data-ve="${v.id}">Edit</button> <button class="btn sm bad" data-vd="${v.id}">Delete</button></td></tr>`).join("")}</table></div>` : `<p class="hint">No videos yet.</p>`}</div>`;
+    const dz = $("#vdz");
+    const pick = async (f) => {
+      if (!f) return;
+      if (!/^video\//.test(f.type)) return toast("Please choose a video file");
+      if (f.size > MAX_MB * 1048576) return toast("That video is over " + MAX_MB + " MB. Trim it or record in 720p.");
+      toast("Checking video…");
+      try {
+        const m = await probeVideo(f);
+        if (m.dur > MAX_SEC) return toast("Videos must be " + MAX_SEC + " seconds or shorter (this one is " + Math.round(m.dur) + ")");
+        pend = { file: f, dur: m.dur, poster: m.poster };
+        $("#vpv").innerHTML = `<div class="pt" style="width:auto;flex-direction:row;align-items:center;gap:.7rem;margin-top:.5rem">${m.poster ? `<img src="${m.poster}" width="54" height="96" style="object-fit:cover" alt="">` : ""}<span>${esc(f.name)}<br><small>${Math.round(m.dur)} sec · ${(f.size / 1048576).toFixed(1)} MB</small></span><button class="btn sm bad" id="vrm">Remove</button></div>`;
+        $("#vrm").onclick = () => { pend = null; $("#vpv").innerHTML = ""; };
+      } catch (e) { toast("This browser cannot read that video. Use an MP4 (H.264) file."); }
+    };
+    dz.onclick = () => $("#vf").click();
+    dz.onkeydown = (e) => { if (e.key === "Enter") $("#vf").click(); };
+    $("#vf").onchange = (e) => { pick(e.target.files[0]); e.target.value = ""; };
+    dz.ondragover = (e) => { e.preventDefault(); dz.classList.add("on"); };
+    dz.ondragleave = () => dz.classList.remove("on");
+    dz.ondrop = (e) => { e.preventDefault(); dz.classList.remove("on"); pick(e.dataTransfer.files[0]); };
+    $("#vs").onclick = async () => {
+      const title = $("#vti").value.trim(), link = $("#vli").value.trim();
+      if (!title) return toast("Enter a title for the video");
+      if (!pend && !link) return toast("Choose a video or paste a link");
+      const rec = { id: "v" + uid(), title, client: $("#vcl").value.trim(), pid: $("#vpr").value, cap: $("#vca").value.trim(), t: Date.now(), on: true };
+      if (pend) {
+        Object.assign(rec, { kind: "file", poster: pend.poster, dur: pend.dur, size: pend.file.size });
+        try { await MEDIA.put(rec.id, pend.file); } catch (e) { return toast("This browser could not store the video. Try a link instead."); }
+      } else {
+        const pu = parseVideoUrl(link);
+        if (!pu) return toast("Paste a full link that starts with https://");
+        Object.assign(rec, pu);
+      }
+      S.videos.unshift(rec);
+      if (save()) { toast("Video published — customers can watch it now"); refreshVideos(); } else { S = load(); if (rec.kind === "file") MEDIA.del(rec.id); }
+    };
+    document.querySelectorAll("[data-vo]").forEach((c) => c.onchange = () => { S.videos.find((x) => x.id === c.dataset.vo).on = c.checked; save(); toast(c.checked ? "Video is visible" : "Video hidden from customers"); });
+    document.querySelectorAll("[data-vw]").forEach((b) => b.onclick = () => playVideo(b.dataset.vw));
+    document.querySelectorAll("[data-ve]").forEach((b) => b.onclick = () => editVideo(b.dataset.ve));
+    document.querySelectorAll("[data-vd]").forEach((b) => b.onclick = async () => {
+      if (!confirm("Delete this video?")) return;
+      const v = S.videos.find((x) => x.id === b.dataset.vd);
+      S.videos = S.videos.filter((x) => x.id !== v.id);
+      save();
+      if (v.kind === "file") { try { await MEDIA.del(v.id); } catch (e) {} }
+      refreshVideos();
+    });
+  }
+  function editVideo(id) {
+    if (!admin) return;
+    const v = S.videos.find((x) => x.id === id);
+    if (!v) return;
+    openModal(`<div style="padding:1.5rem"><h2>Edit video</h2><label>Title</label><input id="et" value="${esc(v.title)}"><label>Client name</label><input id="ec2" value="${esc(v.client || "")}"><label>Linked product</label><select id="ep2">${prodOpts(v.pid)}</select><label>What the customer said</label><textarea id="ea" rows="3">${esc(v.cap || "")}</textarea><button class="btn gold big" id="es2" style="margin-top:1rem">Save changes</button></div>`);
+    $("#es2").onclick = () => {
+      v.title = $("#et").value.trim() || v.title;
+      v.client = $("#ec2").value.trim();
+      v.pid = $("#ep2").value;
+      v.cap = $("#ea").value.trim();
+      save(); closeModal(); toast("Saved"); refreshVideos();
+    };
+  }
+
+  function trackPay() {
+    const U = me();
+    openModal(`<div class="info" style="padding:1.5rem"><h2>Track my order &amp; pay balance</h2><p class="hint">Enter the order number from your receipt and the phone number you used.</p><div class="row"><div><label>Order number</label><input id="tn" placeholder="KL123456" autocapitalize="characters"></div><div><label>Phone number</label><input id="tp" inputmode="tel" value="${esc(U ? U.phone : "")}"></div></div><button class="btn gold big" id="tg" style="margin-top:.8rem">Find my order</button><div id="tr"></div></div>`);
+    $("#tg").onclick = () => {
+      const n = $("#tn").value.trim().toUpperCase(), ph = $("#tp").value.trim().replace(/\s/g, ""), o = S.orders.find((x) => x.id === n && x.phone === ph);
+      if (!o) {
+        $("#tr").innerHTML = `<p style="margin-top:1rem;color:var(--bad)">We could not find that order. Check the number and phone, or call 0257911684 or 0550771454.</p>`;
+        return;
+      }
+      showOrder(o);
+    };
+  }
+  function openOrder(o) {
+    if (!o) return;
+    openModal(`<div class="info" style="padding:1.5rem"><h2>Order ${o.id}</h2><div id="tr"></div></div>`);
+    showOrder(o);
+  }
+  function showOrder(o) {
+    const b = o.total - pd(o), PL = S.settings.platforms.filter((x) => x.on && x.kind === "momo"), i = STATUS.indexOf(o.status), w = o.status === "Cancelled" ? 100 : Math.round(i / 3 * 100);
+    let pm = PL.length ? PL[0].id : "";
+    const canPay = b > 0 && o.status !== "Cancelled" && PL.length;
+    $("#tr").innerHTML = `<div class="panel" style="margin-top:1rem"><b>Order ${o.id}</b> <span class="badge">${o.status}</span><div class="pg"><i style="width:${w}%"></i></div>${o.items.map((x) => `<div>${esc(x.n)} (${esc(x.v)}) \xD7 ${x.q}</div>`).join("")}<p style="margin-top:.5rem">Total ${money(o.total)} \xB7 Paid ${money(pd(o))} \xB7 <b class="${b > 0 ? "low" : ""}">${b > 0 ? "Balance " + money(b) : "Fully paid"}</b></p>${(o.claims || []).map((c) => `<small style="display:block;color:var(--mute)">${money(c.amt)} via ${esc(c.net)} (ref ${esc(c.ref)}) \u2014 ${c.s}</small>`).join("")}</div>` + (canPay ? `<h3 style="margin-top:1rem">Pay your balance</h3><div class="pm" id="tpm">${PL.map((x) => `<button data-p="${x.id}" class="${x.id === pm ? "on" : ""}">${esc(x.label)}</button>`).join("")}</div><div id="tinfo"></div><div class="row"><div><label>Amount you paid (GH\u20B5)</label><input id="ta" type="number" min="1" max="${b}" step="0.01" value="${b}"></div><div><label>Network</label><select id="tnw"><option>MTN</option><option>Telecel</option><option>AirtelTigo</option></select></div><div><label>Transaction reference</label><input id="trf"></div></div><button class="btn gold big" id="tpb" style="margin-top:.8rem">I have paid \u2014 tell the shop</button><p class="hint">The shop confirms your payment before your balance updates.</p>` : "");
+    if (!canPay) return;
+    const P = () => PL.find((x) => x.id === pm), info = () => {
+      $("#tinfo").innerHTML = payBox(PL, P(), +$("#ta").value || 0);
+      $("#tnw").value = netOf(P());
+    };
+    $("#tpm").onclick = (e) => {
+      const id = e.target.dataset.p;
+      if (!id) return;
+      pm = id;
+      [...$("#tpm").children].forEach((x) => x.classList.toggle("on", x.dataset.p === id));
+      info();
+    };
+    $("#ta").oninput = info;
+    info();
+    $("#tpb").onclick = () => {
+      const a = +$("#ta").value, ref = $("#trf").value.trim();
+      if (!(a > 0 && a <= b)) return toast("Enter an amount up to " + money(b));
+      if (ref.length < 4) return toast("Enter your transaction reference");
+      (o.claims = o.claims || []).push({ id: uid(), amt: a, net: $("#tnw").value, ref, t: Date.now(), s: "Pending" });
+      if (save()) {
+        toast("Sent \u2014 the shop will confirm your payment");
+        showOrder(o);
+      }
+    };
+  }
+  function refreshView() {
+    if (view === "admin") rAdmin();
+    else if (view === "shop") rShop();
+  }
+  function ownerUI() {
+    const b = $("#ownerbar"), a = $("#addp");
+    if (!b) return;
+    if (!admin) {
+      b.innerHTML = "";
+      a.innerHTML = "";
+      return;
+    }
+    b.innerHTML = `<div class="panel" style="border-color:var(--gold)"><b>Owner mode is on.</b> Tap a category above to add products to it, or tap <b>Edit</b> on any product to change its name, price, description, variations or photos. <button class="btn sm" id="ovb" style="margin-left:.4rem">Upload testimony videos</button><button class="btn sm" id="oso" style="margin-left:.4rem">Sign out</button></div>`;
+    $("#ovb").onclick = () => { view = "videos"; render(); };
+    $("#oso").onclick = () => {
+      admin = false;
+      render();
+    };
+    ownerAdd(a);
+  }
+  function ownerAdd(el) {
+    if (!admin) return;
+    let imgs = [];
+    const c0 = cat === "All" ? CATS[0] : cat;
+    el.innerHTML = `<details class="panel" open style="border-color:var(--gold)"><summary style="cursor:pointer;font-size:1.1rem">+ Add a product${cat === "All" ? "" : " to <b>" + esc(cat) + "</b>"}</summary>
+  <p class="hint">Enter the brand name, price, description and variations, then add at least 3 photos. Customers see it as soon as you save.</p>
+  <div class="row"><div><label>Brand name</label><input id="oan" placeholder="e.g. Naviforce NF9089"></div><div><label>Category</label><select id="oac">${CATS.map((x) => `<option ${x === c0 ? "selected" : ""}>${x}</option>`).join("")}</select></div><div><label>Price (GH\u20B5)</label><input id="oap" type="number" min="0"></div><div><label>In stock</label><input id="oas" type="number" min="0" value="1"></div></div>
+  <label>Description</label><textarea id="oad" rows="2" placeholder="Describe the watch: case, strap, features"></textarea>
+  <label>Variations (separate with commas)</label><input id="oav" placeholder="Gold, Silver, Black">${detFields("oa")}
+  <label>Photos <small>(at least 3)</small></label><div class="drop" id="oadz" tabindex="0">Tap to choose photos, or drag them here</div><input type="file" id="oaf" multiple accept="image/*" class="fi"><div class="thumbs" id="oapv"></div>
+  <button class="btn gold" id="oasv" style="margin-top:.8rem">Save product</button></details>`;
+    const pv = () => {
+      $("#oapv").innerHTML = imgs.map((x, k) => `<div class="pt"><img src="${x}" alt=""><button class="btn sm bad" data-ox="${k}">Remove</button></div>`).join("");
+      document.querySelectorAll("[data-ox]").forEach((b) => b.onclick = () => {
+        imgs.splice(+b.dataset.ox, 1);
+        pv();
+      });
+    };
+    const add = async (f) => {
+      toast("Processing photos\u2026");
+      imgs.push(...await shrinkAll(f));
+      pv();
+    }, dz = $("#oadz");
+    dz.onclick = () => $("#oaf").click();
+    dz.onkeydown = (e) => e.key === "Enter" && $("#oaf").click();
+    $("#oaf").onchange = (e) => {
+      add(e.target.files);
+      e.target.value = "";
+    };
+    dz.ondragover = (e) => {
+      e.preventDefault();
+      dz.classList.add("on");
+    };
+    dz.ondragleave = () => dz.classList.remove("on");
+    dz.ondrop = (e) => {
+      e.preventDefault();
+      dz.classList.remove("on");
+      add(e.dataTransfer.files);
+    };
+    $("#oasv").onclick = () => {
+      const n = $("#oan").value.trim(), pr = +$("#oap").value;
+      if (!n) return toast("Enter the brand name");
+      if (!pr) return toast("Enter the price");
+      if (imgs.length < 3) return toast("Add at least 3 photos (" + imgs.length + " so far)");
+      const c = $("#oac").value;
+      S.products.unshift(__spreadProps(__spreadValues({ id: "p" + uid(), name: n, cat: c, price: pr, stock: +$("#oas").value || 0, desc: $("#oad").value.trim(), vars: splitV($("#oav").value) }, readDet("oa")), { imgs, t: Date.now() }));
+      if (save()) {
+        toast("Product published \u2014 customers can see it now");
+        cat = c;
+        rShop();
+      } else S = load();
+    };
+  }
+  function aImport() {
+    let imgs = [];
+    $("#pane").innerHTML = `<div class="panel" style="max-width:720px"><h2>Add photos</h2><p class="hint">Add a new watch brand with its price and photos, or add more photos to a brand you already have.</p>
+  <label>1. Which brand?</label><select id="ib"><option value="new">A new brand</option>${S.products.map((p) => `<option value="${p.id}">${esc(p.name)}</option>`).join("")}</select>
+  <div id="nw"><div class="row"><div><label>Brand name</label><input id="in" placeholder="e.g. Naviforce NF9089"></div><div><label>Category</label><select id="ic">${CATS.map((c) => `<option>${c}</option>`).join("")}</select></div><div><label>Price (GH\u20B5)</label><input id="ip" type="number" min="0"></div><div><label>How many in stock</label><input id="is" type="number" min="0" value="1"></div></div>
+  <label>Description (optional)</label><textarea id="idesc" rows="2"></textarea><label>Options, separated by commas (optional)</label><input id="iv" placeholder="Gold, Silver, Black">${detFields("i")}</div>
+  <label>2. Photos <small>(at least 3 for a new brand)</small></label><div class="drop" id="dz" tabindex="0">Tap to choose photos, or drag them here</div><input type="file" id="if" multiple accept="image/*" class="fi"><div class="thumbs" id="ipv"></div>
+  <button class="btn gold" id="ia" style="margin-top:1rem">3. Save</button></div>`;
+    const pv = () => {
+      $("#ipv").innerHTML = imgs.map((x, k) => `<div class="pt"><img src="${x}" alt=""><button class="btn sm bad" data-x="${k}">Remove</button></div>`).join("");
+      document.querySelectorAll("[data-x]").forEach((b) => b.onclick = () => {
+        imgs.splice(+b.dataset.x, 1);
+        pv();
+      });
+    };
+    const add = async (f) => {
+      toast("Processing photos\u2026");
+      imgs.push(...await shrinkAll(f));
+      pv();
+    }, dz = $("#dz");
+    dz.onclick = () => $("#if").click();
+    dz.onkeydown = (e) => e.key === "Enter" && $("#if").click();
+    $("#if").onchange = (e) => {
+      add(e.target.files);
+      e.target.value = "";
+    };
+    dz.ondragover = (e) => {
+      e.preventDefault();
+      dz.classList.add("on");
+    };
+    dz.ondragleave = () => dz.classList.remove("on");
+    dz.ondrop = (e) => {
+      e.preventDefault();
+      dz.classList.remove("on");
+      add(e.dataTransfer.files);
+    };
+    $("#ib").onchange = () => $("#nw").style.display = $("#ib").value === "new" ? "" : "none";
+    $("#ia").onclick = () => {
+      const b = $("#ib").value;
+      if (b === "new") {
+        const n = $("#in").value.trim(), pr = +$("#ip").value;
+        if (!n) return toast("Enter the brand name");
+        if (!pr) return toast("Enter the price");
+        if (imgs.length < 3) return toast("Add at least 3 photos (" + imgs.length + " so far)");
+        S.products.unshift(__spreadProps(__spreadValues({ id: "p" + uid(), name: n, cat: $("#ic").value, price: pr, stock: +$("#is").value || 0, desc: $("#idesc").value.trim(), vars: splitV($("#iv").value) }, readDet("i")), { imgs, t: Date.now() }));
+      } else {
+        if (!imgs.length) return toast("Choose at least one photo");
+        S.products.find((x) => x.id === b).imgs.push(...imgs);
+      }
+      if (save()) {
+        toast("Saved \u2014 it is now in your shop");
+        tab = "brands";
+        rAdmin();
+      } else S = load();
+    };
+  }
+  function aExport() {
+    const L = S.products.filter((p) => p.imgs && p.imgs.length);
+    $("#pane").innerHTML = `<div class="panel"><h2>Download photos</h2><p class="hint">Save your product photos to this phone or computer. Files are named after the brand, for example <b>brand-name-1.jpg</b>.</p>${L.length ? `<button class="btn gold" id="ea">Download all photos</button>` : "<p>No photos yet. Use <b>Add photos</b> first.</p>"}</div>` + L.map((p) => `<div class="panel"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem"><h3>${esc(p.name)} <span class="price">${money(p.price)}</span></h3><button class="btn" data-eb="${p.id}">Download ${p.imgs.length} photos</button></div><div class="thumbs">${p.imgs.map((x, k) => `<img src="${x}" data-ei="${p.id}:${k}" title="Tap to download this photo" alt="${esc(p.name)} photo ${k + 1}">`).join("")}</div></div>`).join("");
+    const all = (p) => p.imgs.map((x, k) => [x, slug(p.name) + "-" + (k + 1)]);
+    const ea = $("#ea");
+    if (ea) ea.onclick = () => dlMany(L.flatMap(all));
+    document.querySelectorAll("[data-eb]").forEach((b) => b.onclick = () => dlMany(all(S.products.find((p) => p.id === b.dataset.eb))));
+    document.querySelectorAll("[data-ei]").forEach((i) => i.onclick = () => {
+      const [id, k] = i.dataset.ei.split(":"), p = S.products.find((x) => x.id === id);
+      dlOne(p.imgs[+k], slug(p.name) + "-" + (+k + 1));
+      toast("Saving photo\u2026");
+    });
+  }
+  if (location.hash === "#owner") view = "admin";
+  let taps = 0, tt;
+  $(".logo").onclick = () => {
+    taps++;
+    clearTimeout(tt);
+    tt = setTimeout(() => taps = 0, 2500);
+    if (taps >= 5) {
+      taps = 0;
+      backTo = null;
+      view = "admin";
+      render();
+    }
+  };
+  $("#trk").onclick = trackPay;
+  function acMenu() {
+    const u = me();
+    $("#acBtn").textContent = (u ? "Hi, " + u.name.split(" ")[0] : "Account") + " \u25BE";
+    $("#acMenu").innerHTML = u ? `<button data-ac="acct">My account</button><button data-ac="orders">My orders</button><button data-ac="track">Track &amp; pay</button><button data-ac="out">Sign out</button>` : `<button class="btn gold" data-ac="in">Sign in</button><button data-ac="up">Create account</button>`;
+  }
+  function signOut() {
+    LS.removeItem("kl_user");
+    since = 0;
+    toast("Signed out");
+    acMenu();
+    render();
+  }
+  function authModal(mode) {
+    const up = mode === "up";
+    openModal(`<div class="info" style="padding:1.5rem"><h2>${up ? "Create your account" : "Sign in"}</h2><p class="hint">${up ? "Save your delivery location, see new arrivals and track your orders." : "Welcome back."}</p>
+  ${up ? `<label>Your name</label><input id="an" autocomplete="name">` : ""}
+  <label>Phone number</label><input id="ap" inputmode="tel" autocomplete="tel" placeholder="024XXXXXXX">
+  <label>Password <small>(at least 6 characters)</small></label><input id="aw" type="password" autocomplete="${up ? "new-password" : "current-password"}">
+  <label style="display:flex;gap:.5rem;align-items:center;cursor:pointer"><input type="checkbox" id="asp" style="width:auto;min-height:0"> Show password</label>
+  ${up ? locHtml("a", "", "") : ""}
+  <button class="btn gold big" id="ago" style="margin-top:1rem">${up ? "Create account" : "Sign in"}</button>
+  <p class="hint" style="text-align:center;margin-top:.8rem">${up ? "Already have an account?" : "New here?"} <a href="#" id="asw" style="color:var(--gold2)">${up ? "Sign in" : "Create an account"}</a></p></div>`);
+    if (up) bindLoc("a", "");
+    $("#asp").onchange = (e) => {
+      $("#aw").type = e.target.checked ? "text" : "password";
+    };
+    $("#asw").onclick = (e) => {
+      e.preventDefault();
+      authModal(up ? "in" : "up");
+    };
+    $("#ago").onclick = () => {
+      const ph = $("#ap").value.trim().replace(/\s/g, ""), pw = $("#aw").value;
+      if (!/^0\d{9}$/.test(ph)) return toast("Enter a 10-digit phone number");
+      if (pw.length < 6) return toast("Password must be at least 6 characters");
+      const h = H("kc|" + pw + "|" + ph);
+      if (up) {
+        const n = $("#an").value.trim();
+        if (!n) return toast("Enter your name");
+        if (S.users.some((x) => x.phone === ph)) return toast("That number already has an account \u2014 please sign in");
+        const l = getLoc("a");
+        return verifyPhone({ name: n, phone: ph, h, region: l.region, town: l.town });
+      } else {
+        const u = S.users.find((x) => x.phone === ph && x.h === h);
+        if (!u) return toast("Phone number or password is not correct");
+        LS.kl_user = u.id;
+        since = u.last || 0;
+        u.last = Date.now();
+        save();
+      }
+      closeModal();
+      toast("Welcome, " + me().name.split(" ")[0]);
+      acMenu();
+      render();
+    };
+  }
+  function verifyPhone(p) {
+    const masked = p.phone.slice(0, 3) + "\u2022\u2022\u2022\u2022" + p.phone.slice(-3);
+    let code = null, tries = 0, timer = null;
+    openModal(`<div class="info" style="padding:1.5rem"><h2>Confirm your phone number</h2><p class="hint" id="vmsg">Sending a 6-digit code to ${masked}\u2026</p><div id="vtest"></div>
+  <label>Enter the 6-digit code</label><input id="vc" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="000000" style="font-size:1.6rem;letter-spacing:.5em;text-align:center">
+  <button class="btn gold big" id="vgo" style="margin-top:1rem">Verify and create account</button>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.8rem"><button class="btn sm" id="vre" disabled>Resend code</button><a href="#" id="vbk" style="color:var(--gold2)">Change number</a></div></div>`);
+    const api = (path, body) => fetch(SMS_API.replace(/\/$/, "") + path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).then(async (r) => ({ ok: r.ok, j: await r.json().catch(() => ({})) }));
+    const cooldown = () => {
+      let n = 60;
+      const b = $("#vre");
+      clearInterval(timer);
+      b.disabled = true;
+      b.textContent = "Resend in 60s";
+      timer = setInterval(() => {
+        const x = $("#vre");
+        if (!x) return clearInterval(timer);
+        n--;
+        if (n <= 0) { clearInterval(timer); x.disabled = false; x.textContent = "Resend code"; }
+        else x.textContent = "Resend in " + n + "s";
+      }, 1000);
+    };
+    const send = async () => {
+      const t = JSON.parse(LS.kl_otpn || "{}"), now = Date.now(), rec = (t[p.phone] || []).filter((x) => now - x < 36e5);
+      if (rec.length >= 3) return toast("Too many codes requested. Please try again in an hour.");
+      t[p.phone] = [...rec, now];
+      LS.kl_otpn = JSON.stringify(t);
+      tries = 0;
+      cooldown();
+      if (SMS_API) {
+        try {
+          const r = await api("/send", { phone: p.phone });
+          $("#vmsg").textContent = r.ok && r.j.ok ? "We sent a 6-digit code by SMS to " + masked + ". It expires in 10 minutes." : (r.j.error || "We could not send the code. Check the number and try again.");
+        } catch (e) { $("#vmsg").textContent = "Could not reach the verification service. Check your internet connection and try again."; }
+      } else {
+        const a = new Uint32Array(1);
+        crypto.getRandomValues(a);
+        code = String(100000 + (a[0] % 900000));
+        $("#vmsg").textContent = "Test mode: the SMS service is not connected yet, so no text message was sent.";
+        $("#vtest").innerHTML = `<div class="momo">Your test code is <b>${code}</b></div>`;
+      }
+    };
+    $("#vgo").onclick = async () => {
+      const c = $("#vc").value.trim();
+      if (!/^\d{6}$/.test(c)) return toast("Enter the 6-digit code");
+      if (tries >= 5) return toast("Too many wrong attempts. Tap Resend code to get a new one.");
+      let ok = false;
+      if (SMS_API) {
+        try { const r = await api("/verify", { phone: p.phone, code: c }); ok = r.ok && !!r.j.ok; }
+        catch (e) { return toast("Could not reach the verification service"); }
+      } else ok = code !== null && c === code;
+      if (!ok) { tries++; return toast("That code is not correct" + (tries >= 5 ? ". Request a new code." : "")); }
+      if (S.users.some((x) => x.phone === p.phone)) { closeModal(); return toast("That number already has an account \u2014 please sign in"); }
+      const u = { id: "u" + uid(), name: p.name, phone: p.phone, h: p.h, region: p.region, town: p.town, verified: true, t: Date.now(), last: Date.now() };
+      S.users.push(u);
+      if (!save()) return;
+      LS.kl_user = u.id;
+      since = 0;
+      clearInterval(timer);
+      closeModal();
+      toast("Phone confirmed \u2014 welcome, " + u.name.split(" ")[0]);
+      acMenu();
+      render();
+    };
+    $("#vre").onclick = send;
+    $("#vbk").onclick = (e) => { e.preventDefault(); clearInterval(timer); authModal("up"); };
+    send();
+  }
+  function accountModal() {
+    const u = me();
+    if (!u) return authModal("in");
+    const O = S.orders.filter((o) => o.uid === u.id || o.phone === u.phone);
+    openModal(`<div class="info" style="padding:1.5rem"><h2>My account</h2><p class="hint">${esc(u.name)} \xB7 ${esc(u.phone)}</p><h3>Delivery location</h3>${locHtml("m", u.region, u.town)}<button class="btn" id="msv" style="margin-top:.6rem">Save location</button>
+  <h3 style="margin-top:1.4rem">My orders</h3>${O.length ? O.map((o) => {
+      const b = o.total - pd(o);
+      return `<div class="item"><div class="g"><b>${o.id}</b> <span class="badge">${o.status}</span><br><small>${ago(o.t)} \xB7 ${money(o.total)}${b > 0 ? ` \xB7 <span class="low">balance ${money(b)}</span>` : ""}</small></div><button class="btn sm" data-vo="${o.id}">View${b > 0 ? " / pay" : ""}</button></div>`;
+    }).join("") : `<p class="hint">No orders yet.</p>`}<button class="btn" id="mso" style="margin-top:1rem">Sign out</button></div>`);
+    bindLoc("m", u.town);
+    $("#msv").onclick = () => {
+      const l = getLoc("m");
+      u.region = l.region;
+      u.town = l.town;
+      save();
+      toast("Location saved");
+    };
+    document.querySelectorAll("[data-vo]").forEach((b) => b.onclick = () => openOrder(S.orders.find((o) => o.id === b.dataset.vo)));
+    $("#mso").onclick = () => {
+      closeModal();
+      signOut();
+    };
+  }
+  {
+    const u = me();
+    if (u) {
+      since = u.last || 0;
+      u.last = Date.now();
+      save();
+    }
+  }
+  acMenu();
+  $("#acBtn").onclick = (e) => {
+    e.stopPropagation();
+    acMenu();
+    $("#acMenu").classList.toggle("hidden");
+  };
+  $("#acMenu").onclick = (e) => {
+    const a = e.target.dataset.ac;
+    if (!a) return;
+    $("#acMenu").classList.add("hidden");
+    ({ in: () => authModal("in"), up: () => authModal("up"), acct: accountModal, orders: accountModal, track: trackPay, out: signOut })[a]();
+  };
+  document.addEventListener("click", () => $("#acMenu").classList.add("hidden"));
+  const goGrid = () => {
+    const c = $("#chips");
+    if (c) c.scrollIntoView({ behavior: "smooth" });
+  };
+  const doSearch = () => {
+    sq = $("#sq").value;
+    if (view !== "shop") {
+      view = "shop";
+      render();
+    } else drawGrid();
+  };
+  $("#sq").oninput = doSearch;
+  $("#sq").onkeydown = (e) => {
+    if (e.key === "Enter") {
+      doSearch();
+      goGrid();
+    }
+  };
+  $("#sbtn").onclick = () => {
+    doSearch();
+    goGrid();
+  };
+  $("#olink").onclick = (e) => {
+    e.preventDefault();
+    backTo = null;
+    view = "admin";
+    render();
+  };
+  const applyTheme = () => {
+    const t = LS.getItem("kl_theme") || (window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    document.documentElement.setAttribute("data-theme", t);
+    const b = $("#themeBtn");
+    if (b) b.textContent = t === "light" ? "Dark mode" : "Light mode";
+  };
+  $("#themeBtn").onclick = () => { LS.setItem("kl_theme", document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light"); applyTheme(); };
+  applyTheme();
+  const labelTables = () => document.querySelectorAll("#app .scroll table:not(.rt)").forEach((t) => {
+    const ths = [...t.querySelectorAll("tr:first-child th")].map((h) => h.textContent.trim());
+    if (!ths.length) return;
+    t.classList.add("rt");
+    t.querySelectorAll("tr").forEach((r, i) => { if (i) [...r.children].forEach((c, j) => { if (c.tagName === "TD") c.setAttribute("data-label", ths[j] || ""); }); });
+  });
+  new MutationObserver(labelTables).observe($("#app"), { childList: true, subtree: true });
+  window.goTab = goTab;
+  window.authModal = authModal;
+  window.closeModal = closeModal;
+  window.goShop = () => {
+    view = "shop";
+    render();
+  };
+  saveCart();
+  render();
+  if (memOnly) setTimeout(() => toast("This browser is not saving data on your phone. Keep this page open, or open the file in Chrome or Safari."), 900);
+})();
+
+</script>
+</body>
+</html>
