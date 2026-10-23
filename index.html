@@ -25,6 +25,19 @@ window.addEventListener("error", function (e) {
 /* iOS Safari only fires taps on some elements when a touch listener exists; this also enables :active styles. */
 document.addEventListener("touchstart", function () {}, { passive: true });
 </script>
+<meta name="description" content="Kay Lustre Gifts &amp; More — watches (Rolex, Cartier, Boss, G-Shock, chronographs), bracelets, neck chains, ladies sets and gifts at West Hills Mall, North Kaneshie, Lapaz. Order online, pay with MoMo or cash, nationwide delivery in Ghana.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob:; connect-src 'self' data: blob: https:; frame-src https://www.youtube-nocookie.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://www.kaylustre.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kay Lustre Gifts &amp; More">
+<meta property="og:title" content="KAY LUSTRE GIFTS &amp; MORE — Where elegance finds you">
+<meta property="og:description" content="Watches, bracelets, chains and gift sets in Accra. MoMo or cash, nationwide delivery.">
+<meta property="og:url" content="https://www.kaylustre.com/">
+<meta property="og:image" content="https://www.kaylustre.com/icon-512.png">
+<meta property="og:locale" content="en_GH">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"JewelryStore","name":"Kay Lustre Gifts & More","slogan":"Where elegance finds you","url":"https://www.kaylustre.com/","image":"https://www.kaylustre.com/icon-512.png","telephone":["+233257911684","+233550771454"],"address":{"@type":"PostalAddress","streetAddress":"West Hills Mall","addressLocality":"North Kaneshie, Lapaz","addressRegion":"Greater Accra","addressCountry":"GH"},"areaServed":{"@type":"Country","name":"Ghana"},"currenciesAccepted":"GHS","paymentAccepted":"Mobile money, Cash","sameAs":["https://www.instagram.com/kuukuaheninful"]}</script>
 <title>KAY LUSTRE GIFTS &amp; MORE</title>
 <style>
 :root{--in:#0e0e0e;--hl:#16130a;--strip:#0a0a0a;--hdr:rgba(18,18,18,.94);--navbg:rgba(10,10,10,.98);--herog:#2a2412;--bub:#2a2a2a;--bg:#121212;--panel:#1a1a1a;--line:#2e2a1c;--gold:#d4af37;--gold2:#f3e5ab;--txt:#ece7d8;--mute:#9a9484;--ok:#6fbf73;--bad:#d9605a;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -163,7 +176,7 @@ footer{border-top:1px solid var(--gold);background:var(--strip);padding:2.2rem 1
 .welcome{border:1px solid var(--gold);background:var(--hl);padding:.7rem 1rem;margin-bottom:1rem;color:var(--gold2)}
 html{-webkit-text-size-adjust:100%}img{max-width:100%}
 button,.btn,.chip,a,.card,.deal li,.drop,nav button,select,summary{touch-action:manipulation;-webkit-tap-highlight-color:rgba(212,175,55,.25)}
-#toast{pointer-events:none}#chips{scroll-margin-top:8rem}
+#toast{pointer-events:none}.modal.open~#toast{top:1rem;bottom:auto!important}#chips{scroll-margin-top:8rem}
 .sm{display:none}
 @supports not (font-size:clamp(1px,2vw,3px)){.logo{font-size:1.8rem}.hero h1.brand{font-size:3rem}.brand-sub,.tag{font-size:1.4rem}.phone a{font-size:1.8rem}.logo small{font-size:.8rem}}
 @media(max-width:800px){
@@ -249,38 +262,85 @@ a,button,.card,.vcard,.chip,.drop,.deal li{-webkit-tap-highlight-color:rgba(212,
  body{min-height:-webkit-fill-available}
  .modal{top:0;right:0;bottom:0;left:0}
 }
+.spot h2{margin-bottom:.4rem}
+.phs{display:flex;gap:.6rem;overflow-x:auto;padding:.4rem 0;-webkit-overflow-scrolling:touch}
+.ph{flex:0 0 150px;margin:0;cursor:pointer}
+.ph img{width:150px;height:150px;object-fit:cover;display:block;border:1px solid var(--line);border-radius:4px}
+.ph figcaption{width:150px;font-size:.8rem;color:var(--mute);margin-top:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card{position:relative}
+.cth{position:absolute;left:.5rem;top:.5rem;display:flex;gap:.35rem;z-index:2}
+.cth button{width:44px;height:44px;padding:0;border:2px solid rgba(255,255,255,.7);border-radius:6px;overflow:hidden;background:var(--in);cursor:pointer;min-height:0}
+.cth button.on{border-color:var(--gold)}
+.card .cth img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;display:block}
+.bth{display:flex;gap:.3rem}
+.bth button{width:48px;height:48px;padding:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--in);cursor:pointer;min-height:0}
+.bth img{width:100%;height:100%;object-fit:cover;display:block}
+.btn,.chip,.card,input,select,textarea,.menu button,.deal li{transition:background-color .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s}
+.btn:active{transform:scale(.98)}
+.card:hover{transform:translateY(-2px)}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.28)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.card:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+@media (pointer:coarse){
+ button,.btn,.btn.sm,.chip,select,input:not([type=checkbox]):not([type=radio]):not([type=file]),summary,.menu button,nav button,.tbtn,.vars button,.gnav{min-height:44px}
+ .qty button{min-width:44px;min-height:44px}
+ .btn.sm{padding:.55rem .9rem}
+ .deal li{display:flex;align-items:center;min-height:44px}
+ .cth button,.bth button{min-height:0}
+}
+@supports not (aspect-ratio:1){
+ .gs{position:relative;height:0;padding-top:100%}
+ .gs img{position:absolute;top:0;left:0}
+}
+.hidden{display:none!important}
+
+/* ---- audit fixes: accessibility & contrast ---- */
+.skip{position:absolute;left:.5rem;top:-3rem;z-index:100;background:var(--gold);color:#161208;padding:.6rem 1rem;border-radius:3px;font-weight:600;text-decoration:none}
+.skip:focus{top:.5rem}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.drawer{visibility:hidden;transition:transform .25s,visibility 0s linear .25s}
+.drawer.open{visibility:visible;transition:transform .25s}
+.box:focus,#app:focus,.drawer:focus{outline:none}
+:root{--bad:#ec7a73}
+:root[data-theme=light]{--gold:#8a6a14;--gold2:#6b4f08;--bad:#b3261e}
+:root[data-theme=light] .chip.on,:root[data-theme=light] .m.me,:root[data-theme=light] .ic,:root[data-theme=light] #toast,:root[data-theme=light] .skip{color:#fff}
+:root[data-theme=light] .dealh{background:linear-gradient(90deg,#d4af37,#f3e5ab);color:#161208}
+:root[data-theme=light] .btn.gold,:root[data-theme=light] .gold{color:#161208}
+footer .legal{max-width:1200px;margin:1rem auto 0;text-align:center;font-size:.85rem;color:var(--mute)}
+footer .legal a{color:var(--gold2)}
 </style>
 </head>
 <body>
+<a href="#app" id="skip" class="skip">Skip to products</a>
 <noscript><div style="margin:1rem;padding:1.2rem;border:1px solid #d4af37;color:#f3e5ab;font-family:sans-serif"><b>This shop needs JavaScript to work.</b><br>If you opened this file from Files, WhatsApp, Mail or a download preview on an iPhone, it will not be interactive there. Open the shop's web address in Safari instead, or tap Share, then Open in Safari. Need help? Call or WhatsApp 0257911684 or 0550771454.</div></noscript>
-<div class="strip"><span>West Hills Mall, North Kaneshie, Lapaz</span><a href="tel:0257911684">Call &amp; WhatsApp: 0257911684</a><a href="tel:+233550771454">+233 55 077 1454</a><span>Nationwide delivery is available</span><button class="tbtn" id="themeBtn" type="button">Light mode</button></div>
+<div class="strip"><span>West Hills Mall, North Kaneshie, Lapaz</span><a href="tel:0257911684">Call &amp; WhatsApp: 0257911684</a><a href="tel:+233550771454">+233 55 077 1454</a><span>Nationwide delivery is available</span><button class="tbtn" id="themeBtn" type="button">Light mode</button><span id="ownstrip" class="hidden" style="display:inline-flex;gap:.4rem;align-items:center"><b style="color:var(--gold2)">Owner mode</b><button class="tbtn" id="osDash" type="button">Dashboard</button><button class="tbtn" id="osOut" type="button">Log out</button></span></div>
 <header>
   <div class="logo">KAY LUSTRE<small>GIFTS &amp; MORE</small></div>
   <div class="sbar"><input id="sq" placeholder="Search products, brands and categories" aria-label="Search products"><button class="btn gold" id="sbtn">Search</button></div>
-  <nav id="nav">
+  <nav id="nav" aria-label="Main">
     <button data-v="shop" class="on">Shop</button>
     <button data-v="custom"><span class="lg">Customer request</span><span class="sm">Request</span></button>
     <button data-v="feedback">Reviews</button>
     <button data-v="videos"><span class="lg">Testimonies</span><span class="sm">Videos</span></button>
     <button data-v="admin" class="hidden" id="navadm"><span class="lg">Owner dashboard</span><span class="sm">Admin</span></button>
     <button id="trk"><span class="lg">Track &amp; pay</span><span class="sm">Track</span></button>
-    <div class="acct"><button id="acBtn">Account ▾</button><div class="menu hidden" id="acMenu"></div></div>
-    <button id="cartBtn">Cart (<span id="cc">0</span>)<span id="ct"></span></button>
+    <div class="acct"><button id="acBtn" aria-haspopup="true" aria-expanded="false" aria-controls="acMenu">Account ▾</button><div class="menu hidden" id="acMenu"></div></div>
+    <button id="cartBtn" aria-controls="drawer">Cart (<span id="cc">0</span><span class="vh"> items</span>)<span id="ct"></span></button>
   </nav>
 </header>
-<main id="app"></main>
+<main id="app" tabindex="-1"></main>
 <footer><div class="fgrid">
   <div class="cc"><div class="f1">KAY LUSTRE</div><div class="f2">GIFTS &amp; MORE</div><p style="font-family:var(--serif);font-size:1.2rem;color:var(--gold2)">Your elegant choice is here.</p><p>West Hills Mall, North Kaneshie, Lapaz</p></div>
   <div class="cc"><small style="color:var(--mute)">Contact us — for call &amp; WhatsApp</small><div class="phone"><a href="tel:0257911684">0257911684</a></div><div class="phone"><a href="tel:+233550771454">+233 55 077 1454</a></div><p>Nationwide delivery is available.</p><a class="btn gold" href="https://wa.me/233257911684" target="_blank" rel="noopener">WhatsApp 025 791 1684</a> <a class="btn gold" href="https://wa.me/233550771454" target="_blank" rel="noopener">WhatsApp 055 077 1454</a></div>
   <div class="cc soc"><a href="https://www.instagram.com/kuukuaheninful" target="_blank" rel="noopener"><i class="ic">IG</i>kuukuaheninful</a><div><i class="ic">TT</i>Kay Lustre Gifts &amp; More</div><div><i class="ic">SC</i>Kay Lustre</div><p style="color:var(--gold2)">Catalogue online: www.kaylustre.com/catalogue</p></div>
-</div><p style="max-width:1200px;margin:1.2rem auto 0;text-align:center"><a href="#owner" id="olink" style="color:var(--mute);font-size:.8rem">Owner login</a></p></footer>
+</div><p class="legal">&copy; <span id="yr"></span> Kay Lustre Gifts &amp; More &middot; <a href="#privacy" id="plink">Privacy notice</a></p><p style="max-width:1200px;margin:1.2rem auto 0;text-align:center"><a href="#owner" id="olink" rel="nofollow" style="display:inline-block;padding:.7rem 1.2rem;color:var(--gold2);border:1px solid var(--line);border-radius:99px;font-size:.9rem;text-decoration:none">Owner login</a></p></footer>
 
-<div class="drawer" id="drawer" aria-label="Cart"></div>
-<div class="modal" id="modal"><div class="box" id="box"></div></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="Your cart" tabindex="-1"></div>
+<div class="modal" id="modal"><div class="box" id="box" role="dialog" aria-modal="true" tabindex="-1"></div></div>
 <button class="btn gold" id="fab">Chat with us</button>
-<div id="chatbox"><b style="color:var(--gold2)">Chat with Kay Lustre</b>
-  <div class="msgs" id="cmsgs"></div>
-  <div style="display:flex;gap:.4rem;margin-top:.5rem"><input id="cin" placeholder="Type a message"><button class="btn gold sm" id="csend">Send</button></div>
+<div id="chatbox" role="dialog" aria-labelledby="chatT"><b id="chatT" style="color:var(--gold2)">Chat with Kay Lustre</b>
+  <small style="display:block;color:var(--mute)">Your message opens in WhatsApp so the shop gets it straight away.</small>
+  <div class="msgs" id="cmsgs" aria-live="polite"></div>
+  <div style="display:flex;gap:.4rem;margin-top:.5rem"><input id="cin" placeholder="Type a message" aria-label="Your message" enterkeyhint="send"><button class="btn gold sm" id="csend">Send on WhatsApp</button></div>
 </div>
 <div id="toast" role="status"></div>
 
@@ -343,6 +403,46 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     LS.kl_pinh = pinHash(x);
     LS.removeItem("kl_pin");
   };
+  /* Customer passwords: salted PBKDF2-SHA256 (WebCrypto). Older accounts that still use the
+     legacy hash are upgraded automatically the next time they sign in successfully. */
+  const PBKDF2_ITER = 150000;
+  const b64 = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf)));
+  const newSalt = () => {
+    const a = new Uint8Array(16);
+    crypto.getRandomValues(a);
+    return b64(a);
+  };
+  async function kdf(pw, salt) {
+    if (!(window.crypto && crypto.subtle)) return "h:" + H("kc2|" + salt + "|" + pw);
+    const enc = new TextEncoder(), key = await crypto.subtle.importKey("raw", enc.encode(pw), "PBKDF2", false, ["deriveBits"]);
+    const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: enc.encode(salt), iterations: PBKDF2_ITER }, key, 256);
+    return "p:" + b64(bits);
+  }
+  async function setPassword(u, pw) {
+    u.salt = newSalt();
+    u.h = await kdf(pw, u.salt);
+    u.kdf = 2;
+  }
+  async function checkPassword(u, pw) {
+    if (u.kdf === 2) return (await kdf(pw, u.salt)) === u.h;
+    /* legacy account: accept the old forgiving variants once, then upgrade to the strict hash */
+    const tf = (t) => t ? (t[0] === t[0].toLowerCase() ? t[0].toUpperCase() : t[0].toLowerCase()) + t.slice(1) : t;
+    const ok = [pw, pw + " ", " " + pw, tf(pw), tf(pw) + " "].some((t) => H("kc|" + t + "|" + u.phone) === u.h);
+    if (ok) await setPassword(u, pw);
+    return ok;
+  }
+  const parseJSON = (s, fb) => {
+    try {
+      const v = JSON.parse(s);
+      return v == null ? fb : v;
+    } catch (e) {
+      return fb;
+    }
+  };
+  const r2 = (n) => Math.round((+n || 0) * 100) / 100;
+  /* ---- Shop settings: edit these two lines when you deploy ---- */
+  const SHOP_WA = "233257911684"; /* WhatsApp number that receives orders, requests and messages */
+  const CATALOGUE_URL = "catalogue.json"; /* published catalogue, uploaded next to this page */
   let lastAct = Date.now();
   const touch = () => {
     lastAct = Date.now();
@@ -356,12 +456,28 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       render();
     }
   }, 2e4);
-  const CATS = ["Casual Everyday Watches", "Chronographs", "Leather Watches", "Bracelets", "Neck Chains", "Ladies Sets", "G-Shock"];
+  const CATS = ["Casual Everyday Watches", "Chronographs", "Leather Watches", "Bracelets", "Neck Chains", "Ladies Sets", "G-Shock", "Boss", "Cartier", "Ladies Watches", "Rolex", "Scented Body Shower Gel"];
+  const MAX_PHOTOS = 2;
   const STATUS = ["Pending", "Confirmed", "Shipped", "Delivered", "Cancelled"];
   const $ = (s) => document.querySelector(s);
   const esc = (s) => String(s != null ? s : "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-  const money = (n) => "GH\u20B5 " + Number(n).toLocaleString("en-GH", { minimumFractionDigits: 2 });
-  const uid = () => Math.random().toString(36).slice(2, 9);
+  const money = (n) => "GH\u20B5 " + r2(n).toLocaleString("en-GH", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const uid = () => {
+    const a = new Uint32Array(2);
+    crypto.getRandomValues(a);
+    return (a[0].toString(36) + a[1].toString(36)).slice(0, 10);
+  };
+  /* Order numbers: date + 4 random characters, e.g. KL261022-7QF2 (no collisions every 16 minutes) */
+  const orderId = () => {
+    const d = new Date(), p = (x) => String(x).padStart(2, "0"), a = new Uint32Array(1);
+    crypto.getRandomValues(a);
+    return "KL" + String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate()) + "-" + a[0].toString(36).toUpperCase().slice(0, 4).padStart(4, "0");
+  };
+  const waLink = (text) => "https://wa.me/" + SHOP_WA + "?text=" + encodeURIComponent(text);
+  const orderText = (o) => {
+    const bal = r2(o.total - (o.paid || 0));
+    return ["NEW ORDER " + o.id, "Name: " + o.name, "Phone: " + o.phone, "Deliver to: " + o.town + ", " + o.region + (o.addr ? " — " + o.addr : ""), "", ...o.items.map((i) => "• " + i.n + " (" + i.v + ") x" + i.q + " = " + money(i.p * i.q)), "", "Order total: " + money(o.total), "Paying now: " + money(o.paid || 0) + " via " + o.pay + (o.network ? " (" + o.network + ")" : "") + (o.ref ? ", ref " + o.ref : ""), bal > 0 ? "Balance due: " + money(bal) : "Paid in full"].join("\n");
+  };
   const ago = (t) => new Date(t).toLocaleString("en-GH", { dateStyle: "short", timeStyle: "short" });
   function toast(m) {
     const t = $("#toast");
@@ -373,7 +489,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   function art(cat2, i) {
     const h = 38 + i * 9, g = `<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3e5ab"/><stop offset="1" stop-color="#9c7a1c"/></linearGradient></defs>`;
     let b;
-    if (/Casual|Chrono|Leather|G-Shock/.test(cat2)) {
+    if (/Casual|Chrono|Leather|G-Shock|Boss|Cartier|Rolex|Ladies Watches/.test(cat2)) {
       const strap = cat2 === "Leather Watches" ? "#5a3a22" : cat2 === "G-Shock" ? "#222" : "url(#g)";
       b = `<rect x="170" y="20" width="60" height="360" rx="14" fill="${strap}"/><circle cx="200" cy="200" r="92" fill="#0d0d0d" stroke="url(#g)" stroke-width="10"/><circle cx="200" cy="200" r="70" fill="hsl(${h},30%,14%)"/>` + [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((k) => `<rect x="198" y="136" width="4" height="${k % 3 ? 8 : 16}" fill="#f3e5ab" transform="rotate(${k * 30} 200 200)"/>`).join("") + `<rect x="198" y="150" width="4" height="52" fill="#f3e5ab" transform="rotate(${i * 40} 200 200)"/><rect x="198" y="165" width="3" height="38" fill="#d4af37" transform="rotate(${120 + i * 25} 200 200)"/>` + (cat2 === "Chronographs" ? `<circle cx="200" cy="170" r="16" fill="none" stroke="#d4af37"/><circle cx="170" cy="215" r="14" fill="none" stroke="#d4af37"/><circle cx="230" cy="215" r="14" fill="none" stroke="#d4af37"/>` : "");
     } else if (cat2 === "Bracelets") {
@@ -475,11 +591,11 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     r.onload = () => {
       const im = new Image();
       im.onload = () => {
-        const k = Math.min(1, 800 / Math.max(im.width, im.height)), c = document.createElement("canvas");
+        const k = Math.min(1, 720 / Math.max(im.width, im.height)), c = document.createElement("canvas");
         c.width = im.width * k;
         c.height = im.height * k;
         c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
-        res(c.toDataURL("image/jpeg", 0.76));
+        res(c.toDataURL("image/jpeg", 0.7));
       };
       im.onerror = () => res(null);
       im.src = r.result;
@@ -487,27 +603,89 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     r.onerror = () => res(null);
     r.readAsDataURL(f);
   });
+  const takeRoom = (files, have) => {
+    const room = Math.max(0, MAX_PHOTOS - have), a = [...files];
+    if (a.length > room) toast("Only " + MAX_PHOTOS + " photos per brand \u2014 extra photos were skipped");
+    return a.slice(0, room);
+  };
+  const STORE_LIMIT = 4.6 * 1048576;
+  const fits = (list) => {
+    const add = list.reduce((a, x) => a + x.length, 0);
+    if (JSON.stringify(S).length + add > STORE_LIMIT) { toast("Storage is almost full. Remove old photos or videos first."); return false; }
+    return true;
+  };
   const shrinkAll = async (fs) => (await Promise.all([...fs].map(shrink))).filter(Boolean);
+  /* ---------- data validation: every record is checked on load and on catalogue import ---------- */
+  const str = (v, max) => String(v != null ? v : "").slice(0, max || 2e3);
+  const num = (v) => Math.max(0, r2(v));
+  const int = (v) => Math.max(0, Math.floor(+v || 0));
+  const arr = (v) => Array.isArray(v) ? v : [];
+  const safeId = (v, pre) => /^[\w-]{1,40}$/.test(String(v)) ? String(v) : (pre || "") + uid();
+  const safeImg = (v) => typeof v === "string" && /^(data:image\/(jpeg|png|webp|gif);base64,|https:\/\/)/i.test(v) ? v : null;
+  const safeUrl = (v) => typeof v === "string" && /^https:\/\//i.test(v) ? v : "";
+  function normProduct(p) {
+    p = p || {};
+    const vars = arr(p.vars).map((x) => str(x, 60).trim()).filter(Boolean);
+    return { id: safeId(p.id, "p"), name: str(p.name, 120) || "Untitled", cat: str(p.cat, 60) || CATS[0], price: num(p.price), stock: int(p.stock), desc: str(p.desc), vars: vars.length ? vars : ["Standard"], details: str(p.details), feats: str(p.feats), specs: str(p.specs), imgs: arr(p.imgs).map(safeImg).filter(Boolean).slice(0, MAX_PHOTOS), t: +p.t || Date.now(), u: +p.u || 0 };
+  }
+  function normVideo(v) {
+    v = v || {};
+    const kind = ["file", "yt", "link"].includes(v.kind) ? v.kind : "link";
+    const o = { id: safeId(v.id, "v"), title: str(v.title, 120) || "Testimony", client: str(v.client, 80), pid: str(v.pid, 40), cat: str(v.cat, 60), cap: str(v.cap), t: +v.t || Date.now(), on: v.on !== false, kind, dur: +v.dur || 0, size: +v.size || 0, poster: safeImg(v.poster) || "" };
+    if (kind === "yt") Object.assign(o, { vid: /^[\w-]{11}$/.test(v.vid) ? v.vid : "", short: !!v.short, url: safeUrl(v.url), host: "YouTube" });
+    if (kind === "link") Object.assign(o, { url: safeUrl(v.url), host: str(v.host, 40) });
+    return o;
+  }
+  const normFeedback = (f) => ({ id: safeId((f || {}).id, "f"), name: str(f && f.name, 60) || "Guest", stars: Math.min(5, Math.max(1, int(f && f.stars) || 5)), text: str(f && f.text), t: +(f && f.t) || Date.now() });
+  const normPlatform = (x) => ({ id: safeId((x || {}).id, "x"), label: str(x && x.label, 60) || "Payment", kind: x && x.kind === "cash" ? "cash" : "momo", number: str(x && x.number, 20), name: str(x && x.name, 80), note: str(x && x.note, 300), on: !(x && x.on === false) });
+  function normalize(d) {
+    const sd = seed();
+    d = d && typeof d === "object" ? d : sd;
+    d.settings = d.settings && typeof d.settings === "object" ? d.settings : sd.settings;
+    if (!Array.isArray(d.settings.platforms)) {
+      const old = d.settings.pay || {};
+      d.settings.platforms = sd.settings.platforms.map((x) => old[x.id] ? __spreadProps(__spreadValues({}, x), { number: old[x.id].number || x.number, name: old[x.id].name || x.name }) : x);
+    }
+    d.settings.platforms = d.settings.platforms.map(normPlatform);
+    d.products = arr(d.products).map(normProduct);
+    d.videos = arr(d.videos).map(normVideo);
+    d.feedback = arr(d.feedback).map(normFeedback);
+    d.orders = arr(d.orders).filter((o) => o && typeof o === "object").map((o) => __spreadProps(__spreadValues({}, o), { id: safeId(o.id, "KL"), items: arr(o.items), total: num(o.total), status: STATUS.includes(o.status) ? o.status : "Pending", claims: arr(o.claims).map((c) => __spreadProps(__spreadValues({}, c), { id: safeId(c && c.id), amt: num(c && c.amt), s: ["Pending", "Confirmed", "Rejected"].includes(c && c.s) ? c.s : "Pending" })) }));
+    d.requests = arr(d.requests);
+    d.users = arr(d.users);
+    d.chats = d.chats && typeof d.chats === "object" && !Array.isArray(d.chats) ? d.chats : {};
+    Object.keys(d.chats).forEach((k) => { d.chats[k] = arr(d.chats[k]); });
+    return d;
+  }
+  /* ---------- published catalogue (catalogue.json) ----------
+     The owner publishes products, prices, payment options, video links and approved reviews as one file.
+     Every visitor's browser loads that file, so all customers see the same shop on any phone. */
+  let remote = null, remoteNewer = false;
+  const catalogueOf = (d) => ({ products: d.products, platforms: d.settings.platforms, videos: d.videos.filter((v) => v.kind !== "file"), feedback: d.feedback });
+  const catHash = (d) => H(JSON.stringify(catalogueOf(d)));
+  const ownerDevice = () => hasPin();
+  function overlayRemote(d) {
+    if (!remote) return d;
+    const ids = new Set(remote.feedback.map((f) => f.id));
+    d.products = remote.products.map((p) => __spreadValues({}, p));
+    d.settings.platforms = remote.platforms.map((p) => __spreadValues({}, p));
+    d.videos = remote.videos.map((v) => __spreadValues({}, v));
+    d.feedback = [...remote.feedback, ...d.feedback.filter((f) => !ids.has(f.id))].sort((a, b) => b.t - a.t);
+    return d;
+  }
   let S = load();
   function load() {
-    try {
-      const d = JSON.parse(LS.getItem(KEY)) || seed();
-      const sd = seed().settings;
-      d.settings = d.settings || sd;
-      if (!d.settings.platforms) {
-        const old = d.settings.pay || {};
-        d.settings.platforms = sd.platforms.map((x) => old[x.id] ? __spreadProps(__spreadValues({}, x), { number: old[x.id].number || x.number, name: old[x.id].name || x.name }) : x);
-      }
-      d.users = d.users || [];
-      d.videos = d.videos || [];
-      return d;
-    } catch (e) {
-      return seed();
-    }
+    const d = normalize(parseJSON(LS.getItem(KEY), null));
+    return remote && !ownerDevice() ? overlayRemote(d) : d;
   }
   function save() {
     try {
-      LS.setItem(KEY, JSON.stringify(S));
+      /* On customer phones the catalogue comes from catalogue.json, so photos are not copied into this
+         phone's small (about 5 MB) storage. Only the customer's own cart, orders and account are stored. */
+      const out = remote && !ownerDevice() ? __spreadProps(__spreadValues({}, S), { products: [], videos: [], feedback: S.feedback.filter((f) => !remote.feedback.some((r) => r.id === f.id)) }) : S;
+      LS.setItem(KEY, JSON.stringify(out));
+      LS.setItem("kl_rev", String(Date.now()));
+      lastRev = LS.getItem("kl_rev");
       prev = snap();
       return true;
     } catch (e) {
@@ -515,7 +693,68 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       return false;
     }
   }
-  let cart = JSON.parse(LS.getItem("kl_cart") || "[]");
+  let lastRev = LS.getItem("kl_rev");
+  async function fetchCatalogue() {
+    if (location.protocol === "file:") return;
+    try {
+      const r = await fetch(CATALOGUE_URL, { cache: "no-cache" });
+      if (!r.ok) return;
+      const j = await r.json();
+      if (!j || !Array.isArray(j.products)) return;
+      remote = { v: +j.v || 0, products: j.products.map(normProduct), platforms: arr(j.platforms).map(normPlatform), videos: arr(j.videos).map(normVideo).filter((v) => v.kind !== "file"), feedback: arr(j.feedback).map(normFeedback) };
+      if (!ownerDevice()) {
+        S = overlayRemote(normalize(parseJSON(LS.getItem(KEY), null)));
+      } else if (remote.v > (+S.pubV || 0)) {
+        if (!S.products.length || catHash(S) === S.pubHash) applyPublished();
+        else remoteNewer = true;
+      }
+      live();
+    } catch (e) {
+      /* offline or no catalogue published yet: keep what this device already has */
+    }
+  }
+  function applyPublished() {
+    if (!remote) return;
+    S = overlayRemote(S);
+    S.pubV = remote.v;
+    S.pubHash = catHash(S);
+    remoteNewer = false;
+    save();
+  }
+  function publishCatalogue() {
+    if (!admin) return;
+    const files = S.videos.filter((v) => v.kind === "file").length, v = Date.now();
+    const blob = new Blob([JSON.stringify(__spreadValues({ v, shop: "Kay Lustre Gifts & More" }, catalogueOf(S)))], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "catalogue.json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4e3);
+    S.pubV = v;
+    S.pubHash = catHash(S);
+    save();
+    openModal(`<div class="info" style="padding:1.5rem"><h2 id="mt">Catalogue file saved</h2><p style="margin:.8rem 0">A file called <b>catalogue.json</b> has been downloaded. <b>Upload it to the same folder as this shop page</b> on your website host, replacing the old one. Every customer sees the new products, prices and payment options the next time they open the shop.</p>${files ? `<p class="hint">${files} uploaded video${files > 1 ? "s are" : " is"} stored on this phone only and ${files > 1 ? "were" : "was"} not included. Post ${files > 1 ? "them" : "it"} on YouTube, TikTok or Instagram and add the link instead so customers can watch.</p>` : ""}<button class="btn gold" onclick="closeModal()">Done</button></div>`);
+  }
+  const pubBanner = () => {
+    if (!admin) return "";
+    if (remoteNewer) return `<div class="panel" style="border-color:var(--gold)"><b>A newer published catalogue is online.</b> This phone has changes that were not published. <button class="btn sm" id="pubLoad">Load the online catalogue</button> <button class="btn sm gold" id="pubNow">Publish this phone's version</button></div>`;
+    if (!S.products.length && !S.pubV) return "";
+    const dirty = catHash(S) !== S.pubHash;
+    return dirty ? `<div class="panel" style="border-color:var(--bad)"><b>You have changes customers cannot see yet.</b> Products, prices, payment details, video links and reviews reach customers only after you publish. <button class="btn gold sm" id="pubNow">Publish catalogue</button></div>` : `<div class="panel"><span class="dot"></span>Customers see your latest catalogue${S.pubV ? " (published " + ago(S.pubV) + ")" : ""}. <button class="btn sm" id="pubNow">Publish again</button></div>`;
+  };
+  const bindPub = () => {
+    const a = $("#pubNow"), b = $("#pubLoad");
+    if (a) a.onclick = publishCatalogue;
+    if (b) b.onclick = () => {
+      if (confirm("Replace this phone's products with the online catalogue? Unpublished changes on this phone will be lost.")) {
+        applyPublished();
+        rAdmin();
+      }
+    };
+  };
+  let cart = arr(parseJSON(LS.getItem("kl_cart"), [])).filter((c) => c && typeof c.id === "string" && int(c.q) > 0);
   const saveCart = () => {
     LS.setItem("kl_cart", JSON.stringify(cart));
     $("#cc").textContent = cart.reduce((a, c) => a + c.q, 0);
@@ -524,7 +763,8 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   const cid = LS.kl_cid || (LS.kl_cid = "c" + uid());
   let sq = "", backTo = null, view = "shop", cat = "All", admin = false, tab = "overview", thread = null, rating = 5;
   window.addEventListener("storage", (e) => {
-    if (e.key === KEY) {
+    if (e.key === "kl_rev") {
+      lastRev = e.newValue;
       S = load();
       live();
     }
@@ -554,31 +794,53 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     if (view === "shop") drawGrid();
     if (view === "videos") rVideos();
   }
+  /* Cheap cross-tab check: compares a small revision stamp instead of re-serialising the whole shop
+     (the old loop stringified several MB every 3 seconds, which drains battery on budget phones). */
   setInterval(() => {
-    const n = LS.getItem(KEY);
-    if (n && n !== JSON.stringify(S)) {
+    if (document.hidden) return;
+    const r = LS.getItem("kl_rev");
+    if (r && r !== lastRev) {
+      lastRev = r;
       S = load();
       live();
     }
   }, 3e3);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden && remote && !ownerDevice()) fetchCatalogue();
+  });
   document.querySelectorAll("#nav [data-v]").forEach((b) => b.onclick = () => {
     view = b.dataset.v;
     render();
   });
-  $("#cartBtn").onclick = () => {
+  const openCart = () => {
     drawCart();
     $("#drawer").classList.add("open");
+    $("#cartBtn").setAttribute("aria-expanded", "true");
+    setTimeout(() => $("#drawer").focus({ preventScroll: true }), 30);
   };
+  const closeCart = () => {
+    if (!$("#drawer").classList.contains("open")) return;
+    $("#drawer").classList.remove("open");
+    $("#cartBtn").setAttribute("aria-expanded", "false");
+    $("#cartBtn").focus({ preventScroll: true });
+  };
+  $("#cartBtn").onclick = openCart;
   function render() {
     $("#navadm").classList.toggle("hidden", !admin);
-    document.querySelectorAll("#nav [data-v]").forEach((b) => b.classList.toggle("on", b.dataset.v === view));
+    $("#ownstrip").classList.toggle("hidden", !admin);
+    document.querySelectorAll("#nav [data-v]").forEach((b) => {
+      b.classList.toggle("on", b.dataset.v === view);
+      if (b.dataset.v === view) b.setAttribute("aria-current", "page");
+      else b.removeAttribute("aria-current");
+    });
+    document.title = ({ shop: "", custom: "Customer request \u2014 ", feedback: "Reviews \u2014 ", videos: "Testimonies \u2014 ", admin: "Owner dashboard \u2014 " })[view] + "KAY LUSTRE GIFTS & MORE";
     ({ shop: rShop, custom: rCustom, feedback: rFeedback, videos: rVideos, admin: rAdmin })[view]();
     scrollTo(0, 0);
   }
   function rShop() {
     $("#app").innerHTML = `<section class="hero"><div><h1 class="brand">KAY LUSTRE</h1><div class="brand-sub">GIFTS &amp; MORE</div><div class="tag">Where elegance finds you</div><div class="loc"><b>West Hills Mall, North Kaneshie, Lapaz</b></div><div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:inherit"><a class="btn gold" href="tel:0257911684">Call 0257911684</a><a class="btn gold" href="tel:+233550771454">Call 055 077 1454</a><a class="btn" href="https://wa.me/233257911684" target="_blank" rel="noopener">WhatsApp 0257911684</a><a class="btn" href="https://wa.me/233550771454" target="_blank" rel="noopener">WhatsApp 055 077 1454</a></div></div>
   <div><div class="dealh">WE DEAL IN</div><ul class="deal" id="deal">${[...CATS, "And lots more"].map((c) => `<li data-c="${c}">${c}</li>`).join("")}</ul></div></section>
-  ${welcome()}<div class="chips" id="chips">${["All", ...CATS].map((c) => `<button class="chip ${c === cat ? "on" : ""}" data-c="${c}">${c}</button>`).join("")}</div><div id="ownerbar"></div><div id="addp"></div><div class="grid" id="grid"></div>`;
+  ${welcome()}<div class="chips" id="chips">${["All", ...CATS].map((c) => `<button class="chip ${c === cat ? "on" : ""}" data-c="${c}">${c}</button>`).join("")}</div><div id="spot"></div><div id="ownerbar"></div><div id="addp"></div><div class="grid" id="grid"></div>`;
     const pick = (e) => {
       let c = e.target.dataset.c;
       if (!c) return;
@@ -587,7 +849,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       sq = "";
       $("#sq").value = "";
       rShop();
-      $("#chips").scrollIntoView({ behavior: "smooth" });
+      (($("#spot") && $("#spot").firstChild) ? $("#spot") : $("#chips")).scrollIntoView({ behavior: "smooth" });
     };
     $("#chips").onclick = pick;
     $("#deal").onclick = pick;
@@ -595,10 +857,11 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     drawGrid();
   }
   function drawGrid() {
+    drawSpot();
     const g = $("#grid");
     if (!g) return;
     const q = sq.trim().toLowerCase(), mt = (p) => [p.name, p.cat, p.desc, p.details, (p.vars || []).join(" ")].join(" ").toLowerCase().includes(q), l = S.products.filter((p) => q ? mt(p) : cat === "All" || p.cat === cat);
-    g.innerHTML = l.length ? l.map((p) => `<article class="card" tabindex="0" data-id="${p.id}"><img src="${pic(p)}" alt="${esc(p.name)}" loading="lazy"><div><h3>${esc(p.name)}${p.t && Date.now() - p.t < 6048e5 ? ' <span class="badge">New</span>' : ""}</h3><span class="price">${money(p.price)}</span> <small style="color:var(--mute)">${(p.imgs || []).length} photos</small>${p.stock < 1 ? ' <span class="low">Sold out</span>' : p.stock < 4 ? ` <span class="low">Only ${p.stock} left</span>` : ""}${admin ? `<br><button class="btn sm" data-ed="${p.id}" style="margin-top:.4rem">Edit</button>` : ""}</div></article>`).join("") : `<div class="panel" style="grid-column:1/-1;text-align:center"><h3>${S.products.length ? q ? "No products match your search" : "Nothing in this category yet" : "New arrivals are on the way"}</h3><p style="color:var(--mute)">Call or WhatsApp 0257911684 or 0550771454 to ask about our latest watches and gifts.</p></div>`;
+    g.innerHTML = l.length ? l.map((p) => `<article class="card" tabindex="0" data-id="${p.id}"><img class="cimg" src="${pic(p)}" alt="${esc(p.name)}" loading="lazy" decoding="async" width="400" height="400">${(p.imgs || []).length > 1 ? `<div class="cth">${p.imgs.slice(0, MAX_PHOTOS).map((x, j) => `<button type="button" class="${j ? "" : "on"}" data-cth="${p.id}:${j}" aria-label="Show photo ${j + 1}"><img src="${x}" alt=""></button>`).join("")}</div>` : ""}<div><h3>${esc(p.name)}${p.t && Date.now() - p.t < 6048e5 ? ' <span class="badge">New</span>' : ""}</h3><span class="price">${money(p.price)}</span> <small style="color:var(--mute)">${(p.imgs || []).length} photos</small>${p.stock < 1 ? ' <span class="low">Sold out</span>' : p.stock < 4 ? ` <span class="low">Only ${p.stock} left</span>` : ""}${admin ? `<br><button class="btn sm" data-ed="${p.id}" style="margin-top:.4rem">Edit</button>` : ""}</div></article>`).join("") : `<div class="panel" style="grid-column:1/-1;text-align:center"><h3>${S.products.length ? q ? "No products match your search" : "Nothing in this category yet" : "New arrivals are on the way"}</h3><p style="color:var(--mute)">Call or WhatsApp 0257911684 or 0550771454 to ask about our latest watches and gifts.</p></div>`;
     if (q) {
       g.insertAdjacentHTML("afterbegin", `<div style="grid-column:1/-1"><b>${l.length}</b> result(s) for \u201C${esc(sq)}\u201D <button class="btn sm" id="sclr">Clear search</button></div>`);
       $("#sclr").onclick = () => {
@@ -609,21 +872,62 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     }
     g.querySelectorAll(".card").forEach((c) => {
       c.onclick = () => lightbox(c.dataset.id);
-      c.onkeydown = (e) => e.key === "Enter" && lightbox(c.dataset.id);
+      c.onkeydown = (e) => {
+        if ((e.key === "Enter" || e.key === " ") && e.target === c) {
+          e.preventDefault();
+          lightbox(c.dataset.id);
+        }
+      };
+    });
+    g.querySelectorAll("[data-cth]").forEach((b) => b.onclick = (e) => {
+      e.stopPropagation();
+      const a = b.dataset.cth.split(":"), pr = S.products.find((x) => x.id === a[0]), card = b.closest(".card");
+      if (!pr || !card) return;
+      card.querySelector(".cimg").src = pr.imgs[+a[1]];
+      card.querySelectorAll("[data-cth]").forEach((x) => x.classList.toggle("on", x === b));
     });
     g.querySelectorAll("[data-ed]").forEach((b) => b.onclick = (e) => {
       e.stopPropagation();
       editBrand(b.dataset.ed);
     });
   }
+  let modalReturn = null;
+  const bgEls = () => document.querySelectorAll("body > header, body > main, body > footer, body > .strip, #fab, #chatbox, #drawer, #skip");
   function openModal(h) {
-    $("#box").innerHTML = `<button class="x" aria-label="Close">\xD7</button>` + h;
+    const box = $("#box"), wasOpen = $("#modal").classList.contains("open");
+    if (!wasOpen) modalReturn = document.activeElement;
+    box.innerHTML = `<button class="x" aria-label="Close">\xD7</button>` + h;
+    const hd = box.querySelector("h2,h3");
+    if (hd) {
+      hd.id = hd.id || "mt";
+      box.setAttribute("aria-labelledby", hd.id);
+    } else box.removeAttribute("aria-labelledby");
     $("#modal").classList.add("open");
+    bgEls().forEach((e) => e.setAttribute("inert", ""));
     document.body.style.overflow = "hidden";
     $("#box .x").onclick = closeModal;
+    box.scrollTop = 0;
+    box.focus({ preventScroll: true });
   }
+  $("#box").addEventListener("keydown", (e) => {
+    if (e.key !== "Tab") return;
+    const f = [...$("#box").querySelectorAll('a[href],button:not([disabled]),input:not([disabled]):not(.fi),select,textarea,[tabindex]:not([tabindex="-1"])')].filter((x) => x.offsetParent !== null);
+    if (!f.length) return;
+    const a = f[0], z = f[f.length - 1];
+    if (e.shiftKey && (document.activeElement === a || document.activeElement === $("#box"))) {
+      e.preventDefault();
+      z.focus();
+    } else if (!e.shiftKey && document.activeElement === z) {
+      e.preventDefault();
+      a.focus();
+    }
+  });
   function closeModal() {
+    if (!$("#modal").classList.contains("open")) return;
     $("#modal").classList.remove("open");
+    bgEls().forEach((e) => e.removeAttribute("inert"));
+    if (modalReturn && document.contains(modalReturn) && modalReturn.focus) modalReturn.focus({ preventScroll: true });
+    modalReturn = null;
     if ($("#box video") || $("#box iframe")) {
       $("#box").innerHTML = "";
       if (curUrl) {
@@ -639,10 +943,29 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeModal();
-      $("#drawer").classList.remove("open");
+      closeCart();
     }
   });
-  function lightbox(id) {
+  function drawSpot() {
+    const el = $("#spot");
+    if (!el) return;
+    if (cat === "All" || sq.trim()) { el.innerHTML = ""; return; }
+    const P = S.products.filter((x) => x.cat === cat), ids = P.map((x) => x.id);
+    const V = (S.videos || []).filter((v) => v.on !== false && (ids.indexOf(v.pid) > -1 || v.cat === cat));
+    const ph = [];
+    P.forEach((x) => (x.imgs || []).slice(0, MAX_PHOTOS).forEach((src, k) => ph.push({ id: x.id, k, src, name: x.name })));
+    if (!ph.length && !V.length) { el.innerHTML = ""; return; }
+    el.innerHTML = `<section class="panel spot"><h2>${esc(cat)}</h2>
+    ${ph.length ? `<h3>Photos</h3><div class="phs">${ph.map((x) => `<figure class="ph" tabindex="0" data-ph="${x.id}:${x.k}"><img src="${x.src}" alt="${esc(x.name)} photo ${x.k + 1}" loading="lazy"><figcaption>${esc(x.name)}</figcaption></figure>`).join("")}</div>` : ""}
+    ${V.length ? `<h3 style="margin-top:.8rem">Videos</h3><div class="vrow">${V.map(vcard).join("")}</div>` : ""}</section>`;
+    el.querySelectorAll("[data-ph]").forEach((f) => {
+      const open = () => { const a = f.dataset.ph.split(":"); lightbox(a[0], +a[1]); };
+      f.onclick = open;
+      f.onkeydown = (e) => { if (e.key === "Enter") open(); };
+    });
+    bindVcards(el);
+  }
+  function lightbox(id, start) {
     const p = S.products.find((x) => x.id === id);
     if (!p) return;
     let k = 0, vi = 0;
@@ -678,6 +1001,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       st = setTimeout(() => { const j = Math.round(tr.scrollLeft / (tr.clientWidth || 1)); if (j !== k) setK(j); }, 60);
     };
     $("#lbt").onclick = (e) => { const j = e.target.dataset.k; if (j !== void 0) go(+j); };
+    if (start) { k = Math.min(start, im.length - 1); tr.scrollLeft = k * tr.clientWidth; setK(k); }
     const gp = $("#gp"), gn = $("#gn");
     if (gp) { gp.onclick = () => go(k - 1); gn.onclick = () => go(k + 1); }
     $("#gal").onkeydown = (e) => { if (e.key === "ArrowLeft") go(k - 1); else if (e.key === "ArrowRight") go(k + 1); };
@@ -722,7 +1046,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       const i = cart.indexOf(x.c);
       return `<div class="item"><img src="${pic(x.p)}" alt=""><div class="g"><b>${esc(x.p.name)}</b><br><small>${esc(x.c.v)} \xB7 ${money(x.p.price)} each</small><br><span class="qty"><button data-m="${i}" aria-label="Fewer">\u2212</button><b>${x.c.q}</b><button data-p="${i}" aria-label="More">+</button></span> <span class="price">${money(x.p.price * x.c.q)}</span></div><button class="btn sm bad" data-r="${i}">Remove</button></div>`;
     }).join("") + `<div class="panel" style="margin-top:1rem"><div style="display:flex;justify-content:space-between"><span>Items (${n})</span><span>${money(total())}</span></div><h3 style="display:flex;justify-content:space-between;margin-top:.4rem"><span>Total to pay</span><span class="price">${money(total())}</span></h3></div><button class="btn gold big" id="co">Checkout</button>` : `<p style="margin-top:1rem;color:var(--mute)">Your cart is empty. Browse the collection and add something you love.</p>`);
-    $("#cx").onclick = () => dr.classList.remove("open");
+    $("#cx").onclick = closeCart;
     const fix = () => {
       saveCart();
       drawCart();
@@ -747,7 +1071,8 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     if (co) co.onclick = checkout;
   }
   function checkout() {
-    const U = me(), PL = S.settings.platforms.filter((x) => x.on), T = total();
+    const U = me(), PL = S.settings.platforms.filter((x) => x.on), T = r2(total());
+    if (!lines().length) return toast("Your cart is empty");
     if (!PL.length) return openModal(`<div class="info" style="padding:2rem;text-align:center"><h2>Payment is being set up</h2><p style="margin:.8rem 0">Please call or WhatsApp 0257911684 or 0550771454 to complete your order.</p></div>`);
     let pm = PL[0].id;
     openModal(`<div class="info" style="padding:1.5rem"><h2>Checkout</h2>
@@ -755,7 +1080,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   <label>Amount you are paying now (GH\u20B5) \u2014 order total ${money(T)}</label><input id="oamt" type="number" min="0" max="${T}" step="0.01" value="${T}">
   <small id="bal" style="color:var(--mute)"></small>
   <div id="pinfo"></div>
-  <div class="row"><div><label>Your name</label><input id="on" value="${esc(U ? U.name : "")}"></div><div><label>Your phone number</label><input id="op" inputmode="tel" placeholder="024XXXXXXX" value="${esc(U ? U.phone : "")}"></div></div>
+  <div class="row"><div><label>Your name</label><input id="on" autocomplete="name" value="${esc(U ? U.name : "")}"></div><div><label>Your phone number</label><input id="op" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="024XXXXXXX" value="${esc(U ? U.phone : "")}"></div></div>
   <div class="row"><div id="onetw"><label>Network you are paying from</label><select id="onet"><option>MTN</option><option>Telecel</option><option>AirtelTigo</option></select></div><div id="orw"><label>Transaction reference / ID</label><input id="or" placeholder="From your payment SMS"></div></div>
   <h3 style="margin-top:1rem">Delivery location</h3>${locHtml("c", U ? U.region : "", U ? U.town : "")}<label>Street / landmark / notes</label><textarea id="oa" rows="2"></textarea>
   <button class="btn gold" id="pay" style="margin-top:1rem;width:100%">Place order</button></div>`);
@@ -789,17 +1114,29 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       if (!n || !/^0\d{9}$/.test(ph)) return toast("Enter your name and a 10-digit phone number");
       const lc = getLoc("c");
       if (!lc.region || !lc.town) return toast("Choose your delivery region and town");
-      if (a > T) return toast("Amount cannot be more than the order total");
+      if (a > T + 1e-3) return toast("Amount cannot be more than the order total");
       if (m && (a <= 0 || ref.length < 4)) return toast("Enter the amount you paid and your transaction reference");
       const L = lines();
-      const o = { id: "KL" + Date.now().toString().slice(-6), cid, name: n, phone: ph, pay: p.label, network: m ? $("#onet").value : "", ref, addr: $("#oa").value, region: lc.region, town: lc.town, uid: U ? U.id : null, items: L.map((x) => ({ n: x.p.name, v: x.c.v, q: x.c.q, p: x.p.price })), total: T, paid: a, status: "Pending", t: Date.now() };
+      if (!L.length) return toast("Your cart is empty");
+      const bad = L.find((x) => x.c.q > x.p.stock);
+      if (bad) return toast("Only " + bad.p.stock + " of " + bad.p.name + " left — please update your cart");
+      $("#pay").disabled = true;
+      const o = { id: orderId(), cid, name: n, phone: ph, pay: p.label, network: m ? $("#onet").value : "", ref, addr: $("#oa").value.trim(), region: lc.region, town: lc.town, uid: U ? U.id : null, items: L.map((x) => ({ n: x.p.name, v: x.c.v, q: x.c.q, p: x.p.price })), total: T, paid: r2(a), status: "Pending", t: Date.now() };
       L.forEach((x) => x.p.stock = Math.max(0, x.p.stock - x.c.q));
       S.orders.unshift(o);
       S.chats[cid] = S.chats[cid] || [];
-      if (!save()) return;
+      if (!save()) {
+        $("#pay").disabled = false;
+        return;
+      }
       cart = [];
       saveCart();
-      openModal(`<div class="info" style="padding:2rem;text-align:center"><h2>Order ${o.id} received</h2><p style="margin:.8rem 0">Thank you, ${esc(n)}. We will confirm your order shortly${m ? " once we verify your payment" : ""}. Questions? Tap Chat with us, or call 0257911684 or 0550771454.</p><button class="btn gold" onclick="closeModal()">Continue shopping</button></div>`);
+      const msg = orderText(o);
+      openModal(`<div class="info" style="padding:2rem;text-align:center"><h2 id="mt">One last step: send your order</h2><p style="margin:.8rem 0">Thank you, ${esc(n)}. Your order number is <b>${esc(o.id)}</b>. Tap the button below to send it to Kay Lustre on WhatsApp — <b>the shop receives your order only when you send this message</b>. We will confirm it${m ? " after checking your payment" : ""}.</p><a class="btn gold big" id="sendwa" href="${esc(waLink(msg))}" target="_blank" rel="noopener">Send order on WhatsApp</a><p class="hint" style="margin-top:.8rem">No WhatsApp? Call 0257911684 or 0550771454 and quote ${esc(o.id)}.</p><button class="btn" onclick="closeModal()">Continue shopping</button></div>`);
+      $("#sendwa").onclick = () => {
+        o.sent = Date.now();
+        save();
+      };
     };
   }
   function rCustom() {
@@ -835,11 +1172,13 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       if (!/^0\d{9}$/.test(ph)) return toast("Enter a 10-digit phone number so we can reach you");
       if (dep > 0 && P().kind === "momo" && ref.length < 4) return toast("Enter your transaction reference for the deposit");
       const l = getLoc("r");
-      S.requests.unshift({ id: uid(), name: n, phone: ph, region: l.region, town: l.town, text: t, budget: $("#rb").value, pay: PL.length ? P().label : "", deposit: dep, ref, uid: U ? U.id : null, t: Date.now() });
+      const rq = { id: uid(), name: n, phone: ph, region: l.region, town: l.town, text: t, budget: $("#rb").value, pay: PL.length ? P().label : "", deposit: r2(dep), ref, uid: U ? U.id : null, t: Date.now() };
+      S.requests.unshift(rq);
       if (save()) {
-        toast("Request sent \u2014 we will contact you soon");
+        const msg = ["CUSTOMER REQUEST", "Name: " + n, "Phone: " + ph, "Location: " + [l.town, l.region].filter(Boolean).join(", "), "", t, rq.budget ? "Budget: " + money(rq.budget) : "", rq.deposit ? "Deposit paid: " + money(rq.deposit) + " via " + rq.pay + (ref ? ", ref " + ref : "") : ""].filter((x) => x !== "").join("\n");
         view = "shop";
         render();
+        openModal(`<div class="info" style="padding:2rem;text-align:center"><h2 id="mt">Send your request to the shop</h2><p style="margin:.8rem 0">Tap below to send your request to Kay Lustre on WhatsApp. <b>The shop receives it only when you send the message.</b></p><a class="btn gold big" href="${esc(waLink(msg))}" target="_blank" rel="noopener">Send request on WhatsApp</a><p class="hint" style="margin-top:.8rem">Or call 0257911684 or 0550771454.</p></div>`);
       }
     };
   }
@@ -857,8 +1196,12 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     $("#fs").onclick = () => {
       const t = $("#ft").value.trim();
       if (!t) return toast("Write a few words first");
-      S.feedback.unshift({ id: uid(), name: $("#fn").value.trim() || "Guest", stars: rating, text: t, t: Date.now() });
-      if (save()) rFeedback();
+      const f = normFeedback({ id: uid(), name: $("#fn").value.trim() || "Guest", stars: rating, text: t, t: Date.now() });
+      S.feedback.unshift(f);
+      if (save()) {
+        rFeedback();
+        openModal(`<div class="info" style="padding:2rem;text-align:center"><h2 id="mt">Thank you for your review</h2><p style="margin:.8rem 0">Share it with Kay Lustre so it can be shown to every customer on the shop.</p><a class="btn gold big" href="${esc(waLink("REVIEW (" + f.stars + "/5) from " + f.name + ":\n" + f.text))}" target="_blank" rel="noopener">Send review on WhatsApp</a></div>`);
+      }
     };
   }
   const fbList = () => S.feedback.length ? S.feedback.map((f) => `<div class="panel"><span class="price">${"\u2605".repeat(f.stars)}${"\u2606".repeat(5 - f.stars)}</span> <b>${esc(f.name)}</b> <small style="color:var(--mute)">${ago(f.t)}</small><p>${esc(f.text)}</p></div>`).join("") : `<p style="text-align:center;color:var(--mute)">No reviews yet. Be the first to share yours.</p>`;
@@ -880,6 +1223,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     i.value = "";
     save();
     drawMsgs();
+    /* the shop's replies come on WhatsApp, so the message is handed to WhatsApp straight away */
+    const w = window.open(waLink(t), "_blank");
+    if (w) w.opener = null;
+    else location.href = waLink(t);
   }
   $("#csend").onclick = sendChat;
   $("#cin").onkeydown = (e) => e.key === "Enter" && sendChat();
@@ -934,7 +1281,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       let pinBuf = "", showPin = false, first = "";
       const setup = !hasPin();
       const locked = () => Math.max(0, (+LS.kl_lock || 0) - Date.now());
-      $("#app").innerHTML = `<div class="panel" style="max-width:340px;margin:2rem auto;text-align:center"><h2 id="pt">${setup ? "Create your owner PIN" : "Owner sign-in"}</h2><p class="hint" id="ph">${setup ? "Choose a 4 to 8 digit PIN. Only you should know it." : "Enter your owner PIN."}</p><div id="pd" class="pd" aria-live="polite"></div><div class="pad">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => `<button class="btn" data-pk="${n}">${n}</button>`).join("")}<button class="btn" data-pk="C">Clear</button><button class="btn" data-pk="0">0</button><button class="btn" data-pk="B">Delete</button></div><label style="display:flex;gap:.5rem;justify-content:center;align-items:center;cursor:pointer"><input type="checkbox" id="spin" style="width:auto;min-height:0"> Show numbers</label><button class="btn gold" id="go" style="margin-top:.8rem;width:100%">${setup ? "Continue" : "Enter dashboard"}</button><button class="btn sm" id="bk" style="margin-top:.6rem">Back to shop</button></div>`;
+      $("#app").innerHTML = `<div class="panel" style="max-width:340px;margin:2rem auto;text-align:center"><h2 id="pt">${setup ? "Create your owner PIN" : "Owner login"}</h2><p class="hint" id="ph">${setup ? "Choose a 4 to 8 digit PIN. Only you should know it." : "Enter your owner PIN."}</p><div id="pd" class="pd" aria-live="polite"></div><div class="pad">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => `<button class="btn" data-pk="${n}">${n}</button>`).join("")}<button class="btn" data-pk="C">Clear</button><button class="btn" data-pk="0">0</button><button class="btn" data-pk="B">Delete</button></div><label style="display:flex;gap:.5rem;justify-content:center;align-items:center;cursor:pointer"><input type="checkbox" id="spin" style="width:auto;min-height:0"> Show numbers</label><button class="btn gold" id="go" style="margin-top:.8rem;width:100%">${setup ? "Continue" : "Enter dashboard"}</button><button class="btn sm" id="bk" style="margin-top:.6rem">Back to shop</button></div>`;
       const draw = () => {
         const d = $("#pd");
         d.textContent = pinBuf ? showPin ? pinBuf : "\u2022".repeat(pinBuf.length) : "Type your PIN";
@@ -948,6 +1295,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       };
       const ok = () => {
         admin = true;
+        toast("Welcome \u2014 you are logged in as owner");
         touch();
         prev = snap();
         window.pinH = null;
@@ -1018,7 +1366,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     const O = S.orders.filter((o) => o.status !== "Cancelled"), pend = S.orders.filter((o) => o.status === "Pending").length, un = unread();
     const T = [["overview", "Overview"], ["orders", "Orders" + (pend ? `<span class="nb">${pend}</span>` : "")], ["chat", "Messages" + (un ? `<span class="nb">${un}</span>` : "")], ["feedback", "Feedback"], ["requests", "Customer requests"], ["brands", "Brands &amp; prices"], ["import", "Add photos"], ["export", "Download photos"], ["videos", "Upload testimony videos"], ["settings", "Payment settings"]];
     $("#app").innerHTML = `<div class="stats"><div class="stat"><b data-n="${S.orders.length}">0</b>Orders</div><div class="stat"><b data-n="${pend}">0</b>Awaiting confirmation</div><div class="stat"><b data-n="${O.reduce((a, o) => a + o.total, 0)}" data-m="1">0</b>Order value</div><div class="stat"><b data-n="${O.reduce((a, o) => a + pd(o), 0)}" data-m="1">0</b>Payments received</div><div class="stat"><b data-n="${S.products.filter((p) => p.stock < 4).length}">0</b>Low stock items</div></div>
-  <div class="tabs">${T.map((t) => `<button class="chip ${t[0] === tab ? "on" : ""}" data-t="${t[0]}">${t[1]}</button>`).join("")}<button class="chip" id="out">Sign out</button></div><div id="pane"></div>`;
+  <div class="tabs">${T.map((t) => `<button class="chip ${t[0] === tab ? "on" : ""}" data-t="${t[0]}">${t[1]}</button>`).join("")}<button class="chip" id="out">Log out</button></div><div id="pane"></div>`;
     document.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => {
       tab = b.dataset.t;
       rAdmin();
@@ -1032,6 +1380,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     countUp();
   }
   function aOverview() {
+    if (!admin) return;
     const O = S.orders.filter((o) => o.status !== "Cancelled");
     const days = [...Array(7)].map((_, i) => {
       const d = /* @__PURE__ */ new Date();
@@ -1052,16 +1401,18 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       return m && { t: m.t, x: `Message: \u201C${esc(m.text.slice(0, 50))}\u201D` };
     }).filter(Boolean)].sort((a, b) => b.t - a.t).slice(0, 12);
     const low = S.products.filter((p) => p.stock < 4);
-    $("#pane").innerHTML = smsNote() + quick() + `<div class="two"><div class="panel"><h3>Order value \u2014 last 7 days</h3><div class="chart" style="margin-top:1rem">${rv.map((v, i) => `<div class="col" title="${money(v)}"><div class="bw"><i data-h="${v / mx * 100}"></i></div>${days[i].toLocaleDateString("en-GH", { weekday: "short" })}<br>${v ? Math.round(v) : "\u2013"}</div>`).join("")}</div></div>
+    $("#pane").innerHTML = pubBanner() + smsNote() + quick() + `<div class="two"><div class="panel"><h3>Order value \u2014 last 7 days</h3><div class="chart" style="margin-top:1rem">${rv.map((v, i) => `<div class="col" title="${money(v)}"><div class="bw"><i data-h="${v / mx * 100}"></i></div>${days[i].toLocaleDateString("en-GH", { weekday: "short" })}<br>${v ? Math.round(v) : "\u2013"}</div>`).join("")}</div></div>
   <div class="panel"><h3><span class="dot"></span>Live activity</h3><ul class="feed">${ev.length ? ev.map((e) => `<li>${e.x}<small>${ago(e.t)}</small></li>`).join("") : "<li>Waiting for the first order, message or review.</li>"}</ul></div></div>
   <div class="two"><div class="panel"><h3>Sales by category</h3><div style="margin-top:.8rem">${Object.keys(cats).length ? Object.entries(cats).map(([c, v]) => `${esc(c)} <span class="price" style="float:right">${money(v)}</span><div class="hbar"><i data-w="${v / cmx * 100}"></i></div>`).join("") : "<p style='color:var(--mute)'>Category sales appear after your first order.</p>"}</div></div>
   <div class="panel"><h3>Best sellers</h3>${tp.length ? tp.map((t) => `<p>${esc(t[0])} <span class="price" style="float:right">${t[1]} sold</span></p>`).join("") : "<p style='color:var(--mute)'>No sales yet.</p>"}<h3 style="margin-top:1rem">Restock soon</h3>${low.length ? low.map((p) => `<p>${esc(p.name)} <span class="low" style="float:right">${p.stock} left</span></p>`).join("") : "<p style='color:var(--mute)'>Stock levels look healthy.</p>"}</div></div>`;
+    bindPub();
     setTimeout(() => {
       document.querySelectorAll("[data-h]").forEach((e) => e.style.height = e.dataset.h + "%");
       document.querySelectorAll("[data-w]").forEach((e) => e.style.width = e.dataset.w + "%");
     }, 40);
   }
   function ordRows() {
+    if (!admin) return;
     const q = oq.toLowerCase(), L = S.orders.filter((o) => (ofilter === "All" || o.status === ofilter) && (o.name + o.id + o.phone).toLowerCase().includes(q));
     $("#ot").innerHTML = L.length ? `<div class="scroll"><table><tr><th>Order</th><th>Client</th><th>Items</th><th>Amounts (GH\u20B5)</th><th>Status</th></tr>${L.map((o) => {
       const i = STATUS.indexOf(o.status), w = o.status === "Cancelled" ? 100 : Math.round(i / 3 * 100), b = o.total - pd(o);
@@ -1112,6 +1463,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     document.querySelectorAll("[data-cr]").forEach((b) => b.onclick = () => claim(b.dataset.cr, false));
   }
   function aOrders() {
+    if (!admin) return;
     $("#pane").innerHTML = `<div class="chips">${["All", ...STATUS].map((s) => `<button class="chip ${s === ofilter ? "on" : ""}" data-sf="${s}">${s} (${s === "All" ? S.orders.length : S.orders.filter((o) => o.status === s).length})</button>`).join("")}<button class="chip" id="csv">Export CSV</button></div><input id="oq" placeholder="Search by name, phone or order number" value="${esc(oq)}" style="max-width:360px;margin-bottom:.8rem"><div id="ot"></div>`;
     document.querySelectorAll("[data-sf]").forEach((b) => b.onclick = () => {
       ofilter = b.dataset.sf;
@@ -1127,15 +1479,22 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   function exportCSV() {
     if (!admin) return;
     const r = [["Order", "Date", "Client", "Phone", "Platform", "Reference", "Items", "Total", "Received", "Status"], ...S.orders.map((o) => [o.id, ago(o.t), o.name, o.phone, o.pay || o.network, o.ref || "", o.items.map((i) => i.n + " x" + i.q).join("; "), o.total, pd(o), o.status])];
-    const csv = r.map((x) => x.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("\n");
+    /* cells starting with = + - @ are prefixed so Excel/Sheets never run them as formulas (CSV injection) */
+    const cell = (c) => {
+      let s = String(c != null ? c : "");
+      if (/^[=+\-@\t\r]/.test(s) && !/^-?\d+(\.\d+)?$/.test(s)) s = "'" + s;
+      return `"${s.replace(/"/g, '""')}"`;
+    };
+    const csv = "﻿" + r.map((x) => x.map(cell).join(",")).join("\r\n");
     const a = document.createElement("a");
-    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
     a.download = "kay-lustre-orders.csv";
     a.click();
     toast("Orders exported");
   }
   const lastT = (id) => ((S.chats[id] || []).slice(-1)[0] || {}).t || 0;
   function aChat() {
+    if (!admin) return;
     const ids = Object.keys(S.chats).sort((a, b) => lastT(b) - lastT(a));
     thread = ids.includes(thread) ? thread : ids[0];
     const nm = (id) => (S.orders.find((o) => o.cid === id) || {}).name || "Visitor " + id.slice(-4), sn = seenMap();
@@ -1166,6 +1525,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     drawAdminChat();
   }
   function drawAdminChat() {
+    if (!admin) return;
     const b = $("#am");
     if (!b || !S.chats[thread]) return;
     markSeen(thread);
@@ -1173,6 +1533,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     b.scrollTop = 1e9;
   }
   function aSettings() {
+    if (!admin) return;
     const L = S.settings.platforms;
     const collect = () => document.querySelectorAll("[data-g]").forEach((i) => {
       const x = L[+i.dataset.i], g = i.dataset.g;
@@ -1215,28 +1576,47 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     };
   }
   function aFeedback() {
-    $("#pane").innerHTML = fbList();
+    if (!admin) return;
+    $("#pane").innerHTML = `<div class="panel" style="max-width:640px"><h2>Add a review you received</h2><p class="hint">Customers send reviews to your WhatsApp. Add the ones you want to show here, then publish the catalogue so every customer sees them.</p><div class="row"><div><label>Customer name</label><input id="afn"></div><div><label>Stars</label><select id="afs"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div></div><label>What they said</label><textarea id="aft" rows="3"></textarea><button class="btn gold" id="afa" style="margin-top:.8rem">Add review</button></div>` + (S.feedback.length ? S.feedback.map((f) => `<div class="panel"><span class="price">${"\u2605".repeat(f.stars)}${"\u2606".repeat(5 - f.stars)}</span> <b>${esc(f.name)}</b> <small style="color:var(--mute)">${ago(f.t)}</small><p>${esc(f.text)}</p><button class="btn sm bad" data-fd="${esc(f.id)}">Remove</button></div>`).join("") : `<p class="hint">No reviews yet.</p>`);
+    $("#afa").onclick = () => {
+      const t = $("#aft").value.trim();
+      if (!t) return toast("Type the review first");
+      S.feedback.unshift(normFeedback({ name: $("#afn").value.trim() || "Customer", stars: +$("#afs").value, text: t, t: Date.now() }));
+      save();
+      aFeedback();
+      toast("Review added \u2014 publish the catalogue to show it to customers");
+    };
+    document.querySelectorAll("[data-fd]").forEach((b) => b.onclick = () => {
+      if (!confirm("Remove this review?")) return;
+      S.feedback = S.feedback.filter((f) => f.id !== b.dataset.fd);
+      save();
+      aFeedback();
+    });
   }
   function aRequests() {
+    if (!admin) return;
     $("#pane").innerHTML = S.requests.length ? S.requests.map((r) => `<div class="panel"><b>${esc(r.name)}</b> \xB7 ${esc(r.phone)} <small style="color:var(--mute)">${ago(r.t)}</small>${r.town ? `<br><small>${esc(r.town)}, ${esc(r.region)}</small>` : ""}${r.budget ? ` \xB7 budget ${money(r.budget)}` : ""}<p>${esc(r.text)}</p>${r.pay ? `<small style="color:var(--gold2)">Payment option: ${esc(r.pay)}${r.deposit ? ` \xB7 deposit ${money(r.deposit)}` : ""}${r.ref ? ` \xB7 ref ${esc(r.ref)}` : ""}</small>` : ""}</div>`).join("") : `<p>No customer requests yet.</p>`;
   }
-  const smsNote = () => SMS_API ? "" : `<div class="panel" style="border-color:var(--bad)"><b style="color:var(--bad)">Phone verification is in test mode.</b> The SMS service is not connected, so each new customer is shown a random 6-digit code on screen instead of receiving a text message. Connect an SMS gateway (see <b>sms-gateway-example.js</b>) and set <b>SMS_API</b> in this file to send real codes before you go live.</div>`;
-  const quick = () => `<div class="panel"><h3>${S.products.length ? "Quick actions" : "Welcome \u2014 let's stock your shop"}</h3><p class="hint">${S.products.length ? "Everything you need is one tap away." : "Your shop is empty. Add your first watch brand with its price and at least 3 photos, and customers see it straight away."}</p><div class="qa"><button class="btn gold" onclick="goTab('import')">Add a brand &amp; photos</button><button class="btn" onclick="goTab('brands')">Change names &amp; prices</button><button class="btn" onclick="goTab('export')">Download photos</button><button class="btn" onclick="goTab('videos')">Upload testimony video</button><button class="btn" onclick="goTab('settings')">Payment details</button><button class="btn" onclick="goShop()">View my shop</button></div></div>`;
+  const smsNote = () => !admin || SMS_API ? "" : `<div class="panel" style="border-color:var(--bad)"><b style="color:var(--bad)">Phone verification is in test mode.</b> The SMS service is not connected, so each new customer is shown a random 6-digit code on screen instead of receiving a text message. Connect an SMS gateway (see <b>sms-gateway-example.js</b>) and set <b>SMS_API</b> in this file to send real codes before you go live.</div>`;
+  const quick = () => !admin ? "" : `<div class="panel"><h3>${S.products.length ? "Quick actions" : "Welcome \u2014 let's stock your shop"}</h3><p class="hint">${S.products.length ? "Everything you need is one tap away." : "Your shop is empty. Add your first watch brand with its price and 1 or 2 photos, then tap Publish catalogue so customers can see it."}</p><div class="qa"><button class="btn gold" onclick="goTab('import')">Add a brand &amp; photos</button><button class="btn gold" onclick="publishCatalogue()">Publish catalogue</button><button class="btn" onclick="goTab('brands')">Change names &amp; prices</button><button class="btn" onclick="goTab('export')">Download photos</button><button class="btn" onclick="goTab('videos')">Upload testimony video</button><button class="btn" onclick="goTab('settings')">Payment details</button><button class="btn" onclick="goShop()">View my shop</button></div></div>`;
   function goTab(t) {
     tab = t;
     rAdmin();
   }
   function aBrands() {
+    if (!admin) return;
     const mb = (JSON.stringify(S).length / 1048576).toFixed(1), pct = Math.min(100, mb / 5 * 100);
-    $("#pane").innerHTML = `<div class="panel"><h2>Brands &amp; prices</h2><p class="hint">Change a name, price or stock count below and the shop updates straight away. Each brand needs at least 3 photos.</p>
-  <small style="color:var(--mute)">Photo storage used: ${mb} MB of about 5 MB</small><div class="hbar"><i style="width:${pct}%"></i></div>
-  ${S.products.length ? `<div class="scroll"><table><tr><th>Photo</th><th>Brand name</th><th>Category</th><th>Price (GH\u20B5)</th><th>In stock</th><th></th></tr>${S.products.map((p) => `<tr><td><img src="${pic(p)}" width="56" height="56" style="object-fit:cover" alt=""><br><small class="${p.imgs.length < 3 ? "low" : ""}">${p.imgs.length < 3 ? "Needs " + (3 - p.imgs.length) + " more" : p.imgs.length + " photos"}</small></td><td><input data-p="${p.id}" data-f="name" value="${esc(p.name)}" style="min-width:160px"></td><td><select data-p="${p.id}" data-f="cat">${CATS.map((c) => `<option ${c === p.cat ? "selected" : ""}>${c}</option>`).join("")}</select></td><td><input type="number" min="0" style="width:110px" data-p="${p.id}" data-f="price" value="${p.price}"></td><td><input type="number" min="0" style="width:80px" data-p="${p.id}" data-f="stock" value="${p.stock}"></td><td><button class="btn sm" data-e="${p.id}">Edit photos &amp; details</button> <button class="btn sm bad" data-d="${p.id}">Delete</button></td></tr>`).join("")}</table></div>` : `<p>No brands yet. Open <b>Add photos</b> to add your first one.</p><button class="btn gold" onclick="goTab('import')">Add a brand &amp; photos</button>`}</div>`;
+    $("#pane").innerHTML = pubBanner() + `<div class="panel"><h2>Brands &amp; prices</h2><p class="hint">Change a name, price or stock count below. Each brand can have 1 or 2 photos. Customers see changes after you publish the catalogue.</p>
+  <small style="color:var(--mute)">Photo storage used: ${mb} MB of about 5 MB</small> <button class="btn sm" id="trim2" style="margin-left:.6rem">Keep only ${MAX_PHOTOS} photos per brand</button><div class="hbar"><i style="width:${pct}%"></i></div>
+  ${S.products.length ? `<div class="scroll"><table><tr><th>Photo</th><th>Brand name</th><th>Category</th><th>Price (GH\u20B5)</th><th>In stock</th><th></th></tr>${S.products.map((p) => `<tr><td><div class="bth">${(p.imgs && p.imgs.length ? p.imgs.slice(0, MAX_PHOTOS) : [pic(p)]).map((x, j) => `<button type="button" data-bph="${p.id}:${j}" aria-label="Preview photo ${j + 1}"><img src="${x}" alt=""></button>`).join("")}</div><br><small class="${p.imgs.length > MAX_PHOTOS || !p.imgs.length ? "low" : ""}">${!p.imgs.length ? "No photos" : p.imgs.length > MAX_PHOTOS ? p.imgs.length + " photos (too many)" : p.imgs.length + " photo" + (p.imgs.length > 1 ? "s" : "")}</small></td><td><input data-p="${p.id}" data-f="name" value="${esc(p.name)}" style="min-width:160px"></td><td><select data-p="${p.id}" data-f="cat">${CATS.map((c) => `<option ${c === p.cat ? "selected" : ""}>${c}</option>`).join("")}</select></td><td><input type="number" min="0" style="width:110px" data-p="${p.id}" data-f="price" value="${p.price}"></td><td><input type="number" min="0" style="width:80px" data-p="${p.id}" data-f="stock" value="${p.stock}"></td><td><button class="btn sm" data-e="${p.id}">Edit photos &amp; details</button> <button class="btn sm bad" data-d="${p.id}">Delete</button></td></tr>`).join("")}</table></div>` : `<p>No brands yet. Open <b>Add photos</b> to add your first one.</p><button class="btn gold" onclick="goTab('import')">Add a brand &amp; photos</button>`}</div>`;
     document.querySelectorAll("[data-f]").forEach((i) => i.onchange = () => {
       const p = S.products.find((x) => x.id === i.dataset.p), f = i.dataset.f;
       p[f] = f === "name" || f === "cat" ? i.value.trim() || p[f] : Math.max(0, +i.value || 0);
       save();
       toast("Saved");
     });
+    bindPub();
+    document.querySelectorAll("[data-bph]").forEach((b) => b.onclick = () => { const a = b.dataset.bph.split(":"); lightbox(a[0], +a[1]); });
     document.querySelectorAll("[data-e]").forEach((b) => b.onclick = () => editBrand(b.dataset.e));
     document.querySelectorAll("[data-d]").forEach((b) => b.onclick = () => {
       if (confirm("Delete this brand and all its photos?")) {
@@ -1252,7 +1632,8 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     if (!p) return;
     openModal(`<div style="padding:1.5rem"><h2>Edit product</h2><div class="row"><div><label>Brand name</label><input id="en" value="${esc(p.name)}"></div><div><label>Category</label><select id="ec">${CATS.map((c) => `<option ${c === p.cat ? "selected" : ""}>${c}</option>`).join("")}</select></div><div><label>Price (GH\u20B5)</label><input id="epr" type="number" min="0" value="${p.price}"></div><div><label>In stock</label><input id="es" type="number" min="0" value="${p.stock}"></div></div><label>Description</label><textarea id="ed" rows="3">${esc(p.desc)}</textarea><label>Variations, separated by commas (e.g. Gold, Silver, Black)</label><input id="ev" value="${esc(p.vars.join(", "))}">${detFields("e", p)}<h3 style="margin-top:1.2rem">Photos</h3><p class="hint" id="eh"></p><div class="thumbs" id="ep"></div><input type="file" id="ef" multiple accept="image/*" class="fi"><div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem"><button class="btn" id="eadd">Import more photos</button><button class="btn gold" id="esv">Save changes</button></div></div>`);
     const draw = () => {
-      $("#eh").textContent = p.imgs.length < 3 ? `Add ${3 - p.imgs.length} more photo(s) \u2014 each brand needs at least 3. The first photo is the main one.` : `${p.imgs.length} photos. The first photo is the main one shown in the shop.`;
+      $("#eh").textContent = p.imgs.length > MAX_PHOTOS ? "This brand has " + p.imgs.length + " photos. Remove extras to save space (maximum " + MAX_PHOTOS + ")." : p.imgs.length + " of " + MAX_PHOTOS + " photos. The first photo is the main one shown in the shop.";
+      $("#eadd").disabled = p.imgs.length >= MAX_PHOTOS;
       $("#ep").innerHTML = p.imgs.map((x, k) => `<div class="pt"><img src="${x}" alt=""><button class="btn sm" data-mk="${k}" ${k ? "" : "disabled"}>${k ? "Make main" : "Main photo"}</button><button class="btn sm bad" data-rm="${k}">Remove</button></div>`).join("");
       document.querySelectorAll("[data-rm]").forEach((b) => b.onclick = () => {
         p.imgs.splice(+b.dataset.rm, 1);
@@ -1274,8 +1655,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     $("#eadd").onclick = () => $("#ef").click();
     $("#ef").onchange = async (e) => {
       toast("Processing photos\u2026");
-      p.imgs.push(...await shrinkAll(e.target.files));
-      save();
+      const add = await shrinkAll(takeRoom(e.target.files, p.imgs.length));
+      if (!add.length || !fits(add)) return;
+      p.imgs.push(...add);
+      if (!save()) { p.imgs.length -= add.length; return; }
       draw();
       toast("Photos added");
     };
@@ -1405,6 +1788,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     $("#pane").innerHTML = `<div class="panel" style="max-width:760px"><h2>Testimonial videos</h2><p class="hint">Add short videos of happy customers or product clips. Customers watch them on the <b>Testimonies</b> page, and on the product page if you link one. Videos can be up to ${MAX_SEC} seconds and ${MAX_MB} MB.</p>
     <div class="row"><div><label>Title</label><input id="vti" placeholder="e.g. Ama loves her chronograph"></div><div><label>Client name (optional)</label><input id="vcl" placeholder="e.g. Ama, Kumasi"></div></div>
     <label>Linked product (optional)</label><select id="vpr">${prodOpts("")}</select>
+    <label>Or show it under a whole category (optional)</label><select id="vcat"><option value="">No category</option>${CATS.map((c) => `<option>${c}</option>`).join("")}</select>
     <label>What the customer said (optional)</label><textarea id="vca" rows="2"></textarea>
     <label>1. Upload a video from this device</label><div class="drop" id="vdz" tabindex="0">Tap to choose a video, or drag one here</div><input type="file" id="vf" accept="video/*" class="fi"><div id="vpv"></div>
     <label>2. Or paste a link (YouTube, TikTok, Instagram or Facebook)</label><input id="vli" placeholder="https://...">
@@ -1436,7 +1820,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       const title = $("#vti").value.trim(), link = $("#vli").value.trim();
       if (!title) return toast("Enter a title for the video");
       if (!pend && !link) return toast("Choose a video or paste a link");
-      const rec = { id: "v" + uid(), title, client: $("#vcl").value.trim(), pid: $("#vpr").value, cap: $("#vca").value.trim(), t: Date.now(), on: true };
+      const rec = { id: "v" + uid(), title, client: $("#vcl").value.trim(), pid: $("#vpr").value, cat: $("#vcat").value, cap: $("#vca").value.trim(), t: Date.now(), on: true };
       if (pend) {
         Object.assign(rec, { kind: "file", poster: pend.poster, dur: pend.dur, size: pend.file.size });
         try { await MEDIA.put(rec.id, pend.file); } catch (e) { return toast("This browser could not store the video. Try a link instead."); }
@@ -1512,12 +1896,13 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     info();
     $("#tpb").onclick = () => {
       const a = +$("#ta").value, ref = $("#trf").value.trim();
-      if (!(a > 0 && a <= b)) return toast("Enter an amount up to " + money(b));
+      if (!(a > 0 && a <= b + 1e-3)) return toast("Enter an amount up to " + money(b));
       if (ref.length < 4) return toast("Enter your transaction reference");
-      (o.claims = o.claims || []).push({ id: uid(), amt: a, net: $("#tnw").value, ref, t: Date.now(), s: "Pending" });
+      const c = { id: uid(), amt: r2(a), net: $("#tnw").value, ref, t: Date.now(), s: "Pending" };
+      (o.claims = o.claims || []).push(c);
       if (save()) {
-        toast("Sent \u2014 the shop will confirm your payment");
         showOrder(o);
+        $("#tr").insertAdjacentHTML("afterbegin", `<div class="momo" style="margin-top:1rem"><b style="font-size:1rem">Now tell the shop.</b> Tap below to send your payment details on WhatsApp so it can be confirmed.<br><a class="btn gold" style="margin-top:.6rem" href="${esc(waLink("BALANCE PAYMENT for order " + o.id + "\nAmount: " + money(c.amt) + "\nNetwork: " + c.net + "\nReference: " + c.ref))}" target="_blank" rel="noopener">Send payment details on WhatsApp</a></div>`);
       }
     };
   }
@@ -1533,7 +1918,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       a.innerHTML = "";
       return;
     }
-    b.innerHTML = `<div class="panel" style="border-color:var(--gold)"><b>Owner mode is on.</b> Tap a category above to add products to it, or tap <b>Edit</b> on any product to change its name, price, description, variations or photos. <button class="btn sm" id="ovb" style="margin-left:.4rem">Upload testimony videos</button><button class="btn sm" id="oso" style="margin-left:.4rem">Sign out</button></div>`;
+    b.innerHTML = `<div class="panel" style="border-color:var(--gold)"><b>Owner mode is on.</b> Tap a category above to add products to it, or tap <b>Edit</b> on any product to change its name, price, description, variations or photos. <button class="btn sm gold" onclick="publishCatalogue()" style="margin-left:.4rem">Publish catalogue</button><button class="btn sm" id="ovb" style="margin-left:.4rem">Upload testimony videos</button><button class="btn sm" id="oso" style="margin-left:.4rem">Log out</button></div>`;
     $("#ovb").onclick = () => { view = "videos"; render(); };
     $("#oso").onclick = () => {
       admin = false;
@@ -1546,11 +1931,11 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     let imgs = [];
     const c0 = cat === "All" ? CATS[0] : cat;
     el.innerHTML = `<details class="panel" open style="border-color:var(--gold)"><summary style="cursor:pointer;font-size:1.1rem">+ Add a product${cat === "All" ? "" : " to <b>" + esc(cat) + "</b>"}</summary>
-  <p class="hint">Enter the brand name, price, description and variations, then add at least 3 photos. Customers see it as soon as you save.</p>
+  <p class="hint">Enter the brand name, price, description and variations, then add 1 or 2 photos (maximum 2, to save space). Customers see it as soon as you save.</p>
   <div class="row"><div><label>Brand name</label><input id="oan" placeholder="e.g. Naviforce NF9089"></div><div><label>Category</label><select id="oac">${CATS.map((x) => `<option ${x === c0 ? "selected" : ""}>${x}</option>`).join("")}</select></div><div><label>Price (GH\u20B5)</label><input id="oap" type="number" min="0"></div><div><label>In stock</label><input id="oas" type="number" min="0" value="1"></div></div>
   <label>Description</label><textarea id="oad" rows="2" placeholder="Describe the watch: case, strap, features"></textarea>
   <label>Variations (separate with commas)</label><input id="oav" placeholder="Gold, Silver, Black">${detFields("oa")}
-  <label>Photos <small>(at least 3)</small></label><div class="drop" id="oadz" tabindex="0">Tap to choose photos, or drag them here</div><input type="file" id="oaf" multiple accept="image/*" class="fi"><div class="thumbs" id="oapv"></div>
+  <label>Photos <small>(1 or 2)</small></label><div class="drop" id="oadz" tabindex="0">Tap to choose photos, or drag them here</div><input type="file" id="oaf" multiple accept="image/*" class="fi"><div class="thumbs" id="oapv"></div>
   <button class="btn gold" id="oasv" style="margin-top:.8rem">Save product</button></details>`;
     const pv = () => {
       $("#oapv").innerHTML = imgs.map((x, k) => `<div class="pt"><img src="${x}" alt=""><button class="btn sm bad" data-ox="${k}">Remove</button></div>`).join("");
@@ -1561,7 +1946,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     };
     const add = async (f) => {
       toast("Processing photos\u2026");
-      imgs.push(...await shrinkAll(f));
+      imgs.push(...await shrinkAll(takeRoom(f, imgs.length)));
       pv();
     }, dz = $("#oadz");
     dz.onclick = () => $("#oaf").click();
@@ -1584,7 +1969,8 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       const n = $("#oan").value.trim(), pr = +$("#oap").value;
       if (!n) return toast("Enter the brand name");
       if (!pr) return toast("Enter the price");
-      if (imgs.length < 3) return toast("Add at least 3 photos (" + imgs.length + " so far)");
+      if (imgs.length < 1) return toast("Add 1 or 2 photos (maximum 2 to save space)");
+      if (!fits(imgs)) return;
       const c = $("#oac").value;
       S.products.unshift(__spreadProps(__spreadValues({ id: "p" + uid(), name: n, cat: c, price: pr, stock: +$("#oas").value || 0, desc: $("#oad").value.trim(), vars: splitV($("#oav").value) }, readDet("oa")), { imgs, t: Date.now() }));
       if (save()) {
@@ -1595,12 +1981,13 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     };
   }
   function aImport() {
+    if (!admin) return;
     let imgs = [];
     $("#pane").innerHTML = `<div class="panel" style="max-width:720px"><h2>Add photos</h2><p class="hint">Add a new watch brand with its price and photos, or add more photos to a brand you already have.</p>
   <label>1. Which brand?</label><select id="ib"><option value="new">A new brand</option>${S.products.map((p) => `<option value="${p.id}">${esc(p.name)}</option>`).join("")}</select>
   <div id="nw"><div class="row"><div><label>Brand name</label><input id="in" placeholder="e.g. Naviforce NF9089"></div><div><label>Category</label><select id="ic">${CATS.map((c) => `<option>${c}</option>`).join("")}</select></div><div><label>Price (GH\u20B5)</label><input id="ip" type="number" min="0"></div><div><label>How many in stock</label><input id="is" type="number" min="0" value="1"></div></div>
   <label>Description (optional)</label><textarea id="idesc" rows="2"></textarea><label>Options, separated by commas (optional)</label><input id="iv" placeholder="Gold, Silver, Black">${detFields("i")}</div>
-  <label>2. Photos <small>(at least 3 for a new brand)</small></label><div class="drop" id="dz" tabindex="0">Tap to choose photos, or drag them here</div><input type="file" id="if" multiple accept="image/*" class="fi"><div class="thumbs" id="ipv"></div>
+  <label>2. Photos <small>(1 or 2 per brand)</small></label><div class="drop" id="dz" tabindex="0">Tap to choose photos, or drag them here</div><input type="file" id="if" multiple accept="image/*" class="fi"><div class="thumbs" id="ipv"></div>
   <button class="btn gold" id="ia" style="margin-top:1rem">3. Save</button></div>`;
     const pv = () => {
       $("#ipv").innerHTML = imgs.map((x, k) => `<div class="pt"><img src="${x}" alt=""><button class="btn sm bad" data-x="${k}">Remove</button></div>`).join("");
@@ -1611,7 +1998,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     };
     const add = async (f) => {
       toast("Processing photos\u2026");
-      imgs.push(...await shrinkAll(f));
+      imgs.push(...await shrinkAll(takeRoom(f, imgs.length)));
       pv();
     }, dz = $("#dz");
     dz.onclick = () => $("#if").click();
@@ -1637,11 +2024,15 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         const n = $("#in").value.trim(), pr = +$("#ip").value;
         if (!n) return toast("Enter the brand name");
         if (!pr) return toast("Enter the price");
-        if (imgs.length < 3) return toast("Add at least 3 photos (" + imgs.length + " so far)");
+        if (imgs.length < 1) return toast("Add 1 or 2 photos (maximum 2 to save space)");
+      if (!fits(imgs)) return;
         S.products.unshift(__spreadProps(__spreadValues({ id: "p" + uid(), name: n, cat: $("#ic").value, price: pr, stock: +$("#is").value || 0, desc: $("#idesc").value.trim(), vars: splitV($("#iv").value) }, readDet("i")), { imgs, t: Date.now() }));
       } else {
         if (!imgs.length) return toast("Choose at least one photo");
-        S.products.find((x) => x.id === b).imgs.push(...imgs);
+        const pp = S.products.find((x) => x.id === b), room = MAX_PHOTOS - pp.imgs.length;
+        if (room <= 0) return toast("This brand already has " + MAX_PHOTOS + " photos. Remove one first.");
+        if (!fits(imgs)) return;
+        pp.imgs.push(...imgs.slice(0, room));
       }
       if (save()) {
         toast("Saved \u2014 it is now in your shop");
@@ -1651,6 +2042,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     };
   }
   function aExport() {
+    if (!admin) return;
     const L = S.products.filter((p) => p.imgs && p.imgs.length);
     $("#pane").innerHTML = `<div class="panel"><h2>Download photos</h2><p class="hint">Save your product photos to this phone or computer. Files are named after the brand, for example <b>brand-name-1.jpg</b>.</p>${L.length ? `<button class="btn gold" id="ea">Download all photos</button>` : "<p>No photos yet. Use <b>Add photos</b> first.</p>"}</div>` + L.map((p) => `<div class="panel"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem"><h3>${esc(p.name)} <span class="price">${money(p.price)}</span></h3><button class="btn" data-eb="${p.id}">Download ${p.imgs.length} photos</button></div><div class="thumbs">${p.imgs.map((x, k) => `<img src="${x}" data-ei="${p.id}:${k}" title="Tap to download this photo" alt="${esc(p.name)} photo ${k + 1}">`).join("")}</div></div>`).join("");
     const all = (p) => p.imgs.map((x, k) => [x, slug(p.name) + "-" + (k + 1)]);
@@ -1664,23 +2056,12 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     });
   }
   if (location.hash === "#owner") view = "admin";
-  let taps = 0, tt;
-  $(".logo").onclick = () => {
-    taps++;
-    clearTimeout(tt);
-    tt = setTimeout(() => taps = 0, 2500);
-    if (taps >= 5) {
-      taps = 0;
-      backTo = null;
-      view = "admin";
-      render();
-    }
-  };
+
   $("#trk").onclick = trackPay;
   function acMenu() {
     const u = me();
     $("#acBtn").textContent = (u ? "Hi, " + u.name.split(" ")[0] : "Account") + " \u25BE";
-    $("#acMenu").innerHTML = u ? `<button data-ac="acct">My account</button><button data-ac="orders">My orders</button><button data-ac="track">Track &amp; pay</button><button data-ac="out">Sign out</button>` : `<button class="btn gold" data-ac="in">Sign in</button><button data-ac="up">Create account</button>`;
+    $("#acMenu").innerHTML = u ? `<button data-ac="acct">My dashboard</button><button data-ac="orders">My orders</button><button data-ac="track">Track &amp; pay</button><button data-ac="out">Sign out</button>` : `<button class="btn gold" data-ac="in">Sign in</button><button data-ac="up">Create account</button>`;
   }
   function signOut() {
     LS.removeItem("kl_user");
@@ -1693,35 +2074,57 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     const up = mode === "up";
     openModal(`<div class="info" style="padding:1.5rem"><h2>${up ? "Create your account" : "Sign in"}</h2><p class="hint">${up ? "Save your delivery location, see new arrivals and track your orders." : "Welcome back."}</p>
   ${up ? `<label>Your name</label><input id="an" autocomplete="name">` : ""}
-  <label>Phone number</label><input id="ap" inputmode="tel" autocomplete="tel" placeholder="024XXXXXXX">
-  <label>Password <small>(at least 6 characters)</small></label><input id="aw" type="password" autocomplete="${up ? "new-password" : "current-password"}">
+  <label>Phone number</label><input id="ap" inputmode="tel" autocomplete="tel" autocapitalize="none" autocorrect="off" placeholder="024XXXXXXX">
+  <label>Password${up ? " <small>(at least 8 characters)</small>" : ""}</label><input id="aw" type="password" ${up ? 'minlength="8"' : ""} autocomplete="${up ? "new-password" : "current-password"}" autocapitalize="none" autocorrect="off" spellcheck="false">
   <label style="display:flex;gap:.5rem;align-items:center;cursor:pointer"><input type="checkbox" id="asp" style="width:auto;min-height:0"> Show password</label>
   ${up ? locHtml("a", "", "") : ""}
-  <button class="btn gold big" id="ago" style="margin-top:1rem">${up ? "Create account" : "Sign in"}</button>
+  ${up ? `<label style="display:flex;gap:.5rem;align-items:flex-start;cursor:pointer;color:var(--txt)"><input type="checkbox" id="aok" style="width:auto;min-height:0;margin-top:.3rem"> <span>I agree that Kay Lustre stores my name, phone number and delivery location to process my orders, as described in the <a href="#" onclick="privacyModal();return false" style="color:var(--gold2)">privacy notice</a>.</span></label>` : ""}
+  <p id="aerr" role="alert" style="color:var(--bad);min-height:1.2em;margin-top:.6rem"></p>
+  <button class="btn gold big" id="ago" style="margin-top:.4rem">${up ? "Create account" : "Sign in"}</button>
+  ${up ? "" : `<p style="text-align:center;margin-top:.6rem"><a href="#" id="afp" style="color:var(--gold2)">Forgot password?</a></p>`}
   <p class="hint" style="text-align:center;margin-top:.8rem">${up ? "Already have an account?" : "New here?"} <a href="#" id="asw" style="color:var(--gold2)">${up ? "Sign in" : "Create an account"}</a></p></div>`);
     if (up) bindLoc("a", "");
     $("#asp").onchange = (e) => {
       $("#aw").type = e.target.checked ? "text" : "password";
     };
+    if (!up) $("#afp").onclick = (e) => { e.preventDefault(); forgotModal($("#ap").value); };
     $("#asw").onclick = (e) => {
       e.preventDefault();
       authModal(up ? "in" : "up");
     };
-    $("#ago").onclick = () => {
-      const ph = $("#ap").value.trim().replace(/\s/g, ""), pw = $("#aw").value;
-      if (!/^0\d{9}$/.test(ph)) return toast("Enter a 10-digit phone number");
-      if (pw.length < 6) return toast("Password must be at least 6 characters");
-      const h = H("kc|" + pw + "|" + ph);
+    $("#ago").onclick = async () => {
+      const ph = $("#ap").value.trim().replace(/\s/g, ""), pw = $("#aw").value.trim(), bad = (m) => { $("#aerr").textContent = m; toast(m); };
+      if (!/^0\d{9}$/.test(ph)) return bad("Enter a 10-digit phone number");
+      if (pw.length < (up ? 8 : 6)) return bad("Password must be at least " + (up ? 8 : 6) + " characters");
       if (up) {
         const n = $("#an").value.trim();
-        if (!n) return toast("Enter your name");
-        if (S.users.some((x) => x.phone === ph)) return toast("That number already has an account \u2014 please sign in");
+        if (!n) return bad("Enter your name");
+        if (!$("#aok").checked) return bad("Please agree to the privacy notice to create an account");
+        if (S.users.some((x) => x.phone === ph)) return bad("That number already has an account \u2014 please sign in");
         const l = getLoc("a");
-        return verifyPhone({ name: n, phone: ph, h, region: l.region, town: l.town });
+        return verifyPhone({ name: n, phone: ph, pw, region: l.region, town: l.town });
       } else {
-        const u = S.users.find((x) => x.phone === ph && x.h === h);
-        if (!u) return toast("Phone number or password is not correct");
+        const lk = parseJSON(LS.kl_lf, {}), rec = lk[ph] || { n: 0, until: 0 };
+        if (rec.until > Date.now()) return bad("Too many wrong passwords. Try again in " + Math.ceil((rec.until - Date.now()) / 6e4) + " minute(s), or tap Forgot password.");
+        const u = S.users.find((x) => x.phone === ph);
+        if (!u) return bad("No account was found for this number on this phone. Accounts are saved on the phone where they were created, so tap Create an account.");
+        $("#ago").disabled = true;
+        const hit = await checkPassword(u, pw);
+        $("#ago").disabled = false;
+        if (!hit) {
+          rec.n++;
+          if (rec.n >= 5) {
+            rec.n = 0;
+            rec.until = Date.now() + 3e5;
+          }
+          lk[ph] = rec;
+          LS.kl_lf = JSON.stringify(lk);
+          return bad("That password is not correct. Check it and try again, or tap Forgot password.");
+        }
+        delete lk[ph];
+        LS.kl_lf = JSON.stringify(lk);
         LS.kl_user = u.id;
+      admin = false;
         since = u.last || 0;
         u.last = Date.now();
         save();
@@ -1732,12 +2135,12 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       render();
     };
   }
-  function verifyPhone(p) {
+  function verifyPhone(p, after) {
     const masked = p.phone.slice(0, 3) + "\u2022\u2022\u2022\u2022" + p.phone.slice(-3);
     let code = null, tries = 0, timer = null;
-    openModal(`<div class="info" style="padding:1.5rem"><h2>Confirm your phone number</h2><p class="hint" id="vmsg">Sending a 6-digit code to ${masked}\u2026</p><div id="vtest"></div>
+    openModal(`<div class="info" style="padding:1.5rem"><h2>${after ? "Reset your password" : "Confirm your phone number"}</h2><p class="hint" id="vmsg">Sending a 6-digit code to ${masked}\u2026</p><div id="vtest"></div>
   <label>Enter the 6-digit code</label><input id="vc" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="000000" style="font-size:1.6rem;letter-spacing:.5em;text-align:center">
-  <button class="btn gold big" id="vgo" style="margin-top:1rem">Verify and create account</button>
+  <button class="btn gold big" id="vgo" style="margin-top:1rem">${after ? "Verify and continue" : "Verify and create account"}</button>
   <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.8rem"><button class="btn sm" id="vre" disabled>Resend code</button><a href="#" id="vbk" style="color:var(--gold2)">Change number</a></div></div>`);
     const api = (path, body) => fetch(SMS_API.replace(/\/$/, "") + path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).then(async (r) => ({ ok: r.ok, j: await r.json().catch(() => ({})) }));
     const cooldown = () => {
@@ -1755,7 +2158,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       }, 1000);
     };
     const send = async () => {
-      const t = JSON.parse(LS.kl_otpn || "{}"), now = Date.now(), rec = (t[p.phone] || []).filter((x) => now - x < 36e5);
+      const t = parseJSON(LS.kl_otpn, {}), now = Date.now(), rec = (t[p.phone] || []).filter((x) => now - x < 36e5);
       if (rec.length >= 3) return toast("Too many codes requested. Please try again in an hour.");
       t[p.phone] = [...rec, now];
       LS.kl_otpn = JSON.stringify(t);
@@ -1784,11 +2187,14 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         catch (e) { return toast("Could not reach the verification service"); }
       } else ok = code !== null && c === code;
       if (!ok) { tries++; return toast("That code is not correct" + (tries >= 5 ? ". Request a new code." : "")); }
+      if (after) { clearInterval(timer); after(); return; }
       if (S.users.some((x) => x.phone === p.phone)) { closeModal(); return toast("That number already has an account \u2014 please sign in"); }
-      const u = { id: "u" + uid(), name: p.name, phone: p.phone, h: p.h, region: p.region, town: p.town, verified: true, t: Date.now(), last: Date.now() };
+      const u = { id: "u" + uid(), name: p.name, phone: p.phone, region: p.region, town: p.town, verified: !!SMS_API, consent: Date.now(), t: Date.now(), last: Date.now() };
+      await setPassword(u, p.pw);
       S.users.push(u);
       if (!save()) return;
       LS.kl_user = u.id;
+      admin = false;
       since = 0;
       clearInterval(timer);
       closeModal();
@@ -1797,14 +2203,51 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       render();
     };
     $("#vre").onclick = send;
-    $("#vbk").onclick = (e) => { e.preventDefault(); clearInterval(timer); authModal("up"); };
+    $("#vbk").onclick = (e) => { e.preventDefault(); clearInterval(timer); if (after) forgotModal(p.phone); else authModal("up"); };
     send();
+  }
+  function forgotModal(prefill) {
+    openModal(`<div class="info" style="padding:1.5rem"><h2>Forgot password?</h2><p class="hint">Enter the phone number you registered with. We send a 6-digit code to confirm it is you, then you choose a new password. You do not need to create a new account.</p>
+  <label>Phone number</label><input id="fp" inputmode="tel" autocomplete="tel" autocapitalize="none" autocorrect="off" placeholder="024XXXXXXX" value="${esc(prefill || "")}">
+  <p id="fpe" style="color:var(--bad);min-height:1.2em;margin-top:.5rem"></p>
+  <button class="btn gold big" id="fpg">Send code</button>
+  <p class="hint" style="text-align:center;margin-top:.8rem"><a href="#" id="fpb" style="color:var(--gold2)">Back to sign in</a></p></div>`);
+    $("#fpb").onclick = (e) => { e.preventDefault(); authModal("in"); };
+    $("#fpg").onclick = () => {
+      const ph = $("#fp").value.trim().replace(/\s/g, ""), u = S.users.find((x) => x.phone === ph);
+      if (!/^0\d{9}$/.test(ph)) { $("#fpe").textContent = "Enter a 10-digit phone number."; return; }
+      if (!u) { $("#fpe").textContent = "No account was found for this number on this phone. Accounts are saved on the phone where they were created, so please create the account here."; return; }
+      verifyPhone({ phone: ph }, () => resetPassword(u));
+    };
+  }
+  function resetPassword(u) {
+    openModal(`<div class="info" style="padding:1.5rem"><h2>Choose a new password</h2>
+  <label>New password <small>(at least 8 characters)</small></label><input id="rp1" type="password" minlength="8" autocomplete="new-password" autocapitalize="none" autocorrect="off" spellcheck="false">
+  <label>Type it again</label><input id="rp2" type="password" autocomplete="new-password" autocapitalize="none" autocorrect="off" spellcheck="false">
+  <label style="display:flex;gap:.5rem;align-items:center;cursor:pointer"><input type="checkbox" id="rps" style="width:auto;min-height:0"> Show password</label>
+  <p id="rpe" style="color:var(--bad);min-height:1.2em;margin-top:.5rem"></p>
+  <button class="btn gold big" id="rpg">Save new password</button></div>`);
+    $("#rps").onchange = (e) => { $("#rp1").type = e.target.checked ? "text" : "password"; $("#rp2").type = $("#rp1").type; };
+    $("#rpg").onclick = async () => {
+      const a = $("#rp1").value.trim(), b = $("#rp2").value.trim();
+      if (a.length < 8) { $("#rpe").textContent = "Password must be at least 8 characters."; return; }
+      if (a !== b) { $("#rpe").textContent = "The two passwords do not match."; return; }
+      await setPassword(u, a);
+      u.last = Date.now();
+      if (!save()) return;
+      LS.kl_user = u.id;
+      admin = false;
+      closeModal();
+      toast("Password changed \u2014 you are signed in");
+      acMenu();
+      render();
+    };
   }
   function accountModal() {
     const u = me();
     if (!u) return authModal("in");
     const O = S.orders.filter((o) => o.uid === u.id || o.phone === u.phone);
-    openModal(`<div class="info" style="padding:1.5rem"><h2>My account</h2><p class="hint">${esc(u.name)} \xB7 ${esc(u.phone)}</p><h3>Delivery location</h3>${locHtml("m", u.region, u.town)}<button class="btn" id="msv" style="margin-top:.6rem">Save location</button>
+    openModal(`<div class="info" style="padding:1.5rem"><h2>My dashboard</h2><p class="hint">${esc(u.name)} \xB7 ${esc(u.phone)}</p><h3>Delivery location</h3>${locHtml("m", u.region, u.town)}<button class="btn" id="msv" style="margin-top:.6rem">Save location</button>
   <h3 style="margin-top:1.4rem">My orders</h3>${O.length ? O.map((o) => {
       const b = o.total - pd(o);
       return `<div class="item"><div class="g"><b>${o.id}</b> <span class="badge">${o.status}</span><br><small>${ago(o.t)} \xB7 ${money(o.total)}${b > 0 ? ` \xB7 <span class="low">balance ${money(b)}</span>` : ""}</small></div><button class="btn sm" data-vo="${o.id}">View${b > 0 ? " / pay" : ""}</button></div>`;
@@ -1836,6 +2279,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     e.stopPropagation();
     acMenu();
     $("#acMenu").classList.toggle("hidden");
+    $("#acBtn").setAttribute("aria-expanded", String(!$("#acMenu").classList.contains("hidden")));
   };
   $("#acMenu").onclick = (e) => {
     const a = e.target.dataset.ac;
@@ -1843,7 +2287,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     $("#acMenu").classList.add("hidden");
     ({ in: () => authModal("in"), up: () => authModal("up"), acct: accountModal, orders: accountModal, track: trackPay, out: signOut })[a]();
   };
-  document.addEventListener("click", () => $("#acMenu").classList.add("hidden"));
+  document.addEventListener("click", () => {
+    $("#acMenu").classList.add("hidden");
+    $("#acBtn").setAttribute("aria-expanded", "false");
+  });
   const goGrid = () => {
     const c = $("#chips");
     if (c) c.scrollIntoView({ behavior: "smooth" });
@@ -1886,8 +2333,99 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     t.classList.add("rt");
     t.querySelectorAll("tr").forEach((r, i) => { if (i) [...r.children].forEach((c, j) => { if (c.tagName === "TD") c.setAttribute("data-label", ths[j] || ""); }); });
   });
-  new MutationObserver(labelTables).observe($("#app"), { childList: true, subtree: true });
+  /* Accessibility pass that runs after every render: ties each label to its field (screen readers and
+     tap-to-focus), and exposes the selected state of toggle buttons (categories, payment options, stars). */
+  let lid = 0;
+  const enhance = (root) => {
+    root.querySelectorAll("label:not([for])").forEach((l) => {
+      if (l.querySelector("input,select,textarea")) return;
+      let c = l.nextElementSibling;
+      if (c && c.matches("small")) c = c.nextElementSibling;
+      if (!c) return;
+      if (!c.matches("input,select,textarea")) c = c.matches(".pm,.vars,.stars,.qty,.drop") ? null : c.querySelector(":scope > input,:scope > select,:scope > textarea");
+      if (!c) return;
+      if (!c.id) c.id = "f" + ++lid;
+      l.htmlFor = c.id;
+    });
+    root.querySelectorAll(".pm button,.vars button,.chips .chip[data-c],.stars button,#chips .chip,.tabs .chip[data-t]").forEach((b) => b.setAttribute("aria-pressed", String(b.classList.contains("on"))));
+  };
+  let enhQ = 0;
+  const runEnh = () => {
+    if (enhQ) return;
+    enhQ = requestAnimationFrame(() => {
+      enhQ = 0;
+      labelTables();
+      enhance(document);
+    });
+  };
+  new MutationObserver(runEnh).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class"] });
+  runEnh();
+  document.addEventListener("click", (e) => {
+    if (e.target && e.target.id === "trim2" && admin) {
+      S.products.forEach((x) => { x.imgs = (x.imgs || []).slice(0, MAX_PHOTOS); });
+      save();
+      aBrands();
+      toast("Each brand now keeps only " + MAX_PHOTOS + " photos");
+    }
+  });
+  (() => {
+    const lg = document.querySelector(".logo");
+    let n = 0, t0 = 0;
+    if (lg) lg.addEventListener("click", () => { const now = Date.now(); n = now - t0 < 900 ? n + 1 : 1; t0 = now; if (n >= 5) { n = 0; $("#olink").click(); } });
+    if (navigator.storage && navigator.storage.persist) { try { navigator.storage.persist(); } catch (e) {} }
+  })();
+  document.addEventListener("error", (e) => {
+    const t = e.target;
+    if (t && t.tagName === "IMG" && !t.dataset.fb) { t.dataset.fb = "1"; t.src = pic({}); }
+  }, true);
+  window.addEventListener("offline", () => toast("You are offline. Video links and SMS codes need internet."));
+  window.addEventListener("online", () => toast("Back online"));
+  try { localStorage.setItem("__kl", "1"); localStorage.removeItem("__kl"); }
+  catch (err) {
+    const h = document.querySelector("header");
+    if (h) h.insertAdjacentHTML("afterend", '<div class="welcome" style="border-color:var(--bad)"><b>Your browser is blocking storage</b> (private browsing?). The shop still works, but accounts, carts and orders will be lost when you close this page.</div>');
+  }
+  $("#osDash").onclick = () => { view = "admin"; render(); };
+  $("#osOut").onclick = () => { admin = false; window.pinH = null; view = "shop"; render(); toast("You are logged out"); };
+  function privacyModal() {
+    openModal(`<div class="info" style="padding:1.5rem"><h2>Privacy notice</h2>
+  <p class="hint">Kay Lustre Gifts &amp; More, West Hills Mall, North Kaneshie, Lapaz. Contact: 0257911684 or 0550771454.</p>
+  <h3 style="margin-top:1rem">What we collect</h3><p>Your name, phone number, delivery region, town and address notes, the items you order, and the payment reference you give us. If you create an account we also keep a protected (hashed) version of your password.</p>
+  <h3 style="margin-top:1rem">Why</h3><p>Only to confirm, deliver and support your orders and requests. We do not sell your information or use it for unrelated marketing.</p>
+  <h3 style="margin-top:1rem">Where it is kept</h3><p>Your account, cart and order history are stored in this browser on your phone. Order, request and payment details reach the shop when you send them to us on WhatsApp, and the shop keeps them for as long as needed for delivery, returns and accounting records.</p>
+  <h3 style="margin-top:1rem">Your rights</h3><p>Under Ghana's Data Protection Act, 2012 (Act 843) you can ask us what we hold about you, ask us to correct it, or ask us to delete it. Call or WhatsApp us, or remove everything stored on this phone now:</p>
+  <button class="btn bad" id="pdel" style="margin-top:.6rem">Delete my data from this phone</button></div>`);
+    $("#pdel").onclick = () => {
+      if (!confirm("Delete your account, cart, orders and messages from this phone? This cannot be undone.")) return;
+      const u = me();
+      if (u) {
+        S.users = S.users.filter((x) => x.id !== u.id);
+        S.orders = S.orders.filter((o) => o.uid !== u.id && o.phone !== u.phone);
+        S.requests = S.requests.filter((r) => r.uid !== u.id && r.phone !== u.phone);
+      }
+      if (!ownerDevice()) {
+        S.orders = [];
+        S.requests = [];
+      }
+      delete S.chats[cid];
+      LS.removeItem("kl_user");
+      cart = [];
+      saveCart();
+      save();
+      closeModal();
+      acMenu();
+      render();
+      toast("Your data has been removed from this phone");
+    };
+  }
+  window.privacyModal = privacyModal;
+  $("#plink").onclick = (e) => {
+    e.preventDefault();
+    privacyModal();
+  };
+  $("#yr").textContent = new Date().getFullYear();
   window.goTab = goTab;
+  window.publishCatalogue = publishCatalogue;
   window.authModal = authModal;
   window.closeModal = closeModal;
   window.goShop = () => {
@@ -1896,6 +2434,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   };
   saveCart();
   render();
+  fetchCatalogue();
+  if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+    addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+  }
   if (memOnly) setTimeout(() => toast("This browser is not saving data on your phone. Keep this page open, or open the file in Chrome or Safari."), 900);
 })();
 
